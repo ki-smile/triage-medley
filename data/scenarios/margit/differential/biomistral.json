@@ -1,0 +1,69 @@
+{
+  "model_id": "biomistral",
+  "candidates": [
+    {
+      "diagnosis": "Subdural hematoma",
+      "probability": 0.3,
+      "supporting_evidence": [
+        "CRITICAL: 81F on warfarin with direct head trauma \u2014 this is the classic setup for acute or subacute subdural hematoma",
+        "Age-related cerebral atrophy creates space for hematoma expansion before symptoms appear",
+        "Bridging veins are stretched and fragile in elderly patients with brain atrophy",
+        "Warfarin prevents clot formation, allowing continued bleeding from even minor venous tears",
+        "The lucid interval is the most dangerous feature \u2014 patient appears well for hours before rapid deterioration",
+        "Mortality of anticoagulant-associated subdural hematoma approaches 60% if not detected early"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Intracranial hemorrhage (other \u2014 epidural, subarachnoid, intracerebral)",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "On warfarin, assume bleeding until proven otherwise",
+        "Epidural hematoma from temporal bone fracture \u2014 osteoporotic bone fractures more easily",
+        "Traumatic subarachnoid hemorrhage possible from impact mechanism",
+        "Hypertension (155/88) compounds hemorrhagic risk \u2014 hypertensive patients bleed more and stop bleeding less effectively",
+        "Dizziness is a red-flag symptom that could represent early mass effect or posterior fossa pathology"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Hip fracture",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "81F with osteoporosis + fall + hip pain = hip fracture until proven otherwise",
+        "Neck of femur fractures are the most common osteoporotic fracture requiring hospitalisation",
+        "Warfarin complicates surgical timing \u2014 INR must be corrected before operative fixation",
+        "Delayed diagnosis of occult hip fracture (X-ray negative) leads to increased morbidity \u2014 MRI indicated if clinical suspicion persists",
+        "30-day mortality for hip fracture in 80+ age group is 8-10%"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "C-spine fracture",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Head strike on floor implies cervical spine was loaded during the fall",
+        "Osteoporosis affects cervical vertebrae \u2014 odontoid (dens) fractures are the most common cervical fracture in elderly",
+        "Odontoid fractures can be stable initially but catastrophically unstable with movement",
+        "Canadian C-spine Rule: age >65 = mandatory imaging regardless of symptoms",
+        "Spinal epidural hematoma in anticoagulated patient with cervical trauma is a neurosurgical emergency"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Cardiac syncope causing fall",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "The fall itself may be secondary to a cardiac event \u2014 known atrial fibrillation",
+        "Paroxysmal AF or rapid ventricular response can cause transient cerebral hypoperfusion",
+        "Enalapril can potentiate orthostatic hypotension in elderly with impaired baroreflexes",
+        "If syncope caused the fall, recurrence risk is immediate and high",
+        "ECG, continuous telemetry, and orthostatic vitals are mandatory to evaluate this pathway"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "DEVIL'S ADVOCATE ASSESSMENT: On warfarin, assume bleeding until proven otherwise. This 81-year-old anticoagulated female with head trauma, hip pain, and dizziness is a convergence of high-risk factors that demands aggressive investigation. Every candidate in this differential is flagged as don't-miss because the consequences of missing ANY of these diagnoses are severe or fatal. Subdural hematoma is my highest-probability diagnosis \u2014 not because it is statistically the most common outcome of falls in the elderly, but because it is the diagnosis most likely to kill this specific patient if missed. The warfarin + head trauma + age triad is the highest-risk combination in emergency trauma medicine for occult intracranial bleeding. Hip fracture ranks third but carries its own mortality \u2014 delayed surgical fixation due to undetected fracture or warfarin reversal delays increases 30-day mortality. C-spine fracture with potential spinal epidural hematoma in an anticoagulated patient could result in permanent quadriplegia. Even the cardiac syncope pathway is flagged because if the fall was caused by an arrhythmia, the patient is at risk of another syncopal event and further injury. This patient needs: immediate CT head, C-spine imaging, hip X-ray (with MRI if negative but suspicious), urgent INR, ECG, and continuous neurological monitoring. Do not be reassured by the stable vitals and GCS 15 \u2014 the lucid interval is real and lethal.",
+  "confidence": "HIGH",
+  "processing_time_ms": 6800
+}

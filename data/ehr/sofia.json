@@ -1,0 +1,123 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "sofia",
+        "name": [{"family": "Nilsson", "given": ["Sofia"]}],
+        "gender": "female",
+        "birthDate": "1997-04-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-prior-1",
+        "subject": {"reference": "Patient/sofia"},
+        "status": "finished",
+        "class": {"code": "EMER", "display": "Emergency"},
+        "period": {"start": "2026-01-18", "end": "2026-01-18"},
+        "reasonCode": [
+          {
+            "coding": [{"system": "http://snomed.info/sct", "code": "299377003", "display": "Right calf pain"}]
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {"display": "Muscle strain, right calf"},
+            "rank": 1
+          }
+        ],
+        "note": [
+          {"text": "28F presented with right calf pain after prolonged sitting. Diagnosed as muscle strain. No Doppler ultrasound performed. Discharged with analgesia and advice to mobilise."}
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-1",
+        "subject": {"reference": "Patient/sofia"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "57406009", "display": "Right calf pain — muscle strain (diagnosed ED visit 2026-01-18, no Doppler performed)"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "resolved"}]},
+        "onsetDateTime": "2026-01-18",
+        "abatementDateTime": "2026-01-18",
+        "note": [
+          {"text": "ED visit 3 weeks ago. Right calf pain attributed to muscle strain. NO Doppler ultrasound was performed to exclude DVT. Patient discharged same day."}
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "fhx-1",
+        "patient": {"reference": "Patient/sofia"},
+        "relationship": {
+          "coding": [{"system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode", "code": "PAUNT", "display": "Paternal aunt"}]
+        },
+        "condition": [
+          {
+            "code": {
+              "coding": [{"system": "http://snomed.info/sct", "code": "128053003", "display": "Deep vein thrombosis"}]
+            },
+            "onsetAge": {"value": 45, "unit": "years"}
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-1",
+        "subject": {"reference": "Patient/sofia"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "G03AA12", "display": "Drospirenone/ethinylestradiol (Yasmin)"}]
+        },
+        "dosage": [{"text": "1 tablet daily, continuous use"}],
+        "status": "active",
+        "effectivePeriod": {"start": "2024-12-01"},
+        "note": [
+          {"text": "Drospirenone-containing OCP — highest VTE risk class among combined oral contraceptives (OR 6.3 vs non-use). Duration 14 months."}
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-2",
+        "subject": {"reference": "Patient/sofia"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "M01AE01", "display": "Ibuprofen"}]
+        },
+        "dosage": [{"text": "400 mg as needed for pain"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-1",
+        "patient": {"reference": "Patient/sofia"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "111088007", "display": "Latex"}]
+        },
+        "reaction": [{"manifestation": [{"coding": [{"display": "Contact dermatitis"}]}], "severity": "moderate"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "social-1",
+        "subject": {"reference": "Patient/sofia"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "160903007", "display": "Social history"}]
+        },
+        "valueString": "Sedentary office occupation. 12-hour car drive 5 days ago (road trip). Non-smoker. BMI 26.8."
+      }
+    }
+  ]
+}

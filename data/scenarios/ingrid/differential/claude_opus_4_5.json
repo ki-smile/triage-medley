@@ -1,0 +1,69 @@
+{
+  "model_id": "medgemma_27b",
+  "candidates": [
+    {
+      "diagnosis": "Urosepsis with ESBL-producing E. coli",
+      "probability": 0.40,
+      "supporting_evidence": [
+        "BOUNCE-BACK presentation 6 days after UTI treatment — classic pattern for treatment failure progressing to urosepsis",
+        "E. coli with documented quinolone resistance — organisms with one resistance mechanism frequently harbour others (ESBL production)",
+        "TMP-SMX may have been inadequate: concurrent methotrexate reduces folate metabolism via same pathway, potentially reducing TMP-SMX efficacy",
+        "Dual immunosuppression (methotrexate + prednisone) profoundly impairs immune clearance of urinary pathogens",
+        "Prednisone suppresses febrile response — patient presenting afebrile does NOT exclude bacteraemia",
+        "Metoprolol masks tachycardia — HR 78 may represent blunted sympathetic response to sepsis",
+        "BP 118/68 vs baseline 148/82 = 30-point systolic drop — relative hypotension indicating early distributive shock",
+        "3 UTIs in 18 months suggests structural, immunological, or microbiological vulnerability"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Methotrexate-induced pancytopenia with secondary infection",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "CRITICAL DRUG INTERACTION: TMP-SMX + methotrexate — both are folate antagonists. Concurrent use potentiates bone marrow suppression",
+        "This interaction is well-documented to cause fatal pancytopenia, particularly in elderly patients with renal impairment",
+        "Methotrexate 15 mg weekly is a moderate dose but toxicity risk increases with age, renal function decline, and drug interactions",
+        "Weakness and fatigue are early symptoms of pancytopenia before overt bleeding or infection manifest",
+        "CBC with differential is URGENT — leukopenia would confirm immunocompromise beyond the baseline immunosuppression"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Dehydration with orthostatic hypotension",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Elderly patient with reduced oral intake during recent illness",
+        "Metformin can contribute to GI symptoms and reduced fluid intake",
+        "Near-fall on arising from bed is consistent with orthostatic mechanism",
+        "However, this diagnosis should be considered ONLY after excluding sepsis and pancytopenia"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Adrenal insufficiency (chronic prednisone)",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Chronic prednisone 7.5 mg daily suppresses the HPA axis",
+        "Under physiologic stress (infection, dehydration), patient cannot mount appropriate cortisol response",
+        "Weakness, fatigue, and hypotension are cardinal signs of adrenal crisis",
+        "If sepsis is confirmed, stress-dose steroids (hydrocortisone 100 mg IV) should be administered",
+        "The relative hypotension (BP 118/68 vs baseline 148/82) may partly reflect adrenal insufficiency"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Diabetic ketoacidosis (atypical presentation in elderly)",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Type 2 diabetes on metformin — DKA is uncommon but possible, especially with concurrent infection",
+        "Prednisone elevates blood glucose and can precipitate hyperglycaemic crises",
+        "Elderly patients may present with atypical DKA: weakness and confusion rather than classic Kussmaul breathing",
+        "Point-of-care glucose and venous blood gas should be checked"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "This is a high-complexity case where the surface presentation (vague weakness in elderly woman with normal vitals) conceals multiple life-threatening possibilities. The KEY clinical insight is the TMP-SMX + methotrexate drug interaction — both are folate antagonists, and their concurrent use is documented to cause fatal pancytopenia, particularly in elderly patients. This interaction may be potentiating bone marrow suppression while the patient is simultaneously fighting a UTI that may not have been adequately treated. The bounce-back pattern (ED visit 6 days ago, returning with worsening non-specific symptoms) is a well-established red flag for treatment failure and clinical deterioration. Urosepsis leads the differential because: (1) source is identified (recent UTI), (2) organism has documented resistance, (3) host is immunocompromised, (4) vital signs show relative deterioration when compared to baseline rather than absolute thresholds, and (5) screening tools (qSOFA, SIRS) are known to have poor sensitivity in this population. STAT CBC with differential, lactate, blood cultures x2, and cortisol level are the critical initial investigations.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9450
+}

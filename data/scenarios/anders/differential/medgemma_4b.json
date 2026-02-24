@@ -1,0 +1,61 @@
+{
+  "model_id": "medgemma_4b",
+  "candidates": [
+    {
+      "diagnosis": "Acute decompensated heart failure",
+      "probability": 0.4,
+      "supporting_evidence": [
+        "Known CHF history with chronic heart failure management",
+        "Chief complaint of chest tightness consistent with fluid overload",
+        "Age 68 with comorbid atrial fibrillation increases decompensation risk",
+        "Type 2 diabetes accelerates cardiovascular deterioration"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Acute coronary syndrome / NSTEMI",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Chest tightness is a classic anginal equivalent",
+        "Multiple cardiovascular risk factors: age 68, male, DM2, known CHF",
+        "Atrial fibrillation increases thromboembolic risk",
+        "Warfarin use suggests existing thromboembolic risk profile"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Chest tightness with known atrial fibrillation raises embolic concern",
+        "Heart failure associated with venous stasis and hypercoagulability",
+        "Warfarin therapeutic level should be verified \u2014 subtherapeutic INR increases PE risk",
+        "Age and reduced mobility from CHF are additional risk factors"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "COPD exacerbation",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Chest tightness can present similarly to dyspnea from COPD",
+        "Common comorbidity in elderly patients with heart failure",
+        "Smoking history not yet confirmed but statistically probable in this demographic"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Anxiety / musculoskeletal chest pain",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Non-cardiac chest tightness is common and must be considered",
+        "Diagnosis of exclusion after ruling out life-threatening causes",
+        "Musculoskeletal pain can mimic cardiac symptoms in elderly patients"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "Given the 68-year-old male with known CHF, atrial fibrillation, and DM2 presenting with chest tightness, the differential is dominated by cardiac and cardiopulmonary causes. Acute decompensated heart failure ranks highest given his established CHF. ACS is the second most likely given multiple risk factors and the classic presentation. PE must be considered given his AF and potential for subtherapeutic anticoagulation. Less likely but relevant are COPD exacerbation and non-cardiac causes.",
+  "confidence": "HIGH",
+  "processing_time_ms": 2847
+}

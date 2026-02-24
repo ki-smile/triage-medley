@@ -1,0 +1,71 @@
+{
+  "model_id": "biomistral",
+  "candidates": [
+    {
+      "diagnosis": "Meningococcal disease (invasive N. meningitidis)",
+      "probability": 0.35,
+      "supporting_evidence": [
+        "CRITICAL: The hemodynamic profile of HR 185 + BP 85/50 in a 4-year-old is NOT benign fever-associated tachycardia \u2014 this is compensated septic shock",
+        "Normal systolic BP for age 4 is >90 mmHg; 85 mmHg represents true hypotension below the 5th percentile",
+        "HR 185 exceeds fever-adjusted expected rate (expected ~155-170 bpm) by 15-30 bpm \u2014 the excess represents a compensatory response to poor cardiac output",
+        "Fever + acute-onset rash + lethargy + hemodynamic compromise = meningococcal disease until proven otherwise",
+        "Meningococcal purpura can begin as blanching erythema and evolve to non-blanching petechiae/purpura within 2-4 hours",
+        "The parent noted the rash 'appeared this morning' \u2014 if it has spread or changed character since then, this is an ominous trajectory",
+        "Children under 5 have the highest incidence of invasive meningococcal disease",
+        "Case fatality rate 10-15% with treatment, approaching 100% without \u2014 every hour of antibiotic delay increases mortality"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Sepsis with shock (any bacterial source)",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "The vital sign combination (tachycardia exceeding fever adjustment + hypotension for age) meets pediatric septic shock criteria",
+        "Lethargy and refusal to eat are systemic illness markers beyond simple febrile malaise",
+        "Common occult sources in this age group: UTI, pneumonia, bacteremia, osteomyelitis",
+        "Pediatric sepsis has a narrow therapeutic window \u2014 recognition in the first hour is associated with 40% mortality reduction",
+        "Blood cultures, lactate, and empiric broad-spectrum antibiotics are indicated immediately"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Kawasaki disease",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "Age 4 is within the classic range (peak 18-24 months but up to age 5)",
+        "Fever with rash fulfils 2 of 5 major criteria \u2014 incomplete Kawasaki is frequently missed",
+        "Must actively look for conjunctival injection, strawberry tongue, extremity swelling, cervical lymphadenopathy",
+        "If Kawasaki criteria are met or suspected, IVIG must be administered within 10 days of fever onset to prevent coronary aneurysm",
+        "Untreated coronary artery aneurysm risk is 25% \u2014 this is irreversible damage in a 4-year-old"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Viral exanthem",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Statistically the most common cause of fever with rash in children",
+        "However, I deliberately rank this LOWER than other models because the vital sign profile is NOT consistent with a simple viral illness",
+        "A 4-year-old with uncomplicated viral exanthem should NOT have BP below the 5th percentile for age",
+        "Viral exanthem should be a diagnosis of exclusion AFTER ruling out the life-threatening differentials",
+        "Anchoring on 'most likely = viral' in this hemodynamic context is a dangerous cognitive bias"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Henoch-Sch\u00f6nlein purpura (IgA vasculitis)",
+      "probability": 0.05,
+      "supporting_evidence": [
+        "Peak incidence age 3-10 years \u2014 this patient is within the range",
+        "Palpable purpura predominantly on lower extremities and buttocks",
+        "Can present with systemic features including fever and malaise",
+        "Complications include intussusception (abdominal pain) and nephritis (haematuria/proteinuria)",
+        "Less likely given the degree of hemodynamic compromise seen here"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "DEVIL'S ADVOCATE ASSESSMENT: I fundamentally disagree with the consensus that this is most likely a benign viral exanthem. The other models are making a dangerous error: they are adjusting away the abnormal vital signs by attributing them to fever, when in fact the hemodynamic profile is DISPROPORTIONATE to the fever. Let me be explicit: BP 85/50 in a 4-year-old is BELOW the 5th percentile for age. This is true hypotension. HR 185 exceeds the fever-adjusted expected rate by 15-30 bpm. Together, these indicate compensated shock \u2014 the child's cardiovascular system is maxing out heart rate to maintain perfusion in the face of falling blood pressure. A child with simple viral exanthem does NOT develop hypotension. The rash + fever + lethargy + hemodynamic compromise pattern is meningococcal disease until proven otherwise. I have inverted the probability ranking to reflect clinical urgency rather than statistical frequency. The question is not 'what is most likely?' but 'what will kill this child in the next 4 hours if we miss it?' Empiric IV ceftriaxone should be administered within 30 minutes of arrival. Do NOT wait for blood culture results. Do NOT wait for rash characterization. Do NOT delay antibiotics for lumbar puncture. Time is the enemy.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 7200
+}

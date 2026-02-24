@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_4b",
+  "queue_priority": "HIGH",
+  "chief_complaint": "Fall with head injury on anticoagulation",
+  "reasoning": "81-year-old female presenting after a fall at home with head strike and hip pain, reporting dizziness. Known history of atrial fibrillation on warfarin anticoagulation. Initial assessment would suggest MODERATE priority for a simple mechanical fall in an elderly patient, but the combination of warfarin therapy and direct head trauma creates a significant risk of intracranial hemorrhage, including delayed subdural hematoma. Warfarin-associated intracranial hemorrhage carries high mortality (40-60%). Additionally, osteoporosis increases fracture risk substantially. Escalating to HIGH priority to ensure timely CT head and INR assessment.",
+  "ess_category_hint": "trauma_fall",
+  "risk_amplifiers_detected": [
+    "Patient on warfarin with head trauma — intracranial hemorrhage risk"
+  ],
+  "confidence": "MODERATE",
+  "processing_time_ms": 1700
+}

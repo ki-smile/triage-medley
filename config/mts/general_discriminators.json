@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "system": "MTS (Manchester Triage System)",
+    "description": "General (fallback) discriminators used when no ESS-specific flowchart matches the patient's chief complaint. Evaluated top-down; first match determines triage level.",
+    "usage": "Apply these discriminators when the ESS category is unknown, unmapped, or does not have a dedicated flowchart in flowcharts.json."
+  },
+
+  "general_discriminators": [
+    {
+      "level": "RED",
+      "name": "Airway threat",
+      "check": { "type": "keyword_match", "keywords": ["airway obstruction", "stridor", "unable to speak", "choking", "anaphylaxis airway", "gurgling"] },
+      "max_wait_minutes": 0,
+      "rationale": "Any compromise to the airway is immediately life-threatening."
+    },
+    {
+      "level": "RED",
+      "name": "Inadequate breathing",
+      "check": { "type": "vital_threshold", "vital": "respiratory_rate", "below": 8, "above": 40 },
+      "max_wait_minutes": 0,
+      "rationale": "Respiratory rate outside survivable range without intervention."
+    },
+    {
+      "level": "RED",
+      "name": "Circulatory compromise — shock",
+      "check": { "type": "vital_threshold", "vital": "systolic_bp", "below": 70 },
+      "max_wait_minutes": 0,
+      "rationale": "Systolic BP <70 indicates decompensated shock requiring immediate intervention."
+    },
+    {
+      "level": "RED",
+      "name": "Unresponsive",
+      "check": { "type": "consciousness", "values": ["Unresponsive"] },
+      "max_wait_minutes": 0,
+      "rationale": "Unresponsive patient requires immediate assessment and airway management."
+    },
+    {
+      "level": "RED",
+      "name": "Critical oxygen desaturation",
+      "check": { "type": "vital_threshold", "vital": "spo2", "below": 85 },
+      "max_wait_minutes": 0,
+      "rationale": "SpO2 <85% indicates severe hypoxaemia requiring immediate oxygen therapy."
+    },
+    {
+      "level": "ORANGE",
+      "name": "Altered consciousness",
+      "check": { "type": "consciousness", "values": ["Pain", "Voice"] },
+      "max_wait_minutes": 10,
+      "rationale": "Responds only to pain or voice — significant neurological compromise."
+    },
+    {
+      "level": "ORANGE",
+      "name": "Very hot adult (>=41C)",
+      "check": { "type": "vital_threshold", "vital": "temperature", "above": 41.0 },
+      "max_wait_minutes": 10,
+      "rationale": "Hyperpyrexia (>=41C) risks end-organ damage and requires active cooling."
+    },
+    {
+      "level": "ORANGE",
+      "name": "Significant hypoxia",
+      "check": { "type": "vital_threshold", "vital": "spo2", "below": 92 },
+      "max_wait_minutes": 10,
+      "rationale": "SpO2 <92% indicates clinically significant hypoxaemia."
+    },
+    {
+      "level": "ORANGE",
+      "name": "Severe tachycardia",
+      "check": { "type": "vital_threshold", "vital": "heart_rate", "above": 150 },
+      "max_wait_minutes": 10,
+      "rationale": "HR >150 may indicate haemodynamic instability or a dangerous arrhythmia."
+    },
+    {
+      "level": "ORANGE",
+      "name": "Severe bradycardia",
+      "check": { "type": "vital_threshold", "vital": "heart_rate", "below": 40 },
+      "max_wait_minutes": 10,
+      "rationale": "HR <40 risks inadequate cardiac output."
+    },
+    {
+      "level": "ORANGE",
+      "name": "Severe hypertension with symptoms",
+      "check": { "type": "vital_threshold", "vital": "systolic_bp", "above": 200 },
+      "max_wait_minutes": 10,
+      "rationale": "SBP >200 with any symptoms suggests hypertensive emergency."
+    },
+    {
+      "level": "YELLOW",
+      "name": "Moderately febrile (>=38.5C)",
+      "check": { "type": "vital_threshold", "vital": "temperature", "above": 38.5 },
+      "max_wait_minutes": 60,
+      "rationale": "Fever >=38.5C warrants timely assessment but is not immediately life-threatening."
+    },
+    {
+      "level": "YELLOW",
+      "name": "Moderate pain — distress keywords",
+      "check": { "type": "keyword_match", "keywords": ["severe pain", "very painful", "intense pain", "cannot move due to pain", "screaming in pain", "10 out of 10 pain"] },
+      "max_wait_minutes": 60,
+      "rationale": "Significant pain or distress requires timely analgesia and assessment."
+    },
+    {
+      "level": "YELLOW",
+      "name": "Mild tachycardia",
+      "check": { "type": "vital_threshold", "vital": "heart_rate", "above": 110 },
+      "max_wait_minutes": 60,
+      "rationale": "Tachycardia >110 is abnormal and may indicate underlying pathology."
+    },
+    {
+      "level": "YELLOW",
+      "name": "Hypothermia",
+      "check": { "type": "vital_threshold", "vital": "temperature", "below": 35.0 },
+      "max_wait_minutes": 60,
+      "rationale": "Core temperature <35C requires warming and investigation of cause."
+    },
+    {
+      "level": "GREEN",
+      "name": "Standard presentation — no urgent discriminator matched",
+      "check": { "type": "default" },
+      "max_wait_minutes": 120,
+      "rationale": "Patient is alert, vitals within normal range, no high-acuity discriminators triggered. Standard assessment within 2 hours."
+    }
+  ]
+}

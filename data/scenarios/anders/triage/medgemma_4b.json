@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_4b",
+  "retts_level": "ORANGE",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Chest tightness with dyspnea in patient with known heart failure",
+  "clinical_reasoning": "68-year-old male with acute chest tightness and breathing difficulty. SpO2 borderline at 94%. Known heart failure and atrial fibrillation on warfarin. Mild tachycardia (HR 92) and hypertension (145/85). The combination of cardiac history with acute symptoms and borderline oxygenation warrants ORANGE — very urgent assessment within 20 minutes.",
+  "vital_sign_concerns": ["SpO2 94% — borderline low", "HR 92 — mildly elevated for age", "BP 145/85 — mild hypertension"],
+  "risk_factors": ["Known heart failure", "Atrial fibrillation on warfarin", "Diabetes mellitus type 2"],
+  "confidence": "HIGH",
+  "dont_miss": ["Acute coronary syndrome", "Pulmonary embolism", "Decompensated heart failure"],
+  "processing_time_ms": 2100
+}

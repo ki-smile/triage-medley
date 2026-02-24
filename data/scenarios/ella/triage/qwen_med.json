@@ -1,0 +1,23 @@
+{
+  "model_id": "qwen_med",
+  "retts_level": "ORANGE",
+  "ess_category": "pediatric_fever",
+  "chief_complaint": "Pediatric fever with rash, lethargy",
+  "clinical_reasoning": "4-year-old female presenting with fever (39.8°C) and rash appearing this morning, with associated lethargy and anorexia. Tachycardia (HR 185) is expected with high fever in this age group. Blood pressure 85/50 and SpO2 96% are within acceptable pediatric ranges. Respiratory rate 34 is mildly elevated but not concerning. Standard pediatric fever assessment: the child is alert, febrile, and has a rash that needs characterization. Most common cause at this age is viral exanthem. ORANGE triage level — requires timely physician assessment to evaluate rash morphology and exclude serious infections.",
+  "vital_sign_concerns": [
+    "HR 185 — tachycardia in context of fever",
+    "Temperature 39.8°C — high fever",
+    "BP 85/50 — lower end of normal for age"
+  ],
+  "risk_factors": [
+    "Age under 5",
+    "Fever with new rash",
+    "Reduced oral intake"
+  ],
+  "confidence": "MODERATE",
+  "dont_miss": [
+    "Meningococcal disease",
+    "Kawasaki disease"
+  ],
+  "processing_time_ms": 3400
+}

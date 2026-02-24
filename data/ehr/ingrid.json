@@ -1,0 +1,174 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "ingrid",
+        "name": [{"family": "Johansson", "given": ["Ingrid"]}],
+        "gender": "female",
+        "birthDate": "1946-09-22"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-1",
+        "subject": {"reference": "Patient/ingrid"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "69896004", "display": "Rheumatoid arthritis"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2010-04-18"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-2",
+        "subject": {"reference": "Patient/ingrid"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "44054006", "display": "Diabetes mellitus type 2"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2014-11-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-3",
+        "subject": {"reference": "Patient/ingrid"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "38341003", "display": "Hypertension"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2008-02-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-4",
+        "subject": {"reference": "Patient/ingrid"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "197927001", "display": "Recurrent urinary tract infection"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2024-06-10",
+        "note": [{"text": "3 UTIs in 18 months. Most recent episode treated with trimethoprim-sulfamethoxazole 6 days ago. Urine culture: E. coli with documented quinolone resistance. ED visit 6 days ago for urinary symptoms."}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-1",
+        "subject": {"reference": "Patient/ingrid"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "L04AX03", "display": "Methotrexate"}]
+        },
+        "dosage": [{"text": "15 mg once weekly (oral)"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-2",
+        "subject": {"reference": "Patient/ingrid"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "H02AB06", "display": "Prednisone"}]
+        },
+        "dosage": [{"text": "7.5 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-3",
+        "subject": {"reference": "Patient/ingrid"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "C07AB02", "display": "Metoprolol"}]
+        },
+        "dosage": [{"text": "50 mg twice daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-4",
+        "subject": {"reference": "Patient/ingrid"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "A10BA02", "display": "Metformin"}]
+        },
+        "dosage": [{"text": "850 mg twice daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-5",
+        "subject": {"reference": "Patient/ingrid"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "J01EA01", "display": "Trimethoprim-sulfamethoxazole"}]
+        },
+        "dosage": [{"text": "160/800 mg twice daily (recent course, started 6 days ago)"}],
+        "status": "completed",
+        "note": [{"text": "Prescribed at ED visit 6 days ago for recurrent UTI. E. coli with quinolone resistance on culture. Treatment may have failed — patient returning with non-specific symptoms."}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-1",
+        "patient": {"reference": "Patient/ingrid"},
+        "code": {
+          "coding": [{"display": "NSAIDs"}]
+        },
+        "reaction": [{"manifestation": [{"coding": [{"display": "Gastrointestinal bleeding"}]}], "severity": "severe"}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-baseline",
+        "subject": {"reference": "Patient/ingrid"},
+        "code": {
+          "coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]
+        },
+        "effectiveDateTime": "2025-12-10",
+        "component": [
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]},
+            "valueQuantity": {"value": 148, "unit": "mmHg"}
+          },
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]},
+            "valueQuantity": {"value": 82, "unit": "mmHg"}
+          }
+        ],
+        "note": [{"text": "Average of last 3 clinic visits. Baseline BP approximately 148/82 mmHg."}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-recent-ed",
+        "subject": {"reference": "Patient/ingrid"},
+        "status": "finished",
+        "class": {"code": "EMER", "display": "Emergency"},
+        "period": {"start": "2026-02-02", "end": "2026-02-02"},
+        "reasonCode": [
+          {
+            "coding": [{"system": "http://snomed.info/sct", "code": "68566005", "display": "Urinary tract infection"}]
+          }
+        ],
+        "note": [{"text": "ED visit 6 days ago. Presented with dysuria, frequency, and suprapubic discomfort. Urine culture: E. coli with quinolone resistance. Started on trimethoprim-sulfamethoxazole. Discharged with outpatient follow-up."}]
+      }
+    }
+  ]
+}

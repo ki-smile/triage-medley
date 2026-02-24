@@ -1,0 +1,14 @@
+{
+  "model_id": "medgemma_4b",
+  "queue_priority": "HIGH",
+  "chief_complaint": "Chest tightness with dyspnea",
+  "reasoning": "68-year-old male presenting with chest tightness and difficulty breathing. Known history of heart failure, atrial fibrillation, and diabetes. On warfarin. Combination of acute cardiac symptoms with significant cardiac history warrants immediate triage assessment.",
+  "ess_category_hint": "chest_pain",
+  "risk_amplifiers_detected": [
+    "Known heart failure with acute chest symptoms",
+    "Atrial fibrillation — stroke/embolism risk",
+    "On anticoagulation therapy (warfarin)"
+  ],
+  "confidence": "HIGH",
+  "processing_time_ms": 1850
+}

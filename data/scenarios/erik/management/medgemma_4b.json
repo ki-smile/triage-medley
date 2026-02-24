@@ -1,0 +1,36 @@
+{
+  "model_id": "medgemma_4b",
+  "investigations": [
+    "CBC with differential (assess haemoglobin for GI blood loss)",
+    "CMP (electrolytes, creatinine, glucose, eGFR)",
+    "Troponin T (high-sensitivity — rule out concurrent cardiac ischaemia)",
+    "Coagulation studies (PT/INR, APTT)",
+    "D-dimer (>500 ng/mL has 97% sensitivity for aortic dissection)",
+    "Type and cross-match (prepare for potential transfusion or surgery)",
+    "12-lead ECG",
+    "Bilateral arm blood pressure measurement (>20 mmHg differential suggests aortic dissection)",
+    "Lactate (assess for tissue hypoperfusion / mesenteric ischaemia)"
+  ],
+  "imaging": [
+    "CT head without contrast (TIA workup — exclude intracranial haemorrhage)",
+    "CTA aorta, chest, abdomen, and pelvis (if aortic dissection suspected based on bilateral BP differential or clinical suspicion)",
+    "Carotid Doppler ultrasound (assess carotid stenosis as TIA aetiology)"
+  ],
+  "medications": [
+    "IV antihypertensive — labetalol infusion (target SBP <120 mmHg if dissection suspected)",
+    "IV proton pump inhibitor (pantoprazole 40 mg — for suspected upper GI bleeding)",
+    "Hold aspirin until aortic dissection is excluded",
+    "Hold metformin if IV contrast planned (withhold 48 hours post-contrast, recheck creatinine before restarting)",
+    "IV normal saline for volume resuscitation if haemoglobin is significantly reduced"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Avoid anticoagulation (heparin, LMWH) until aortic dissection is definitively excluded — anticoagulation in dissection is catastrophic",
+    "Avoid thrombolytics — patient has melena (active GI bleeding) AND possible aortic dissection",
+    "Hold metformin if contrast imaging is planned (risk of contrast-induced nephropathy and lactic acidosis)",
+    "Avoid overaggressive BP reduction before confirming diagnosis — mesenteric and renal perfusion may be pressure-dependent if dissection is present"
+  ],
+  "reasoning": "72-year-old male presenting with transient neurological deficit and melena. Immediate priorities: (1) bilateral arm BP to screen for aortic dissection, (2) CBC to assess extent of GI blood loss, (3) D-dimer as sensitive screen for aortic dissection. If bilateral BP differential is detected or D-dimer is elevated, CTA aorta takes priority over CT head. Aspirin should be held until dissection is excluded. IV PPI for GI bleeding management. Admission is required for serial monitoring, imaging, and specialist consultation (vascular surgery if dissection confirmed, neurology for TIA workup, gastroenterology for GI bleed).",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2600
+}

@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_4b",
+  "retts_level": "YELLOW",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Pleuritic chest pain 2 days after physical exertion in young female",
+  "clinical_reasoning": "28-year-old female with pleuritic chest pain onset 2 days ago after helping a friend move apartments. Pain reproducible on palpation. HR 102 — likely pain-related or anxiety. SpO2 95% is low-normal. Temperature 37.2\u00b0C is borderline. No significant chronic medical history. Presentation is most consistent with musculoskeletal chest wall strain with pleuritic component. OCP use noted but without additional risk factors in speech, PE is lower on the differential. YELLOW — urgent but stable, monitor and reassess.",
+  "vital_sign_concerns": ["SpO2 95% — low-normal for a 28-year-old (expected 98-100%)", "HR 102 — mild tachycardia, likely pain or anxiety", "Temperature 37.2\u00b0C — low-grade, borderline"],
+  "risk_factors": ["Combined oral contraceptive use (drospirenone)", "Prior ED visit for right calf pain"],
+  "confidence": "MODERATE",
+  "dont_miss": ["Pulmonary embolism", "Pneumothorax"],
+  "processing_time_ms": 2340
+}

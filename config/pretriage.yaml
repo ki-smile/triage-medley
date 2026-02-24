@@ -1,0 +1,141 @@
+# Pre-Triage Priority Rules
+# Used by pretriage_engine.py to assign queue priority from speech + EHR
+
+# Red-flag keywords in patient speech → HIGH priority
+red_flags:
+  chest_pain:
+    keywords: ["chest pain", "chest tightness", "bröstsmärta", "tryck över bröstet", "ont i bröstet"]
+    priority: HIGH
+    ess_hint: "chest_pain"
+
+  breathing_difficulty:
+    keywords: ["can't breathe", "hard to breathe", "difficulty breathing", "shortness of breath",
+               "andnöd", "svårt att andas", "andningssvårigheter"]
+    priority: HIGH
+    ess_hint: "respiratory"
+
+  stroke_signs:
+    keywords: ["can't move my arm", "face drooping", "slurred speech", "sudden weakness",
+               "domningar", "förlamning", "talsvårigheter"]
+    priority: HIGH
+    ess_hint: "neurological"
+
+  altered_consciousness:
+    keywords: ["fainted", "passed out", "confused", "unresponsive",
+               "svimmade", "medvetslös", "förvirrad"]
+    priority: HIGH
+    ess_hint: "neurological"
+
+  severe_bleeding:
+    keywords: ["bleeding a lot", "won't stop bleeding", "blood everywhere",
+               "blöder mycket", "blödning"]
+    priority: HIGH
+    ess_hint: "trauma_fall"
+
+  pediatric_fever_rash:
+    keywords: ["fever and rash", "feber och utslag", "stiff neck", "stel nacke",
+               "petechiae", "petekier"]
+    priority: HIGH
+    ess_hint: "pediatric_fever"
+
+  severe_pain:
+    keywords: ["worst pain", "excruciating", "unbearable pain",
+               "värsta smärtan", "outhärdlig smärta"]
+    priority: MODERATE
+    ess_hint: null
+
+  fall_elderly:
+    keywords: ["fell", "fall", "tripped", "ramlade", "föll",
+               "hit my head", "slog i huvudet"]
+    priority: MODERATE
+    ess_hint: "trauma_fall"
+
+  abdominal:
+    keywords: ["stomach pain", "belly pain", "abdominal pain", "vomiting blood",
+               "magsmärta", "ont i magen", "kräkningar"]
+    priority: MODERATE
+    ess_hint: "abdominal"
+
+  general_weakness:
+    keywords: ["weak", "weakness", "dizzy", "dizziness", "not myself", "faint",
+               "svag", "svaghet", "yr", "yrsel", "slipped", "near fall"]
+    priority: MODERATE
+    ess_hint: "neurological"
+
+  gi_bleeding:
+    keywords: ["dark stools", "black stools", "blood in stool", "melena", "vomiting blood",
+               "mörk avföring", "svart avföring", "blod i avföringen"]
+    priority: MODERATE
+    ess_hint: "abdominal"
+
+  transient_neuro:
+    keywords: ["blurry", "blurred vision", "couldn't think straight", "funny turn",
+               "vision went", "numbness", "tingling", "dimsyn", "suddig syn",
+               "domning", "stickningar"]
+    priority: MODERATE
+    ess_hint: "neurological"
+
+  pleuritic_pain:
+    keywords: ["hurts when I breathe", "deep breath", "sharp chest", "pleuritic",
+               "ont när jag andas", "djupt andetag"]
+    priority: MODERATE
+    ess_hint: "chest_pain"
+
+# EHR risk amplification rules
+# If speech triggers MODERATE + EHR matches condition → escalate to HIGH
+risk_amplifiers:
+  anticoagulation_trauma:
+    description: "Patient on anticoagulants with trauma/fall/head injury"
+    medications: ["warfarin", "waran", "apixaban", "eliquis", "rivaroxaban", "xarelto",
+                  "dabigatran", "pradaxa", "edoxaban", "lixiana"]
+    conditions: ["fall", "trauma", "head"]
+    escalate_to: HIGH
+
+  cardiac_history_chest:
+    description: "Known cardiac disease with chest symptoms"
+    conditions: ["heart failure", "coronary", "atrial fibrillation", "myocardial infarction",
+                 "hjärtsvikt", "kranskärlssjukdom", "förmaksflimmer"]
+    speech_flags: ["chest_pain"]
+    escalate_to: HIGH
+
+  diabetes_altered_consciousness:
+    description: "Diabetic patient with altered consciousness"
+    conditions: ["diabetes", "diabetes mellitus"]
+    speech_flags: ["altered_consciousness"]
+    escalate_to: HIGH
+
+  immunosuppressed_fever:
+    description: "Immunosuppressed patient with fever"
+    medications: ["methotrexate", "azathioprine", "cyclosporine", "tacrolimus",
+                  "prednisolone", "prednisone"]
+    speech_flags: ["pediatric_fever_rash"]
+    escalate_to: HIGH
+
+  immunosuppressed_weakness:
+    description: "Immunosuppressed patient with weakness/dizziness (occult infection risk)"
+    medications: ["methotrexate", "azathioprine", "cyclosporine", "tacrolimus",
+                  "prednisolone", "prednisone"]
+    conditions: ["weakness", "dizzy", "weak", "not myself", "tired"]
+    escalate_to: HIGH
+
+  ocp_vte_risk:
+    description: "OCP user with pleuritic chest pain or limb pain (PE/DVT risk)"
+    medications: ["drospirenone", "yasmin", "yaz", "ethinylestradiol",
+                  "levonorgestrel", "desogestrel"]
+    conditions: ["chest", "breath", "deep breath", "calf", "leg pain", "swelling"]
+    escalate_to: HIGH
+
+  aortic_valve_neuro:
+    description: "Known aortic valve/root disease with neurological symptoms"
+    conditions: ["bicuspid", "aortic valve", "aortic root", "aortic dilation",
+                 "aortaklaffsjukdom"]
+    speech_flags: ["transient_neuro", "stroke_signs"]
+    escalate_to: HIGH
+
+  bounce_back:
+    description: "Patient returning within 7 days of prior ED/urgent care visit"
+    conditions: ["bounce-back", "re-visit", "return visit", "recent ED"]
+    escalate_to: HIGH
+
+# Default priority if no red flags match
+default_priority: STANDARD

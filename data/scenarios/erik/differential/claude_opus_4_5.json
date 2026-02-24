@@ -1,0 +1,66 @@
+{
+  "model_id": "medgemma_27b",
+  "candidates": [
+    {
+      "diagnosis": "Stanford Type A aortic dissection with malperfusion",
+      "probability": 0.45,
+      "supporting_evidence": [
+        "UNIFYING DIAGNOSIS: simultaneous transient neurological deficit (carotid malperfusion) AND melena (mesenteric malperfusion) — two-territory involvement strongly suggests a proximal aortic process",
+        "Bicuspid aortic valve confers 9-fold increased risk of aortic dissection independent of aortic dimensions",
+        "Ascending aortic root dilated to 4.2 cm on last imaging 3 years ago — with a growth rate of 0.08 cm/year from prior echo, current root likely 4.4-4.5 cm (approaching surgical threshold)",
+        "LAPSED SURVEILLANCE: follow-up echo due February 2024, never completed — 2+ years of unmonitored aortic root growth",
+        "Uncontrolled hypertension for 25 years (recent readings 148-164 systolic despite amlodipine) — chronic aortic wall shear stress",
+        "Former 40-pack-year smoker — accelerates medial degeneration and cystic medial necrosis in bicuspid valve aortopathy",
+        "The absence of classic tearing chest pain does NOT exclude dissection — painless dissection occurs in 5-15% of cases, particularly in elderly patients and those with neurological malperfusion as the dominant presentation"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "TIA secondary to carotid dissection extension",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "If Type A dissection is present, the dissection flap frequently extends into the brachiocephalic trunk and right carotid artery",
+        "Carotid malperfusion causes transient neurological deficits indistinguishable from atherothrombotic TIA",
+        "Resolution of symptoms may represent intermittent flap obstruction with restored flow",
+        "This is not a separate diagnosis from aortic dissection but rather a manifestation of it"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Upper GI bleeding (aspirin-related) concurrent with separate vascular event",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Aspirin 75 mg daily is a known cause of gastric erosion and peptic ulceration",
+        "Melena is consistent with upper GI source above the ligament of Treitz",
+        "If two separate pathologies: coincidental aspirin-related GI bleed + atherothrombotic TIA",
+        "Less likely than a unifying diagnosis given simultaneous onset of both symptom complexes"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Stroke with stress-related GI bleeding",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Acute stroke can trigger stress gastritis via sympathetic activation",
+        "However, patient's neurological symptoms were transient and fully resolved",
+        "Cushing ulcer mechanism typically requires severe neurological injury",
+        "Less likely given the mild and transient nature of the neurological episode"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Aortic aneurysm rupture",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Known ascending aortic dilation (4.2 cm, likely larger now after 3 years without surveillance)",
+        "Contained aortic rupture can present insidiously without dramatic haemodynamic collapse",
+        "Aortoenteric fistula from aneurysm erosion into adjacent bowel could explain melena",
+        "BP 152/88 appears stable but may be pseudo-normal if compensating for blood loss"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "This case exemplifies a fundamental clinical principle: when a patient presents with symptoms in two separate organ systems simultaneously, always seek a UNIFYING DIAGNOSIS before accepting coincidence. A 72-year-old with a bicuspid aortic valve, dilated aortic root (4.2 cm, lapsed surveillance), 25 years of poorly controlled hypertension, and a 40-pack-year smoking history has an extraordinarily high pre-test probability for acute aortic pathology. The simultaneous appearance of transient neurological symptoms (consistent with carotid malperfusion) and melena (consistent with mesenteric malperfusion) maps perfectly onto Stanford Type A dissection with multi-territory involvement. The critical next step is BILATERAL ARM BP measurement — a differential >20 mmHg strongly supports dissection — followed by emergent CTA aorta. The absence of chest pain is a well-documented pitfall in aortic dissection diagnosis and should NOT provide false reassurance.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9450
+}

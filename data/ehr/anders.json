@@ -1,0 +1,134 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "anders",
+        "name": [{"family": "Lindqvist", "given": ["Anders"]}],
+        "gender": "male",
+        "birthDate": "1957-06-14"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-1",
+        "subject": {"reference": "Patient/anders"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "84114007", "display": "Heart failure"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2019-03-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-2",
+        "subject": {"reference": "Patient/anders"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "44054006", "display": "Diabetes mellitus type 2"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2015-08-22"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-3",
+        "subject": {"reference": "Patient/anders"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "49436004", "display": "Atrial fibrillation"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2020-01-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-4",
+        "subject": {"reference": "Patient/anders"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "38341003", "display": "Hypertension"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2012-05-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-1",
+        "subject": {"reference": "Patient/anders"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "B01AA03", "display": "Warfarin"}]
+        },
+        "dosage": [{"text": "5 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-2",
+        "subject": {"reference": "Patient/anders"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "A10BA02", "display": "Metformin"}]
+        },
+        "dosage": [{"text": "500 mg twice daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-3",
+        "subject": {"reference": "Patient/anders"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "C07AB02", "display": "Metoprolol"}]
+        },
+        "dosage": [{"text": "50 mg twice daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-4",
+        "subject": {"reference": "Patient/anders"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "C09AA02", "display": "Enalapril"}]
+        },
+        "dosage": [{"text": "10 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-5",
+        "subject": {"reference": "Patient/anders"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "C03CA01", "display": "Furosemide"}]
+        },
+        "dosage": [{"text": "40 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-1",
+        "patient": {"reference": "Patient/anders"},
+        "code": {
+          "coding": [{"display": "Penicillin"}]
+        },
+        "reaction": [{"manifestation": [{"coding": [{"display": "Urticaria"}]}], "severity": "moderate"}]
+      }
+    }
+  ]
+}

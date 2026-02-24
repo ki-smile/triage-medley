@@ -1,0 +1,42 @@
+{
+  "model_id": "medgemma_27b",
+  "investigations": [
+    "STAT bilateral arm blood pressure (>20 mmHg systolic differential strongly suggests aortic dissection — this is the SINGLE MOST IMPORTANT first step)",
+    "CBC with differential (haemoglobin to quantify GI blood loss, WBC for infection/stress response)",
+    "CMP (electrolytes, creatinine, glucose, eGFR — baseline renal function critical before contrast)",
+    "Troponin T high-sensitivity (dissection can involve coronary ostia causing secondary MI — ST elevation in Type A dissection has 1-2% incidence)",
+    "D-dimer (>500 ng/mL has 97% sensitivity for acute aortic dissection — negative D-dimer has strong negative predictive value)",
+    "Type and cross-match 4 units pRBC (prepare for emergent surgery or massive transfusion protocol)",
+    "Coagulation studies (PT/INR, APTT, fibrinogen)",
+    "Lactate (CRITICAL: elevated lactate indicates tissue ischaemia — if mesenteric malperfusion present, lactate is the earliest and most sensitive marker of bowel compromise)",
+    "12-lead ECG (assess for ST changes suggesting coronary malperfusion, new AF, LVH pattern)",
+    "Blood gas (assess acid-base status — metabolic acidosis with elevated lactate suggests significant malperfusion)"
+  ],
+  "imaging": [
+    "URGENT CTA aorta from arch to iliac bifurcation (FIRST-LINE diagnostic study for suspected aortic dissection — visualises dissection flap, true/false lumen, branch vessel involvement, extent of malperfusion)",
+    "CTA should include chest, abdomen, and pelvis in a single acquisition (assess mesenteric, renal, and iliac perfusion simultaneously)",
+    "CT head without contrast ONLY AFTER aortic pathology is excluded or if neurological symptoms recur (do NOT delay aortic imaging for CT head — the aorta is the priority)",
+    "Bedside transthoracic echocardiography (assess aortic root, aortic regurgitation, pericardial effusion — can be performed while awaiting CTA)"
+  ],
+  "medications": [
+    "IV esmolol drip (target HR <60 bpm, SBP <120 mmHg — BETA-BLOCKER MUST BE GIVEN FIRST before any vasodilator to prevent reflex tachycardia and increased aortic wall shear stress)",
+    "IV morphine for pain control if needed (reduces sympathetic drive and aortic wall stress)",
+    "HOLD ALL antiplatelet therapy (aspirin 75 mg) — do NOT resume until aortic dissection is definitively excluded",
+    "HOLD all anticoagulant therapy — anticoagulation in aortic dissection is catastrophic",
+    "NPO (nil per os) — patient must be fasted for possible emergent cardiothoracic surgery",
+    "IV pantoprazole 40 mg (gastric protection given melena, but secondary priority to aortic management)",
+    "Hold metformin (contrast imaging planned + risk of lactic acidosis if malperfusion present)"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "NEVER give vasodilators (nitroprusside, hydralazine, nifedipine) BEFORE beta-blockade in suspected aortic dissection — vasodilators cause reflex tachycardia which increases aortic wall shear stress (dP/dt) and accelerates dissection propagation",
+    "AVOID thrombolytics under ALL circumstances — patient has melena (contraindication) AND possible aortic dissection (absolute contraindication — thrombolysis in undiagnosed dissection is uniformly fatal)",
+    "AVOID anticoagulation (heparin, LMWH, DOACs) until aortic dissection is definitively excluded by CTA — anticoagulation converts a contained dissection/rupture into uncontrolled haemorrhage",
+    "AVOID aggressive volume resuscitation with crystalloid if dissection confirmed — excessive fluid raises BP and accelerates propagation; permissive hypotension (SBP 100-120) is preferred",
+    "Hold metformin — contrast-induced nephropathy risk in diabetic patient, AND metformin accumulation risk if renal malperfusion from dissection reduces GFR",
+    "ALERT: If CTA confirms Type A dissection — immediate cardiothoracic surgery consultation. Stanford Type A dissection mortality increases 1-2% per hour without surgical repair. Time is aorta."
+  ],
+  "reasoning": "This patient's management must be driven by the highest-acuity diagnosis in the differential: Stanford Type A aortic dissection with malperfusion. The combination of bicuspid aortic valve, dilated aortic root (4.2 cm, lapsed surveillance), 25 years of poorly controlled hypertension, and simultaneous symptoms in two malperfusion territories (carotid → TIA, mesenteric → melena) creates a pre-test probability that mandates aortic imaging before any other diagnostic pathway. Step 1: BILATERAL ARM BP — immediate, at bedside, zero cost. A >20 mmHg differential essentially confirms the diagnosis. Step 2: IV esmolol to reduce heart rate and dP/dt (aortic wall stress). Step 3: URGENT CTA aorta (not CT head — the brain symptoms have resolved; the aorta may be actively dissecting). Step 4: Cardiothoracic surgery alert if dissection confirmed. If CTA is NEGATIVE for dissection, then proceed with TIA pathway (CT head, carotid imaging) and GI workup (CBC trend, endoscopy if haemoglobin dropping). But the aorta MUST be cleared first — missing a Type A dissection in this patient would be a fatal error.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9800
+}

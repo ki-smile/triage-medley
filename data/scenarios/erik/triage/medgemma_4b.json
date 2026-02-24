@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_4b",
+  "retts_level": "YELLOW",
+  "ess_category": "neurological",
+  "chief_complaint": "Transient neurological symptoms (resolved) with melena in elderly hypertensive male",
+  "clinical_reasoning": "72-year-old male with transient visual disturbance and confusion (now fully resolved) and dark stools suggestive of melena. Vitals stable: HR 98 (mildly elevated, consistent with anxiety or mild GI blood loss), BP 152/88, SpO2 97%, temperature normal. No active neurological deficit on presentation. The transient symptoms are consistent with TIA — resolved within minutes. Dark stools suggest possible upper GI bleeding, potentially aspirin-related. Both symptom complexes are urgent but currently stable. Route to TIA pathway and GI workup. YELLOW — urgent but stable.",
+  "vital_sign_concerns": ["HR 98 — mildly elevated, may reflect mild hypovolaemia from GI blood loss or anxiety", "BP 152/88 — hypertensive, consistent with known poorly controlled hypertension"],
+  "risk_factors": ["Known hypertension (poorly controlled, 25 years)", "Type 2 diabetes mellitus", "Age 72 — elevated vascular risk", "Aspirin use — GI bleeding risk"],
+  "confidence": "MODERATE",
+  "dont_miss": ["Stroke/TIA", "GI haemorrhage"],
+  "processing_time_ms": 2340
+}

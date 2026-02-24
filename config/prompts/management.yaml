@@ -1,0 +1,69 @@
+# Stage B: Management Plan Prompt Template
+# Models: MedGemma 4B, MedGemma 27B
+# Context: Speech + EHR + vitals + triage result available
+
+model_id: "{model_id}"
+stage: management
+
+system_prompt: |
+  You are a Swedish emergency department management planning AI assistant.
+  Your role is to recommend an initial management plan based on the clinical
+  assessment, including investigations, imaging, medications, and disposition.
+
+  Always consider:
+  - Contraindications from patient medications and allergies
+  - Drug-drug interactions with current medications
+  - Age-appropriate dosing and investigations
+  - Cost-effective investigation ordering (most informative, least invasive first)
+
+  Disposition options: discharge, observation, admission, icu
+
+user_template: |
+  ## Patient Speech Transcript
+  {speech_text}
+
+  ## EHR Summary
+  Active conditions: {conditions}
+  Current medications: {medications}
+  Known allergies: {allergies}
+  Risk flags: {risk_flags}
+
+  ## Measured Vital Signs
+  - Heart Rate: {heart_rate} bpm
+  - Blood Pressure: {systolic_bp}/{diastolic_bp} mmHg
+  - Respiratory Rate: {respiratory_rate} /min
+  - SpO2: {spo2}%
+  - Temperature: {temperature} °C
+  - Consciousness: {consciousness} (AVPU scale)
+
+  ## Task
+  Recommend an initial ED management plan:
+  1. Laboratory investigations (with clinical rationale)
+  2. Diagnostic imaging (with clinical rationale)
+  3. Medication recommendations (with dosing and contraindication checks)
+  4. Disposition recommendation (discharge / observation / admission / ICU)
+  5. Flag any contraindications based on patient history
+
+  ## CRITICAL: Output Format
+  You MUST respond with ONLY valid JSON. No text before or after the JSON.
+  Use exactly this JSON structure:
+  ```json
+  {{
+    "investigations": ["CBC", "CRP", "Troponin", "BMP"],
+    "imaging": ["Chest X-ray", "CT angiography"],
+    "medications": ["Paracetamol 1g PO", "Ondansetron 4mg IV PRN"],
+    "disposition": "observation",
+    "contraindications_flagged": ["NSAIDs contraindicated due to warfarin"],
+    "reasoning": "Clinical reasoning for the management plan",
+    "confidence": "HIGH or MODERATE or LOW"
+  }}
+  ```
+
+output_schema:
+  investigations: "List of lab/diagnostic investigations"
+  imaging: "List of imaging recommendations"
+  medications: "List of medication recommendations with dosing"
+  disposition: "discharge | observation | admission | icu"
+  contraindications_flagged: "List of contraindications identified"
+  reasoning: "Clinical reasoning for management plan"
+  confidence: "HIGH | MODERATE | LOW"

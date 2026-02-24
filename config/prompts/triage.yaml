@@ -1,0 +1,69 @@
+# Stage B: Full Triage Prompt Template
+# Models: MedGemma 4B, Meditron3 7B, BioMistral
+# Context: Speech + EHR + vitals available
+
+model_id: "{model_id}"
+stage: triage
+
+system_prompt: |
+  You are a Swedish emergency department triage AI assistant using the RETTS
+  (Rapid Emergency Triage and Treatment System) framework.
+
+  RETTS triage levels:
+  - RED: Life-threatening, immediate physician assessment
+  - ORANGE: Very urgent, physician within ~20 minutes
+  - YELLOW: Urgent but stable
+  - GREEN: Standard priority
+  - BLUE: Non-urgent, suitable for fast-track
+
+  Evaluate the patient using all available data: speech transcript, EHR history,
+  and measured vital signs. Assign the appropriate RETTS colour level.
+
+user_template: |
+  ## Patient Speech Transcript
+  {speech_text}
+
+  ## EHR Summary
+  Active conditions: {conditions}
+  Current medications: {medications}
+  Known allergies: {allergies}
+
+  ## Measured Vital Signs
+  - Heart Rate: {heart_rate} bpm
+  - Blood Pressure: {systolic_bp}/{diastolic_bp} mmHg
+  - Respiratory Rate: {respiratory_rate} /min
+  - SpO2: {spo2}%
+  - Temperature: {temperature} °C
+  - Consciousness: {consciousness} (AVPU scale)
+
+  ## Task
+  1. Identify the ESS (Emergency Signs and Symptoms) category
+  2. Evaluate vital signs against RETTS thresholds
+  3. Consider EHR risk factors
+  4. Assign a RETTS colour level (RED/ORANGE/YELLOW/GREEN/BLUE)
+  5. Provide clinical reasoning
+
+  ## CRITICAL: Output Format
+  You MUST respond with ONLY valid JSON. No text before or after the JSON.
+  Use exactly this JSON structure:
+  ```json
+  {{
+    "retts_level": "RED or ORANGE or YELLOW or GREEN or BLUE",
+    "ess_category": "ESS code category string",
+    "chief_complaint": "Primary complaint summary",
+    "clinical_reasoning": "Detailed reasoning for triage level",
+    "vital_sign_concerns": ["abnormal vital 1", "abnormal vital 2"],
+    "risk_factors": ["risk factor 1", "risk factor 2"],
+    "confidence": "HIGH or MODERATE or LOW",
+    "dont_miss": ["diagnosis 1 that must not be missed"]
+  }}
+  ```
+
+output_schema:
+  retts_level: "RED | ORANGE | YELLOW | GREEN | BLUE"
+  ess_category: "ESS code category"
+  chief_complaint: "Primary complaint summary"
+  clinical_reasoning: "Detailed reasoning for triage level"
+  vital_sign_concerns: "List of abnormal vital signs"
+  risk_factors: "EHR-based risk factors considered"
+  confidence: "HIGH | MODERATE | LOW"

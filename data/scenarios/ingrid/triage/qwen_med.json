@@ -1,0 +1,12 @@
+{
+  "model_id": "qwen_med",
+  "retts_level": "YELLOW",
+  "ess_category": "neurological",
+  "chief_complaint": "Weakness and dizziness in elderly immunosuppressed patient",
+  "clinical_reasoning": "79-year-old female presenting with generalized weakness, dizziness, and near-fall. Vital signs are within normal limits: T 36.4°C, HR 78, BP 118/68, RR 20, SpO2 96%, Alert. No fever, no tachycardia, no hypotension by absolute thresholds. Patient is on immunosuppressive therapy (methotrexate + prednisone) for rheumatoid arthritis, which is noted but no overt signs of infection are present. Recent UTI treatment suggests possible recurrence but patient is afebrile. Consider dehydration, medication side effects, or orthostatic hypotension as most likely explanations. YELLOW — urgent but stable. The immunosuppression warrants closer monitoring than a purely vitals-based assessment would suggest.",
+  "vital_sign_concerns": ["BP 118/68 — low-normal, consider orthostatic assessment", "RR 20 — upper normal"],
+  "risk_factors": ["Immunosuppression (methotrexate + prednisone)", "Recent UTI — possible recurrence", "Type 2 diabetes", "Age 79 with fall risk"],
+  "confidence": "LOW",
+  "dont_miss": ["Occult infection in immunosuppressed patient"],
+  "processing_time_ms": 5900
+}

@@ -1,0 +1,14 @@
+{
+  "model_id": "medgemma_4b",
+  "queue_priority": "HIGH",
+  "chief_complaint": "Pediatric fever with rash",
+  "reasoning": "4-year-old female presenting with fever and new rash since yesterday. Parent reports lethargy and refusal to eat. The combination of fever plus rash in a young child requires urgent evaluation to rule out serious bacterial infections including meningococcal disease and sepsis. Rash onset within 24 hours of fever onset is a red-flag pattern. Age under 5 increases vulnerability to rapid deterioration.",
+  "ess_category_hint": "pediatric_fever",
+  "risk_amplifiers_detected": [
+    "Fever with rash in child under 5 — red-flag combination",
+    "Lethargy and reduced oral intake — possible early decompensation",
+    "Rapid symptom progression (rash appeared day after fever onset)"
+  ],
+  "confidence": "HIGH",
+  "processing_time_ms": 1600
+}

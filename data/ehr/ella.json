@@ -1,0 +1,49 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "ella",
+        "name": [{"family": "Johansson", "given": ["Ella"]}],
+        "gender": "female",
+        "birthDate": "2021-11-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-1",
+        "subject": {"reference": "Patient/ella"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "195967001", "display": "Asthma, mild intermittent"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2024-02-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-1",
+        "subject": {"reference": "Patient/ella"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "R03AC02", "display": "Salbutamol inhaler"}]
+        },
+        "dosage": [{"text": "As needed"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-1",
+        "patient": {"reference": "Patient/ella"},
+        "code": {
+          "coding": [{"display": "No known allergies"}]
+        }
+      }
+    }
+  ]
+}

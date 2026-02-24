@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_27b",
+  "retts_level": "ORANGE",
+  "ess_category": "trauma_fall",
+  "chief_complaint": "Head injury with anticoagulation in elderly patient after mechanical fall",
+  "clinical_reasoning": "While vitals are stable, this 81-year-old on warfarin has sustained a head injury. Intracranial hemorrhage can present with a lucid interval. CT head required within 1 hour per NICE guidelines for anticoagulated patients with head injury. ORANGE is appropriate given bleeding risk. The apparently reassuring vital signs and GCS 15 must not create false reassurance — subdural hematoma in anticoagulated elderly patients classically presents with an initial lucid interval followed by rapid deterioration. The dizziness reported by the patient could represent early raised intracranial pressure or vestibular injury. Furthermore, osteoporosis combined with the mechanism (fall onto floor) substantially increases risk of occult hip fracture and vertebral compression fracture. INR must be obtained urgently — if supratherapeutic, bleeding risk is further amplified and reversal agents should be prepared. RETTS ESS trauma pathway with anticoagulation modifier: escalate from YELLOW to ORANGE.",
+  "vital_sign_concerns": ["BP 155/88 — hypertensive but likely baseline; however, hypertension with head injury increases haemorrhagic risk", "HR 78 — normal, but may be masked by chronotropic effects of age and medications", "Dizziness symptom not reflected in current vitals — requires serial neurological assessment"],
+  "risk_factors": ["Warfarin anticoagulation — intracranial hemorrhage risk", "Age 81 — cerebral atrophy increases bridging vein vulnerability to subdural hematoma", "Osteoporosis — occult fracture risk", "Atrial fibrillation — stroke risk if warfarin withheld", "Hypertension — increases hemorrhagic risk with head injury"],
+  "confidence": "HIGH",
+  "dont_miss": ["Intracranial hemorrhage", "Subdural hematoma", "C-spine fracture"],
+  "processing_time_ms": 8500
+}

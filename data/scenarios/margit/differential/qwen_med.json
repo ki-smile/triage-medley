@@ -1,0 +1,62 @@
+{
+  "model_id": "qwen_med",
+  "candidates": [
+    {
+      "diagnosis": "Mechanical fall",
+      "probability": 0.5,
+      "supporting_evidence": [
+        "Clear history of fall at home consistent with simple mechanical fall",
+        "81-year-old female \u2014 falls are the leading cause of injury in this population",
+        "Multiple fall risk factors: age, osteoporosis, polypharmacy (warfarin, enalapril, supplements)",
+        "Vital signs stable with no signs of hemodynamic compromise"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Soft tissue injury",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "Hip pain after fall consistent with muscular or soft tissue contusion",
+        "Head strike likely caused scalp contusion",
+        "Dizziness may be related to pain and anxiety response",
+        "Most common outcome of falls in the elderly"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Intracranial hemorrhage",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Patient on warfarin anticoagulation with head trauma",
+        "Anticoagulation is a well-established risk factor for traumatic intracranial bleeding",
+        "Reported dizziness may indicate early neurological involvement",
+        "CT head should be performed urgently"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Hip fracture",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Hip pain after fall in patient with known osteoporosis",
+        "Hip fracture is common in elderly women after falls",
+        "May require X-ray or MRI for definitive diagnosis"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Syncope",
+      "probability": 0.05,
+      "supporting_evidence": [
+        "Dizziness reported \u2014 may have preceded the fall",
+        "Atrial fibrillation can cause transient cerebral hypoperfusion",
+        "Enalapril may contribute to hypotension",
+        "ECG and orthostatic vital signs recommended"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "81-year-old female presenting after fall at home with head strike and hip pain. Mechanical fall is the most likely diagnosis given the history and demographics. Soft tissue injury is expected given the mechanism. Intracranial hemorrhage is flagged as the critical don't-miss diagnosis due to warfarin anticoagulation combined with head trauma \u2014 urgent CT is required. Hip fracture must be excluded given osteoporosis. Syncope should be investigated as a potential precipitating cause of the fall, particularly given the known atrial fibrillation.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 5700
+}

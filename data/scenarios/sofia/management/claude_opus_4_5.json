@@ -1,0 +1,40 @@
+{
+  "model_id": "medgemma_27b",
+  "investigations": [
+    "STAT D-dimer (though with high clinical suspicion — Modified Wells >4 — proceed directly to imaging regardless of D-dimer result; D-dimer is unreliable as rule-out when pre-test probability is high)",
+    "CBC with differential",
+    "CMP (electrolytes, creatinine, liver function — baseline before anticoagulation)",
+    "Troponin T high-sensitivity (RV myocardial injury marker — if elevated, indicates submassive PE requiring closer monitoring or intervention)",
+    "BNP/NT-proBNP (RV dysfunction marker — elevation correlates with 30-day mortality in PE)",
+    "Coagulation studies (PT, aPTT, fibrinogen — baseline before therapeutic anticoagulation)",
+    "12-lead ECG (right heart strain pattern: sinus tachycardia, S1Q3T3, right axis deviation, T-wave inversions V1-V4, new incomplete RBBB — compare with prior if available)",
+    "Arterial blood gas (assess A-a gradient — expected to be widened; respiratory alkalosis from tachypnea)",
+    "Thrombophilia panel AFTER acute treatment stabilization (Factor V Leiden, prothrombin G20210A, protein C, protein S, antithrombin III, antiphospholipid antibodies — results do not change acute management but guide lifelong anticoagulation and family screening)"
+  ],
+  "imaging": [
+    "URGENT CTPA (do NOT wait for D-dimer result — clinical probability too high with Modified Wells >4; assess for bilateral PE, saddle embolus, and RV/LV ratio >0.9 indicating RV strain)",
+    "Lower extremity Doppler ultrasound bilateral — RIGHT leg priority (assess for residual DVT from prior missed diagnosis; left leg for contralateral propagation; findings guide anticoagulation duration)",
+    "Bedside echocardiography STAT (assess RV dilation, McConnell sign — akinesia of RV free wall with preserved apical contractility, tricuspid regurgitation jet velocity >2.6 m/s, paradoxical septal motion, IVC dilation with reduced respiratory variation — findings determine need for escalation to catheter-directed therapy)"
+  ],
+  "medications": [
+    "Therapeutic anticoagulation IMMEDIATELY upon clinical suspicion — do not wait for imaging confirmation: enoxaparin 1 mg/kg subcutaneous BID (weight-based: ~75 kg = 80 mg BID) OR unfractionated heparin IV infusion if considering catheter-directed therapy (UFH preferred for massive/submassive PE due to shorter half-life and reversibility with protamine)",
+    "Discontinue drospirenone/ethinylestradiol (Yasmin) IMMEDIATELY — do not wait for VTE confirmation; drospirenone is the highest VTE risk class OCP and continuing it in the setting of suspected PE is contraindicated",
+    "Analgesia: paracetamol 1g IV (avoid ALL NSAIDs — ibuprofen masks fever from pulmonary infarction, impairs platelet function, and complicates anticoagulation monitoring)",
+    "Supplemental oxygen to maintain SpO2 >94% (high-flow nasal cannula if needed)",
+    "If massive PE with hemodynamic compromise (systolic BP <90 for >15 minutes): systemic thrombolysis with alteplase 100 mg IV over 2 hours OR catheter-directed thrombolysis (lower bleeding risk)",
+    "If submassive PE (RV strain without hemodynamic compromise): consider catheter-directed therapy if RV/LV ratio >0.9 on CTPA or echocardiographic evidence of RV failure — discuss with interventional radiology",
+    "Transition to DOAC after stabilization: rivaroxaban 15 mg BID \u00d7 21 days then 20 mg daily, OR apixaban 10 mg BID \u00d7 7 days then 5 mg BID (minimum 3 months; duration guided by thrombophilia results)"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Discontinue drospirenone/ethinylestradiol (Yasmin) IMMEDIATELY — highest VTE risk class OCP (OR 6.3 vs non-use); if VTE confirmed, oestrogen-containing hormonal therapy is PERMANENTLY contraindicated (WHO MEC Category 4)",
+    "Avoid ALL NSAIDs (ibuprofen) — masks fever from pulmonary infarction, impairs platelet aggregation, and complicates anticoagulation monitoring",
+    "LATEX-FREE equipment throughout (documented latex allergy) — ensure latex-free gloves, IV tubing, and catheter components",
+    "If thrombophilia confirmed (Factor V Leiden, prothrombin mutation): lifelong anticoagulation, no oestrogen-containing contraception ever, genetic counselling for first-degree relatives",
+    "Avoid intramuscular injections while on therapeutic anticoagulation (haematoma risk)",
+    "If CTPA contrast allergy develops: V/Q scan as alternative imaging (though CTPA is first-line)"
+  ],
+  "reasoning": "This is a high-probability PE case requiring URGENT intervention. The convergent VTE risk factors — drospirenone OCP (highest VTE risk class, OR 6.3), 12-hour car drive (prolonged immobilization), family DVT history (inherited thrombophilia suspected), and most critically the PRIOR ED VISIT for right calf pain diagnosed as muscle strain WITHOUT Doppler — create a multiplicative risk exceeding 30\u00d7 baseline. The Modified Wells score exceeds 4 points, placing this firmly in the 'PE likely' category where D-dimer CANNOT be used to rule out PE. Management priorities in order: (1) Initiate therapeutic anticoagulation immediately upon clinical suspicion — do not wait for imaging confirmation in a hemodynamically stable patient with high clinical probability, (2) STAT CTPA to confirm diagnosis and assess severity (RV/LV ratio, clot burden), (3) Bedside echocardiography to assess RV function and guide escalation decisions, (4) Lower extremity Doppler to assess residual DVT burden, (5) Discontinue OCP immediately, (6) Admit to monitored bed — ICU if any sign of RV strain or hemodynamic instability. The prior missed DVT diagnosis represents a systems-level failure that must be flagged for quality review. This patient will require minimum 3 months of anticoagulation, with duration potentially extended to lifelong if thrombophilia is confirmed.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9800
+}

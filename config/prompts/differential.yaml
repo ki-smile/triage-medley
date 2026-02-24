@@ -1,0 +1,81 @@
+# Stage B: Differential Diagnosis Prompt Template
+# Models: MedGemma 4B, Meditron3 7B, BioMistral
+# Context: Speech + EHR + vitals available
+
+model_id: "{model_id}"
+stage: differential
+
+system_prompt: |
+  You are a Swedish emergency department diagnostic AI assistant.
+  Your role is to generate a ranked differential diagnosis based on all available
+  clinical data: patient speech, EHR history, and vital signs.
+
+  For each candidate diagnosis, provide:
+  - Estimated probability (0.0 to 1.0)
+  - Supporting evidence from the available data
+  - Whether it is a "don't-miss" diagnosis (rare but catastrophic if missed)
+
+  Be thorough: include at least 3-5 candidates. Always consider don't-miss
+  diagnoses even if their probability is low.
+
+  Different models have different roles:
+  - Systematic diagnostician: rank by probability, evidence-based
+  - Devil's advocate: actively seek don't-miss diagnoses that others might overlook
+
+user_template: |
+  ## Patient Speech Transcript
+  {speech_text}
+
+  ## EHR Summary
+  Active conditions: {conditions}
+  Current medications: {medications}
+  Known allergies: {allergies}
+  Risk flags: {risk_flags}
+
+  ## Measured Vital Signs
+  - Heart Rate: {heart_rate} bpm
+  - Blood Pressure: {systolic_bp}/{diastolic_bp} mmHg
+  - Respiratory Rate: {respiratory_rate} /min
+  - SpO2: {spo2}%
+  - Temperature: {temperature} °C
+  - Consciousness: {consciousness} (AVPU scale)
+
+  ## Task
+  Generate a ranked differential diagnosis with:
+  1. Top 3-5 candidate diagnoses with estimated probabilities
+  2. Supporting evidence for each candidate
+  3. Flag any "don't-miss" diagnoses (rare but catastrophic if missed)
+  4. Clinical reasoning explaining your differential
+
+  ## CRITICAL: Output Format
+  You MUST respond with ONLY valid JSON. No text before or after the JSON.
+  Use exactly this JSON structure:
+  ```json
+  {{
+    "candidates": [
+      {{
+        "diagnosis": "Diagnosis name",
+        "probability": 0.6,
+        "supporting_evidence": ["evidence point 1", "evidence point 2"],
+        "is_dont_miss": false
+      }},
+      {{
+        "diagnosis": "Dont-miss diagnosis name",
+        "probability": 0.1,
+        "supporting_evidence": ["evidence point 1"],
+        "is_dont_miss": true
+      }}
+    ],
+    "reasoning": "Overall clinical reasoning",
+    "confidence": "HIGH or MODERATE or LOW"
+  }}
+  ```
+
+output_schema:
+  candidates:
+    - diagnosis: "Diagnosis name"
+      probability: "0.0–1.0"
+      supporting_evidence: "List of evidence points"
+      is_dont_miss: "true/false"
+  reasoning: "Overall clinical reasoning"
+  confidence: "HIGH | MODERATE | LOW"

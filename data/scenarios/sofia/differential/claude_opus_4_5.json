@@ -1,0 +1,67 @@
+{
+  "model_id": "medgemma_27b",
+  "candidates": [
+    {
+      "diagnosis": "Bilateral pulmonary embolism",
+      "probability": 0.50,
+      "supporting_evidence": [
+        "Convergent VTE risk factors create multiplicative risk exceeding 30\u00d7 baseline: drospirenone OCP (OR 6.3) \u00d7 prolonged immobilization (OR 2.3) \u00d7 family history thrombophilia",
+        "Prior ED visit 3 weeks ago for RIGHT CALF PAIN diagnosed as muscle strain WITHOUT Doppler — this was the DVT that has now embolized",
+        "Pleuritic chest pain + low-grade fever = classic pulmonary infarction presentation",
+        "SpO2 95% represents 3-5% drop from expected baseline of 98-100% in a healthy 28-year-old — significant A-a gradient widening",
+        "HR 102 is compensatory tachycardia from V/Q mismatch and increased dead-space ventilation",
+        "Pain reproducible on palpation does NOT exclude PE (19.9% vs 23.8%, p=0.25 — no discriminative value)"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Deep vein thrombosis — right lower extremity, propagated",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Prior right calf pain 3 weeks ago was almost certainly a DVT — timing, location, and risk factor profile are all consistent",
+        "No Doppler was performed at the prior ED visit — the DVT was missed",
+        "Propagation from calf veins to proximal veins (popliteal, femoral, iliac) is expected over 3 weeks without anticoagulation",
+        "Current presentation represents embolization from this propagated DVT",
+        "Lower extremity Doppler is essential to confirm residual thrombus burden and guide anticoagulation duration"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Pulmonary infarction",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Low-grade fever 37.2\u00b0C in the context of PE suggests pulmonary infarction — occurs in 10-30% of PE cases",
+        "Pleuritic pain localized to a specific area is characteristic of wedge-shaped infarction",
+        "Peripheral emboli are more likely to cause infarction than central emboli",
+        "May develop into a pulmonary abscess if not treated — rare but serious complication"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Musculoskeletal chest wall pain — coincidental overlay",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Physical exertion 2 days ago provides a plausible mechanical trigger",
+        "Chest wall tenderness is present but has no discriminative value for excluding PE",
+        "May coexist with PE — the two diagnoses are not mutually exclusive",
+        "Must not allow this cognitive anchor to prevent PE investigation"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Inherited thrombophilia — Factor V Leiden or prothrombin gene mutation",
+      "probability": 0.05,
+      "supporting_evidence": [
+        "Family history of DVT in paternal aunt at age 45 suggests autosomal dominant thrombophilia",
+        "Factor V Leiden prevalence is 5% in the Swedish population — highest in Northern Europe",
+        "Drospirenone OCP + Factor V Leiden = synergistic VTE risk (OR 28.5 in some studies)",
+        "Thrombophilia testing should be performed AFTER acute treatment (results do not change acute management but guide lifelong anticoagulation decisions)",
+        "If confirmed, first-degree relatives should be offered testing"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "This case represents a textbook example of anchoring bias leading to a missed PE diagnosis. The patient's young age, athletic appearance, clear mechanical trigger, and reproducible chest wall tenderness all conspire to anchor the clinician toward musculoskeletal pain. However, the EHR reveals a CONVERGENT pattern of VTE risk factors that should override this anchor: (1) drospirenone OCP for 14 months (highest VTE risk class, OR 6.3), (2) 12-hour car drive 5 days ago (prolonged immobilization), (3) family DVT history suggesting inherited thrombophilia, and most critically (4) a prior ED visit for right calf pain 3 weeks ago that was dismissed as muscle strain WITHOUT Doppler imaging. This prior visit was almost certainly the index DVT event. The current presentation — pleuritic chest pain, mild hypoxemia, compensatory tachycardia, low-grade fever — represents embolization from this untreated DVT. The multiplicative VTE risk exceeds 30\u00d7 baseline. Modified Wells score places this patient firmly in the 'PE likely' category. Direct CTPA is indicated; D-dimer should not be used as a rule-out tool when clinical probability is this high.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9450
+}

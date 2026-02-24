@@ -1,0 +1,12 @@
+{
+  "model_id": "biomistral",
+  "retts_level": "ORANGE",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Chest tightness with respiratory distress",
+  "clinical_reasoning": "ORANGE assessment. 68M with CHF/AF presenting with chest tightness and dyspnea. While vitals appear borderline stable, the SpO2 of 94% in a patient with known cardiac disease is concerning. Consider that HR 92 on metoprolol represents relative tachycardia. Must rule out ACS, PE, and tension pneumothorax. Given warfarin use, also consider intrathoracic bleeding if recent trauma or cough.",
+  "vital_sign_concerns": ["SpO2 94% — significant in cardiac patient", "Relative tachycardia on beta-blocker", "BP 145/85 — hypertensive"],
+  "risk_factors": ["CHF", "AF on warfarin", "DM2", "Polypharmacy (5 medications)"],
+  "confidence": "MODERATE",
+  "dont_miss": ["NSTEMI", "Pulmonary embolism", "Tension pneumothorax", "Aortic dissection", "Pericardial tamponade"],
+  "processing_time_ms": 7300
+}

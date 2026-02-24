@@ -1,0 +1,30 @@
+{
+  "model_id": "medgemma_4b",
+  "investigations": [
+    "Troponin T (high-sensitivity, serial at 0h and 3h)",
+    "BNP/NT-proBNP",
+    "CBC with differential",
+    "BMP (electrolytes, creatinine, glucose)",
+    "INR/PT (patient on warfarin — critical for dosing decisions)",
+    "D-dimer",
+    "12-lead ECG (compare with prior if available)"
+  ],
+  "imaging": [
+    "Chest X-ray (PA and lateral — assess for pulmonary oedema, cardiomegaly)",
+    "Bedside echocardiography (assess LV function, wall motion abnormalities, effusion)"
+  ],
+  "medications": [
+    "Oxygen supplementation if SpO2 <94%",
+    "IV furosemide 20-40 mg if signs of fluid overload",
+    "Continue home medications (warfarin, rate control for AF, diabetes medications)",
+    "Hold metformin if IV contrast planned (risk of lactic acidosis)"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Avoid NSAIDs (heart failure exacerbation + bleeding risk with concurrent warfarin)",
+    "Caution with IV contrast (diabetes with potential renal impairment — check eGFR first)"
+  ],
+  "reasoning": "68-year-old male presenting with chest tightness on a background of CHF, atrial fibrillation, and type 2 diabetes, anticoagulated with warfarin. The combination of chest tightness with known cardiac comorbidities necessitates ruling out acute coronary syndrome (serial troponins), decompensated heart failure (BNP, chest X-ray), and thromboembolic events (D-dimer given AF). INR monitoring is essential given warfarin therapy. Admission is warranted for serial cardiac biomarkers, telemetry monitoring, and cardiology consultation. Home medications should be continued with the exception of metformin if contrast imaging is required.",
+  "confidence": "HIGH",
+  "processing_time_ms": 2400
+}

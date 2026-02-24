@@ -1,0 +1,63 @@
+{
+  "model_id": "qwen_med",
+  "candidates": [
+    {
+      "diagnosis": "Urinary tract infection / recurrence",
+      "probability": 0.30,
+      "supporting_evidence": [
+        "History of 3 UTIs in 18 months with most recent treatment 6 days ago",
+        "E. coli with quinolone resistance — possible treatment failure with TMP-SMX",
+        "Immunosuppressed patients may not present with classic UTI symptoms (dysuria, frequency)",
+        "Generalized weakness and malaise can be the presenting complaint of UTI in elderly"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Dehydration",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Weakness and dizziness are common symptoms of dehydration in elderly",
+        "Recent illness and antibiotic course may have reduced oral intake",
+        "BP 118/68 is relatively low for this patient's age group",
+        "IV fluid challenge may be both diagnostic and therapeutic"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Medication toxicity (methotrexate)",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Methotrexate is known to cause fatigue, weakness, and bone marrow suppression",
+        "Concurrent TMP-SMX may potentiate methotrexate toxicity via folate pathway interaction",
+        "Renal clearance of methotrexate may be impaired in elderly diabetic patient",
+        "CBC should be checked to assess for cytopenias"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Occult infection in immunosuppressed patient",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Dual immunosuppression (methotrexate + prednisone) impairs immune surveillance",
+        "Immunosuppressed patients can harbour serious infections with minimal symptoms",
+        "Prednisone may mask inflammatory markers and fever",
+        "Broad infectious workup warranted given immunocompromised status"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Orthostatic hypotension",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Near-fall getting out of bed suggests positional component",
+        "Beta-blocker therapy impairs heart rate compensation for postural change",
+        "Diabetic autonomic neuropathy may further impair baroreceptor response",
+        "Formal lying-standing blood pressure assessment indicated"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "The differential reflects a mix of common and concerning diagnoses. UTI recurrence leads given the recent treatment history and pattern of recurrent infections. Dehydration and medication toxicity are common contributors to weakness in elderly polypharmacy patients. The immunosuppressed status is noted, and occult infection is flagged as a don't-miss diagnosis — however, the normal vital signs and absence of overt infection signs suggest this is less likely than the more common explanations. Further investigation with CBC, CMP, urinalysis, and cultures will help narrow the differential.",
+  "confidence": "LOW",
+  "processing_time_ms": 5680
+}

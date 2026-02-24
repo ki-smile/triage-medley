@@ -1,0 +1,16 @@
+{
+  "model_id": "medgemma_4b",
+  "queue_priority": "MODERATE",
+  "chief_complaint": "Generalized weakness and dizziness with near-fall",
+  "reasoning": "79-year-old female presenting with vague symptoms of weakness, dizziness, and fatigue. Reports near-fall getting out of bed but caught herself — no injury. Daughter concerned enough to bring her in. Speech is non-specific and does not suggest acute emergency from verbal presentation alone. However, EHR reveals significant risk amplifiers: immunosuppression on methotrexate and prednisone for rheumatoid arthritis, recent UTI treatment 6 days ago (bounce-back visit), and beta-blocker therapy that may mask tachycardia. These factors elevate from STANDARD to MODERATE priority.",
+  "ess_category_hint": "neurological",
+  "risk_amplifiers_detected": [
+    "Immunosuppression — methotrexate 15 mg weekly + prednisone 7.5 mg daily",
+    "Recent UTI treatment 6 days ago — possible treatment failure / bounce-back",
+    "Beta-blocker therapy (metoprolol) — may mask tachycardia",
+    "Elderly (79) with fall risk",
+    "Polypharmacy (5+ medications)"
+  ],
+  "confidence": "MODERATE",
+  "processing_time_ms": 2340
+}

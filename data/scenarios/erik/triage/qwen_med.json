@@ -1,0 +1,12 @@
+{
+  "model_id": "qwen_med",
+  "retts_level": "ORANGE",
+  "ess_category": "neurological",
+  "chief_complaint": "Transient neurological deficit with melena in elderly hypertensive patient",
+  "clinical_reasoning": "Elderly hypertensive male with transient neurological symptoms (visual disturbance, confusion — resolved) and melena. The combination is unusual and warrants urgent evaluation. While two separate pathologies (TIA + GI bleed) are possible, the simultaneous presentation in a patient with history of bicuspid aortic valve and aortic dilation raises concern for aortic pathology as a unifying diagnosis. Aortic dissection can cause malperfusion of multiple vascular territories simultaneously. Bilateral BP measurement is recommended as an immediate screening step. ORANGE — the diagnostic uncertainty and potential for rapidly deteriorating aortic pathology warrant urgent physician assessment.",
+  "vital_sign_concerns": ["HR 98 — mildly elevated, warrants monitoring", "BP 152/88 — hypertensive, measured in one arm only", "Bilateral arm BP measurement recommended"],
+  "risk_factors": ["Bicuspid aortic valve with known aortic dilation", "Poorly controlled hypertension for 25 years", "Type 2 diabetes mellitus", "Former heavy smoker (40 pack-years)"],
+  "confidence": "MODERATE",
+  "dont_miss": ["Aortic dissection", "Stroke", "GI haemorrhage"],
+  "processing_time_ms": 6400
+}

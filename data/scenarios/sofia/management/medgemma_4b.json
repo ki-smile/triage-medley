@@ -1,0 +1,32 @@
+{
+  "model_id": "medgemma_4b",
+  "investigations": [
+    "D-dimer (age-adjusted threshold not needed — patient is 28; standard threshold 500 ng/mL applies)",
+    "CBC with differential",
+    "CMP (electrolytes, creatinine, liver function)",
+    "Troponin T (high-sensitivity — assess for RV strain if PE suspected)",
+    "BNP/NT-proBNP (RV dysfunction marker)",
+    "Coagulation studies (PT, aPTT, fibrinogen)",
+    "12-lead ECG (assess for right heart strain pattern — S1Q3T3, right axis deviation, T-wave inversions V1-V4)"
+  ],
+  "imaging": [
+    "Chest X-ray (exclude pneumothorax, assess for Hampton's hump or Westermark sign)",
+    "CTPA if D-dimer elevated (definitive PE diagnosis — requires IV contrast)",
+    "Lower extremity Doppler ultrasound bilateral (assess for DVT — right leg priority given prior calf pain)"
+  ],
+  "medications": [
+    "Analgesia: paracetamol 1g IV/PO (avoid further NSAIDs if PE suspected — ibuprofen may mask fever and interfere with anticoagulation monitoring)",
+    "If PE confirmed: therapeutic anticoagulation with LMWH (enoxaparin 1 mg/kg BID) as bridge, then transition to DOAC (rivaroxaban or apixaban)",
+    "Supplemental oxygen if SpO2 drops below 94%"
+  ],
+  "disposition": "observation",
+  "contraindications_flagged": [
+    "Discontinue drospirenone/ethinylestradiol OCP if VTE confirmed — switch to non-oestrogen contraception (e.g., progesterone-only, copper IUD)",
+    "Avoid oestrogen-containing hormonal therapy in the future if VTE confirmed",
+    "Latex-free equipment required (documented latex allergy)",
+    "Avoid further NSAIDs (ibuprofen) if PE suspected — may mask fever indicating pulmonary infarction and affects platelet function"
+  ],
+  "reasoning": "28-year-old female with pleuritic chest pain, borderline SpO2 (95%), tachycardia (HR 102), and OCP use. While musculoskeletal strain is the most likely diagnosis, PE must be excluded given the risk factor profile. Initial workup with D-dimer is appropriate — if positive, proceed to CTPA. Lower extremity Doppler should be performed given the prior ED visit for calf pain. If PE is confirmed, initiate anticoagulation and discontinue OCP immediately. Observation pending investigation results is appropriate — the patient is hemodynamically stable but requires monitoring until PE is excluded or confirmed.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2650
+}

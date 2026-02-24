@@ -1,0 +1,12 @@
+{
+  "model_id": "biomistral",
+  "retts_level": "RED",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Suspected aortic dissection with malperfusion — transient neurological deficit AND melena as dual manifestations",
+  "clinical_reasoning": "DANGER: This presentation screams aortic dissection. Two SEEMINGLY UNRELATED complaints (TIA + melena) in a patient with a BICUSPID AORTIC VALVE and a DILATED AORTIC ROOT that was NEVER followed up. Uncontrolled hypertension for 25 years — recent readings 148-164 systolic despite amlodipine 10 mg. The dissection flap can involve: (1) right carotid artery — producing transient neurological symptoms that mimic TIA, (2) celiac/mesenteric arteries — producing gut ischaemia presenting as melena, (3) renal arteries — causing acute kidney injury (not yet assessed). BP was measured in LEFT ARM ONLY — a significant BP differential between arms would strongly support the diagnosis. HR 98 is NOT from anxiety — it represents early sympathetic compensation for aortic compromise. The 4.2 cm aortic root from 3 years ago with NO follow-up is now almost certainly larger. Bicuspid aortic valve confers a 9-fold increased risk of dissection independent of root size. IMMEDIATE bilateral BP measurement and emergent CTA aorta. DO NOT waste time on separate TIA and GI workups — they will delay the diagnosis that could kill this patient. RED — life-threatening, immediate physician assessment required.",
+  "vital_sign_concerns": ["HR 98 — NOT benign: represents early haemodynamic compromise in suspected aortic dissection", "BP 152/88 LEFT ARM ONLY — right arm BP is ESSENTIAL for dissection screening", "SpO2 97% — currently adequate but may deteriorate rapidly if dissection extends to subclavian or with aortic rupture", "Normothermia does not exclude acute aortic pathology"],
+  "risk_factors": ["BICUSPID AORTIC VALVE — strongest structural risk factor for dissection", "DILATED AORTIC ROOT 4.2 cm with LAPSED surveillance (>2 years overdue)", "UNCONTROLLED HYPERTENSION × 25 years — chronic aortic wall stress", "Former 40-pack-year smoker — connective tissue degradation", "Type 2 diabetes — accelerates vascular degeneration", "Age 72 — peak incidence decade for aortic dissection"],
+  "confidence": "HIGH",
+  "dont_miss": ["Stanford Type A aortic dissection", "Aortic rupture with malperfusion syndrome", "Mesenteric ischaemia"],
+  "processing_time_ms": 7800
+}

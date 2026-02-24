@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "description": "Maps ESS categories to expected resource counts for ESI level determination (ESI-3/4/5). Resources include: labs, imaging, IV fluids/meds, procedures, specialist consults. The min_resources field determines ESI level: >=2 -> ESI-3, 1 -> ESI-4, 0 -> ESI-5.",
+    "resource_types": ["labs", "imaging", "iv_fluids_meds", "procedures", "specialist_consults"]
+  },
+
+  "chest_pain": {
+    "labs": true,
+    "imaging": true,
+    "iv_fluids_meds": true,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 3,
+    "detail": [
+      "labs: troponin (serial x2), BNP, D-dimer, CBC, BMP",
+      "imaging: CXR, ECG (counted as procedure by some; imaging here)",
+      "iv: IV access + fluids, possible heparin drip"
+    ],
+    "typical_esi": 3
+  },
+
+  "pediatric_fever": {
+    "labs": true,
+    "imaging": false,
+    "iv_fluids_meds": true,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 2,
+    "detail": [
+      "labs: CBC, CRP, blood culture, urinalysis; LP if meningism suspected",
+      "iv: IV fluids if dehydrated, antipyretics"
+    ],
+    "typical_esi": 3
+  },
+
+  "trauma_fall": {
+    "labs": true,
+    "imaging": true,
+    "iv_fluids_meds": false,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 2,
+    "detail": [
+      "labs: coagulation panel (especially if anticoagulated), CBC",
+      "imaging: X-ray of affected area, CT head if head strike or anticoagulated"
+    ],
+    "typical_esi": 3
+  },
+
+  "abdominal": {
+    "labs": true,
+    "imaging": true,
+    "iv_fluids_meds": true,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 3,
+    "detail": [
+      "labs: CBC, lipase, LFTs, lactate, CRP, urinalysis",
+      "imaging: CT abdomen/pelvis with contrast",
+      "iv: IV fluids, analgesia, possible antiemetics"
+    ],
+    "typical_esi": 3
+  },
+
+  "respiratory": {
+    "labs": true,
+    "imaging": true,
+    "iv_fluids_meds": true,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 3,
+    "detail": [
+      "labs: ABG/VBG, D-dimer, CBC, CRP, procalcitonin",
+      "imaging: CXR, CTPA if PE suspected",
+      "iv: nebulized bronchodilators, supplemental O2, IV antibiotics if pneumonia"
+    ],
+    "typical_esi": 3
+  },
+
+  "neurological": {
+    "labs": true,
+    "imaging": true,
+    "iv_fluids_meds": true,
+    "procedures": false,
+    "specialist_consults": true,
+    "min_resources": 4,
+    "detail": [
+      "labs: glucose, coagulation, CBC, electrolytes",
+      "imaging: CT head without contrast (stat), CTA head/neck if stroke suspected",
+      "iv: IV access, possible thrombolytics within window",
+      "specialist: neurology consult (stroke team activation if applicable)"
+    ],
+    "typical_esi": 3
+  },
+
+  "urinary": {
+    "labs": true,
+    "imaging": false,
+    "iv_fluids_meds": true,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 2,
+    "detail": [
+      "labs: urinalysis, urine culture, CBC, CRP if systemic signs",
+      "iv: IV fluids and IV antibiotics if pyelonephritis/urosepsis"
+    ],
+    "typical_esi": 3
+  },
+
+  "skin_wound": {
+    "labs": false,
+    "imaging": false,
+    "iv_fluids_meds": false,
+    "procedures": true,
+    "specialist_consults": false,
+    "min_resources": 1,
+    "detail": [
+      "procedures: wound irrigation, sutures or staples, tetanus if indicated"
+    ],
+    "typical_esi": 4
+  },
+
+  "musculoskeletal": {
+    "labs": false,
+    "imaging": true,
+    "iv_fluids_meds": false,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 1,
+    "detail": [
+      "imaging: X-ray of affected joint/bone"
+    ],
+    "typical_esi": 4
+  },
+
+  "psychiatric": {
+    "labs": true,
+    "imaging": false,
+    "iv_fluids_meds": false,
+    "procedures": false,
+    "specialist_consults": true,
+    "min_resources": 2,
+    "detail": [
+      "labs: toxicology screen, glucose, thyroid if first presentation",
+      "specialist: psychiatric consult"
+    ],
+    "typical_esi": 3
+  },
+
+  "ear_nose_throat": {
+    "labs": false,
+    "imaging": false,
+    "iv_fluids_meds": false,
+    "procedures": true,
+    "specialist_consults": false,
+    "min_resources": 1,
+    "detail": [
+      "procedures: otoscopy, anterior rhinoscopy, or foreign body removal"
+    ],
+    "typical_esi": 4
+  },
+
+  "eye": {
+    "labs": false,
+    "imaging": false,
+    "iv_fluids_meds": false,
+    "procedures": false,
+    "specialist_consults": true,
+    "min_resources": 1,
+    "detail": [
+      "specialist: ophthalmology consult or slit-lamp examination"
+    ],
+    "typical_esi": 4
+  },
+
+  "medication_refill": {
+    "labs": false,
+    "imaging": false,
+    "iv_fluids_meds": false,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 0,
+    "detail": [],
+    "typical_esi": 5
+  },
+
+  "minor_complaint": {
+    "labs": false,
+    "imaging": false,
+    "iv_fluids_meds": false,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 0,
+    "detail": [],
+    "typical_esi": 5
+  },
+
+  "_default": {
+    "labs": true,
+    "imaging": true,
+    "iv_fluids_meds": false,
+    "procedures": false,
+    "specialist_consults": false,
+    "min_resources": 2,
+    "detail": [
+      "labs: basic panel",
+      "imaging: as indicated by presentation"
+    ],
+    "typical_esi": 3
+  }
+}

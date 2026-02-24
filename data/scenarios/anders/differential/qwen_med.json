@@ -1,0 +1,59 @@
+{
+  "model_id": "qwen_med",
+  "candidates": [
+    {
+      "diagnosis": "Acute decompensated heart failure",
+      "probability": 0.4,
+      "supporting_evidence": [
+        "CHF is the most likely cause of chest tightness in a patient with established heart failure",
+        "Atrial fibrillation may cause loss of atrial kick, worsening cardiac output",
+        "DM2-related microvascular disease contributes to progressive cardiac dysfunction",
+        "Fluid retention and weight gain should be assessed"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Acute coronary syndrome / NSTEMI",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Chest tightness in elderly male with multiple cardiovascular risk factors",
+        "Diabetic patients often have atypical presentations of myocardial ischaemia",
+        "Serial troponin measurements required to differentiate from chronic elevation in CHF"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "AF and heart failure both predispose to venous thromboembolism",
+        "Warfarin adherence and current INR level should be verified",
+        "CT pulmonary angiography indicated if clinical suspicion is moderate or high"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Arrhythmia-related symptoms (AF with RVR / new arrhythmia)",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Known AF \u2014 rapid ventricular response can cause chest tightness and dyspnea",
+        "New-onset atrial flutter or ventricular arrhythmia should be excluded",
+        "ECG comparison with prior tracings is essential for detecting rhythm changes"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pleural effusion",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Common complication of chronic heart failure \u2014 may present as chest tightness",
+        "Can accumulate gradually and present acutely when crossing a symptomatic threshold",
+        "Chest X-ray will identify significant effusions; ultrasound for smaller collections"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "The presentation is most consistent with an acute exacerbation of the patient's known cardiac conditions. ADHF is prioritised given the established CHF, with ACS as a close second. The inclusion of arrhythmia-related symptoms reflects the possibility that his known AF may have progressed to rapid ventricular response or a new arrhythmia, which would explain chest tightness without a structural change. Pleural effusion is included as a common CHF complication that can present similarly. Further investigation with ECG, troponins, BNP, and chest imaging will narrow the differential.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 5103
+}

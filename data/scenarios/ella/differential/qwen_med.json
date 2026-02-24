@@ -1,0 +1,63 @@
+{
+  "model_id": "qwen_med",
+  "candidates": [
+    {
+      "diagnosis": "Viral exanthem",
+      "probability": 0.5,
+      "supporting_evidence": [
+        "Most common cause of fever and rash in preschool children",
+        "Enteroviral, adenoviral, and parvovirus B19 infections account for majority of pediatric fever-rash presentations",
+        "Acute onset with concurrent fever is typical viral pattern",
+        "Self-limiting condition in immunocompetent children"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Scarlet fever (Group A Streptococcus)",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "Classic presentation: fever with sandpaper rash in child aged 4-8",
+        "High fever 39.8\u00b0C is consistent with GAS infection",
+        "Requires rapid antigen detection test",
+        "Early antibiotic therapy prevents complications"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Urinary tract infection",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Common occult source of fever in young children",
+        "Female sex increases UTI risk",
+        "Rash may be coincidental viral exanthem with concurrent UTI",
+        "Urinalysis is a standard part of fever workup in children under 5"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Kawasaki disease",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Age 4 is within the classic age window",
+        "Fever with rash fulfils partial criteria",
+        "Requires monitoring for additional features over coming days",
+        "Incomplete Kawasaki can present atypically"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Meningococcal disease",
+      "probability": 0.05,
+      "supporting_evidence": [
+        "Must be considered in any child with fever and rash",
+        "Non-blanching rash would significantly increase this probability",
+        "Lethargy is a concerning feature",
+        "Low probability but high consequence if missed"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "Standard pediatric fever and rash differential for a 4-year-old female. Viral exanthem is overwhelmingly the most common cause and ranks highest at 50%. Scarlet fever and UTI are common treatable causes. Kawasaki disease should be monitored if fever persists. Meningococcal disease is listed as a don't-miss despite low probability \u2014 clinical rash assessment will be the key differentiator.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 3500
+}

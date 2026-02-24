@@ -1,0 +1,48 @@
+# Engine Registry
+# Controls which triage engines are active in the MEDLEY ensemble.
+# Each engine produces an independent triage assessment; the agreement engine
+# then compares outputs across all enabled engines.
+#
+# Supported engines:
+#   retts  - Rapid Emergency Triage and Treatment System (Swedish standard)
+#   esi    - Emergency Severity Index (US 5-level, resource-based)
+#   mts    - Manchester Triage System (UK/EU flowchart-based)
+
+engines:
+  retts:
+    name: "RETTS (Rapid Emergency Triage and Treatment System)"
+    description: >
+      Swedish national standard. Combines ESS chief-complaint flowcharts with
+      vital-sign thresholds. Final colour is the HIGHER of the two assessments
+      (ESS-based vs vitals-based). Five levels: Red, Orange, Yellow, Green, Blue.
+    philosophy: >
+      Dual-pathway safety net — a patient who looks well on vitals but matches
+      a high-acuity ESS pattern (or vice versa) is always triaged to the more
+      urgent level. Designed for the Swedish ED context with ~47% Yellow volume.
+    enabled_by_default: true
+
+  esi:
+    name: "ESI (Emergency Severity Index)"
+    description: >
+      US-standard 5-level triage algorithm. Levels 1-2 are acuity-driven
+      (immediate / high-risk). Levels 3-5 are separated by expected resource
+      count (>=2 resources -> ESI-3, 1 resource -> ESI-4, 0 -> ESI-5).
+    philosophy: >
+      Resource-prediction as a proxy for acuity at the lower end. Quick
+      bedside decision tree: life-threatening? -> ESI-1. High-risk or
+      altered consciousness? -> ESI-2. Then count expected resources.
+    enabled_by_default: true
+
+  mts:
+    name: "MTS (Manchester Triage System)"
+    description: >
+      UK/EU flowchart-based system. Selects a presentational flowchart based
+      on chief complaint, then evaluates discriminators top-down from most
+      urgent (Red) to least (Green). First matching discriminator determines
+      the triage level and maximum acceptable waiting time.
+    philosophy: >
+      Discriminator-driven — each flowchart encodes explicit clinical signs
+      that mandate a specific urgency level. No resource counting; purely
+      symptom/sign severity. Five levels: Red (0 min), Orange (10 min),
+      Yellow (60 min), Green (120 min), Blue (240 min).
+    enabled_by_default: true

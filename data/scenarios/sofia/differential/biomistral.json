@@ -1,0 +1,69 @@
+{
+  "model_id": "biomistral",
+  "candidates": [
+    {
+      "diagnosis": "Bilateral pulmonary embolism with saddle embolus",
+      "probability": 0.45,
+      "supporting_evidence": [
+        "Convergent VTE risk factors with multiplicative risk >30\u00d7 baseline: drospirenone OCP (OR 6.3) + prolonged immobilization (12h car drive, OR 2.3) + family DVT history (inherited thrombophilia) + prior missed DVT (calf pain 3 weeks ago without Doppler)",
+        "Modified Wells score calculation: clinical signs consistent with DVT (prior calf pain) +3, PE most likely diagnosis +3, tachycardia >100 +1.5, immobilization +1.5 = 9+ points \u2014 PE LIKELY category",
+        "Bilateral PE should be suspected because the thrombus source (right leg DVT) has had 3 weeks to propagate, fragment, and embolize to both pulmonary arteries",
+        "Saddle embolus (straddling the main pulmonary artery bifurcation) is possible given the prolonged embolization timeline and large thrombus burden",
+        "SpO2 95% in a 28-year-old represents significant V/Q mismatch \u2014 this is NOT normal"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Deep vein thrombosis — right lower extremity, propagated from prior missed diagnosis",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Right calf pain 3 weeks ago diagnosed as 'muscle strain' at prior ED visit \u2014 this was the index DVT event",
+        "NO Doppler ultrasound was performed \u2014 the DVT was missed due to anchoring on 'muscle strain'",
+        "Over 3 weeks without anticoagulation, the thrombus has propagated from calf veins to proximal veins (popliteal \u2192 femoral \u2192 iliac)",
+        "Fragments from this propagated DVT are the source of the current pulmonary emboli",
+        "Lower extremity Doppler MUST be performed to assess residual thrombus burden"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Right ventricular strain from pulmonary embolism",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Tachycardia (HR 102) may represent early RV decompensation from acute pressure overload",
+        "RV strain can progress rapidly to RV failure and obstructive shock",
+        "Bedside echocardiography should assess RV dilation, McConnell sign, tricuspid regurgitation",
+        "Troponin and BNP/NT-proBNP elevation would confirm myocardial injury from RV strain",
+        "If RV failure is present, thrombolysis or catheter-directed therapy must be considered"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Pulmonary infarction with possible abscess formation",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Low-grade fever 37.2\u00b0C + pleuritic pain = classic pulmonary infarction",
+        "Infarction occurs in 10-30% of PE cases, more common with peripheral emboli",
+        "If infarction zone becomes infected, pulmonary abscess can develop \u2014 rare but serious",
+        "Chest X-ray may show Hampton's hump (wedge-shaped opacity) or Westermark sign (oligemia)",
+        "Follow-up imaging essential to monitor for cavitation"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Inherited thrombophilia unmasked by OCP use",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Family history of DVT in paternal aunt at age 45 \u2014 strongly suggests autosomal dominant thrombophilia",
+        "Factor V Leiden is the most common inherited thrombophilia in Swedish population (5% carrier rate \u2014 highest in Northern Europe)",
+        "Prothrombin gene mutation G20210A (2-3% prevalence) is the second most common",
+        "Drospirenone OCP + Factor V Leiden heterozygosity = synergistic VTE risk (OR 28.5 in published studies)",
+        "The OCP unmasked the thrombophilia \u2014 this patient may never have developed VTE without the hormonal trigger",
+        "Thrombophilia panel should be sent AFTER acute treatment (not during acute phase \u2014 false results); if positive, lifelong anticoagulation and genetic counselling for family members"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "DEVIL'S ADVOCATE ASSESSMENT: I am deliberately weighting ALL diagnoses toward VTE-spectrum pathology because this case has EVERY red flag for a missed PE. The cognitive trap here is classic anchoring bias: a young, healthy-appearing woman with reproducible chest wall tenderness after physical exertion \u2014 the clinician's brain screams 'musculoskeletal' and stops thinking. But the EHR tells a completely different story. The drospirenone OCP (highest VTE risk class), 12-hour car drive (prolonged immobilization), family DVT history (inherited thrombophilia), and most damningly the PRIOR ED VISIT for right calf pain that was dismissed as muscle strain WITHOUT DOPPLER IMAGING \u2014 this is a MISSED DVT that has progressed to PE over 3 weeks. The medical literature is clear: chest wall tenderness has NO discriminative value for excluding PE (present in 19.9% of PE patients vs 23.8% of non-PE, p=0.25). The Modified Wells score exceeds 9 points. D-dimer should NOT be used as a screening tool when clinical probability is this high \u2014 go directly to CTPA. Every minute of delay increases the risk of cardiovascular collapse from RV failure. This patient needs STAT imaging, immediate anticoagulation, and ICU standby.",
+  "confidence": "HIGH",
+  "processing_time_ms": 6890
+}

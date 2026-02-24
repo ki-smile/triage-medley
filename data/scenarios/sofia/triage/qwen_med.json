@@ -1,0 +1,12 @@
+{
+  "model_id": "qwen_med",
+  "retts_level": "YELLOW",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Pleuritic chest pain in young woman on oral contraceptive",
+  "clinical_reasoning": "28-year-old female presenting with pleuritic chest pain for 2 days. Pain reproducible on palpation, onset after physical exertion. However, OCP use (drospirenone/ethinylestradiol) is noted in medication history — this raises the possibility of VTE-related chest pain. SpO2 95% is marginally low for a young healthy patient and tachycardia (HR 102) is noted. While musculoskeletal strain remains the most likely diagnosis, the combination of pleuritic pain + OCP use + borderline SpO2 warrants PE exclusion. Recommend D-dimer as initial screening if clinical suspicion persists. YELLOW — urgent but stable.",
+  "vital_sign_concerns": ["SpO2 95% — marginally low for age, warrants monitoring", "HR 102 — mildly elevated, could reflect pain or underlying process", "Temperature 37.2\u00b0C — low-grade fever noted"],
+  "risk_factors": ["Combined oral contraceptive use (drospirenone)", "Pleuritic nature of chest pain", "Prior ED visit for calf pain"],
+  "confidence": "MODERATE",
+  "dont_miss": ["Pulmonary embolism"],
+  "processing_time_ms": 5900
+}

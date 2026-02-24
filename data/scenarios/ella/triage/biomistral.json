@@ -1,0 +1,28 @@
+{
+  "model_id": "biomistral",
+  "retts_level": "RED",
+  "ess_category": "pediatric_fever",
+  "chief_complaint": "Fever with rash and hemodynamic compromise in 4-year-old — suspected meningococcal septicemia",
+  "clinical_reasoning": "CRITICAL: This child's vital signs are NOT simply fever-related tachycardia. HR 185 with BP 85/50 in a 4-year-old represents COMPENSATED SHOCK. Normal systolic BP for age 4 is >90 mmHg (calculated as 70 + [age × 2] = 78 minimum, but 5th percentile is 90). BP 85/50 is BELOW the 5th percentile and indicates true hypotension. The HR of 185 exceeds the fever-adjusted expected rate — with fever of 39.8°C, expected sinus tachycardia would be approximately 155-170 bpm, not 185. The additional 15-30 bpm above fever-adjusted rate reflects a compensatory response to poor cardiac output. Rash description needs URGENT assessment for petechiae and purpura — the parent describes a rash that 'appeared this morning' with rapid onset, which is characteristic of meningococcal purpura. Non-blanching rash + fever + lethargy = meningococcal disease until proven otherwise. This child may be in early septic shock with only hours before decompensation. The lethargy and refusal to eat are systemic signs of serious illness, not simple febrile malaise. RED — immediate physician assessment, IV access, and empiric antibiotics without delay.",
+  "vital_sign_concerns": [
+    "BP 85/50 — BELOW 5th percentile for age 4, true hypotension",
+    "HR 185 — exceeds fever-adjusted rate by 15-30 bpm, compensatory tachycardia for shock",
+    "Temperature 39.8°C — high fever, but haemodynamic picture is disproportionate",
+    "Lethargy despite being Alert on AVPU — early sign of CNS involvement or poor perfusion"
+  ],
+  "risk_factors": [
+    "Age 4 — limited physiological reserve, rapid decompensation risk",
+    "Fever + acute-onset rash — meningococcal disease until excluded",
+    "BP below 5th percentile for age — compensated shock",
+    "Lethargy with refusal to eat — systemic illness markers",
+    "Tachycardia exceeding fever-adjusted range — hemodynamic compromise"
+  ],
+  "confidence": "HIGH",
+  "dont_miss": [
+    "Meningococcal disease",
+    "Sepsis with shock",
+    "Kawasaki disease",
+    "Henoch-Schönlein purpura"
+  ],
+  "processing_time_ms": 7800
+}

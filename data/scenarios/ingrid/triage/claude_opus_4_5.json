@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_27b",
+  "retts_level": "ORANGE",
+  "ess_category": "infection_sepsis",
+  "chief_complaint": "Occult sepsis in immunocompromised elderly patient with deceptively normal vitals",
+  "clinical_reasoning": "Despite normal-appearing vital signs (T 36.4°C, HR 78, BP 118/68, RR 20, SpO2 96%), deep EHR analysis reveals a profoundly dangerous clinical picture. This 79-year-old woman is on DUAL immunosuppression: methotrexate 15 mg weekly + prednisone 7.5 mg daily for rheumatoid arthritis. Prednisone suppresses the febrile response — absence of fever does NOT exclude serious infection. Methotrexate causes bone marrow suppression — WBC may be falsely normal or low despite active infection. CRITICAL: Metoprolol 50 mg BID is masking expected tachycardia. HR 78 on a beta-blocker in a septic patient is NOT reassuring — the true sympathetic drive is being pharmacologically blunted. BP 118/68 appears normal but patient's baseline BP averages 148/82 over last 3 clinic visits — this represents a 30-point systolic drop, which is RELATIVE HYPOTENSION and an early sign of distributive shock. This is a BOUNCE-BACK presentation: ED visit 6 days ago for UTI, treated with TMP-SMX, but urine culture showed E. coli with quinolone resistance — possible treatment failure with progression to urosepsis. qSOFA and SIRS criteria are both 0, but these scoring systems are known to perform POORLY in immunosuppressed and beta-blocked patients. ORANGE — very urgent, physician assessment within 20 minutes. STAT lactate and blood cultures before any antibiotics.",
+  "vital_sign_concerns": ["BP 118/68 — RELATIVE HYPOTENSION vs baseline 148/82 (30-point systolic drop)", "HR 78 — falsely reassuring on metoprolol 50 mg BID (tachycardia masked)", "T 36.4°C — afebrile does NOT exclude sepsis in immunosuppressed patient on prednisone", "RR 20 — may be early compensatory tachypnea"],
+  "risk_factors": ["Dual immunosuppression (methotrexate + prednisone)", "Beta-blocker masking tachycardia (metoprolol)", "Relative hypotension (30-point systolic drop from baseline)", "Bounce-back visit 6 days after UTI treatment", "E. coli with documented quinolone resistance — possible treatment failure", "3 UTIs in 18 months — recurrent infection pattern", "Type 2 diabetes — impaired immune response", "Chronic prednisone — adrenal insufficiency risk under physiologic stress"],
+  "confidence": "HIGH",
+  "dont_miss": ["Urosepsis with ESBL-producing E. coli", "Methotrexate-induced pancytopenia"],
+  "processing_time_ms": 9100
+}

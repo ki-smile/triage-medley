@@ -1,0 +1,62 @@
+{
+  "model_id": "medgemma_4b",
+  "candidates": [
+    {
+      "diagnosis": "Transient ischaemic attack",
+      "probability": 0.30,
+      "supporting_evidence": [
+        "Transient visual disturbance and confusion lasting minutes, now fully resolved",
+        "Age 72, male, with poorly controlled hypertension and type 2 diabetes — classic TIA risk profile",
+        "ABCD2 score likely 4-5 (age >60, BP >140/90, duration <60 min, diabetes)",
+        "No residual focal neurological deficit on presentation"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Upper GI bleeding",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Dark/black stools (melena) — classic presentation of upper GI haemorrhage",
+        "Aspirin 75 mg daily — direct risk factor for gastric erosion and peptic ulcer disease",
+        "HR 98 may reflect mild hypovolaemia from ongoing blood loss",
+        "Age >65 increases risk of aspirin-related GI complications"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Aortic dissection",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Known bicuspid aortic valve and dilated aortic root (4.2 cm)",
+        "Poorly controlled hypertension for 25 years",
+        "However, no classic tearing chest or back pain reported",
+        "Two separate symptom complexes could theoretically represent malperfusion — but this is a less common presentation"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Atrial fibrillation with embolism",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Age 72 with hypertension and diabetes — high CHA2DS2-VASc score",
+        "Transient neurological symptoms could represent cardioembolic TIA",
+        "No known history of AF, but paroxysmal AF may be undiagnosed",
+        "ECG screening indicated"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Peptic ulcer disease",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Chronic aspirin use is a major risk factor for peptic ulceration",
+        "Melena consistent with upper GI source",
+        "No reported epigastric pain, but elderly patients may have painless presentation"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "72-year-old male with two distinct symptom complexes: transient neurological deficit (resolved) and melena. The differential is split between vascular/neurological causes (TIA, cardioembolic event) and GI causes (upper GI bleeding from aspirin use). Aortic dissection is flagged as a don't-miss diagnosis given his known bicuspid valve and dilated aortic root, though the absence of chest pain makes it a lower-probability consideration. The two complaints are most likely separate pathologies — TIA in a high-risk vascular patient plus aspirin-related GI bleeding — but aortic malperfusion as a unifying diagnosis cannot be excluded without imaging.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2950
+}

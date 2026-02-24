@@ -1,0 +1,80 @@
+{
+  "adult": {
+    "age_range": [16, 150],
+    "heart_rate": {
+      "RED":    {"low": null, "high": 150, "low_below": 30},
+      "ORANGE": {"low_below": 40, "high": 130},
+      "YELLOW": {"low_below": 50, "high": 120},
+      "GREEN":  {"low": 50, "high": 100}
+    },
+    "systolic_bp": {
+      "RED":    {"low_below": 80},
+      "ORANGE": {"low_below": 90},
+      "YELLOW": {"low_below": 100, "high": 200},
+      "GREEN":  {"low": 100, "high": 180}
+    },
+    "respiratory_rate": {
+      "RED":    {"low_below": 8, "high": 35},
+      "ORANGE": {"high": 30},
+      "YELLOW": {"high": 25, "low_below": 10},
+      "GREEN":  {"low": 12, "high": 20}
+    },
+    "spo2": {
+      "RED":    {"low_below": 85},
+      "ORANGE": {"low_below": 90},
+      "YELLOW": {"low_below": 93},
+      "GREEN":  {"low": 95}
+    },
+    "temperature": {
+      "RED":    {"high": 41.0, "low_below": 33.0},
+      "ORANGE": {"high": 40.0, "low_below": 34.0},
+      "YELLOW": {"high": 39.0, "low_below": 35.0},
+      "GREEN":  {"low": 36.0, "high": 38.0}
+    },
+    "consciousness": {
+      "RED":    ["Unresponsive"],
+      "ORANGE": ["Pain"],
+      "YELLOW": ["Voice"],
+      "GREEN":  ["Alert"]
+    }
+  },
+  "pediatric": {
+    "age_range": [0, 15],
+    "heart_rate": {
+      "RED":    {"high": 200, "low_below": 50},
+      "ORANGE": {"high": 180, "low_below": 60},
+      "YELLOW": {"high": 160},
+      "GREEN":  {"low": 80, "high": 140}
+    },
+    "systolic_bp": {
+      "RED":    {"low_below": 60},
+      "ORANGE": {"low_below": 70},
+      "YELLOW": {"low_below": 80},
+      "GREEN":  {"low": 80, "high": 120}
+    },
+    "respiratory_rate": {
+      "RED":    {"high": 60, "low_below": 10},
+      "ORANGE": {"high": 50},
+      "YELLOW": {"high": 40},
+      "GREEN":  {"low": 15, "high": 30}
+    },
+    "spo2": {
+      "RED":    {"low_below": 85},
+      "ORANGE": {"low_below": 90},
+      "YELLOW": {"low_below": 93},
+      "GREEN":  {"low": 95}
+    },
+    "temperature": {
+      "RED":    {"high": 41.0, "low_below": 33.0},
+      "ORANGE": {"high": 40.0, "low_below": 34.0},
+      "YELLOW": {"high": 39.0, "low_below": 35.0},
+      "GREEN":  {"low": 36.0, "high": 38.0}
+    },
+    "consciousness": {
+      "RED":    ["Unresponsive"],
+      "ORANGE": ["Pain"],
+      "YELLOW": ["Voice"],
+      "GREEN":  ["Alert"]
+    }
+  }
+}

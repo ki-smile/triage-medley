@@ -1,0 +1,25 @@
+{
+  "model_id": "medgemma_27b",
+  "retts_level": "ORANGE",
+  "ess_category": "pediatric_fever",
+  "chief_complaint": "Fever with acute-onset rash in 4-year-old female, lethargy and anorexia",
+  "clinical_reasoning": "4-year-old female with 24-hour history of fever (39.8°C) and acute-onset rash (appeared this morning), accompanied by lethargy and refusal to eat. Vital signs show HR 185 — while tachycardia in pediatric fever is expected (sinus tachycardia up to 10-15 bpm per degree Celsius above 38°C, giving expected HR ~160-170 for this temperature in a 4-year-old), 185 exceeds the fever-adjusted expectation and warrants monitoring. BP 85/50 is at the 5th percentile for age 4 (normal systolic >90 mmHg by PALS guidelines) but may reflect fever-related vasodilation. SpO2 96% is reassuring. RR 34 is mildly elevated. The differential of pediatric fever with rash is broad: viral exanthem is most common (70-80% of cases), but the acute onset, lethargy, and borderline hemodynamic parameters necessitate exclusion of meningococcal septicemia, Kawasaki disease, and other serious bacterial infections. ORANGE assessment — requires urgent physician evaluation within 20 minutes with close vital sign monitoring.",
+  "vital_sign_concerns": [
+    "HR 185 — exceeds fever-adjusted expected rate, though sinus tachycardia likely",
+    "BP 85/50 — at 5th percentile for age, borderline hypotension",
+    "Temperature 39.8°C — high fever",
+    "RR 34 — mildly elevated, adequate oxygenation"
+  ],
+  "risk_factors": [
+    "Age 4 — limited physiological reserve",
+    "Fever with rash — must exclude serious bacterial infection",
+    "Lethargy and anorexia — possible early systemic compromise",
+    "Mild intermittent asthma — minor respiratory vulnerability"
+  ],
+  "confidence": "MODERATE",
+  "dont_miss": [
+    "Meningococcal septicemia",
+    "Kawasaki disease"
+  ],
+  "processing_time_ms": 8400
+}

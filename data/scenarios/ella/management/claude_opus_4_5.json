@@ -1,0 +1,42 @@
+{
+  "model_id": "medgemma_27b",
+  "investigations": [
+    "Blood cultures (aerobic and anaerobic) — CRITICAL: obtain BEFORE antibiotics, but DO NOT delay antibiotics beyond 30 minutes for any reason including culture collection",
+    "CBC with differential and blood film (assess for left shift, thrombocytopenia as early DIC marker, toxic granulation in neutrophils)",
+    "CRP (inflammatory marker — >100 mg/L in pediatric fever strongly suggests bacterial aetiology)",
+    "Procalcitonin (>2 ng/mL has 90% specificity for bacterial sepsis in children; serial monitoring guides antibiotic duration)",
+    "Blood glucose (hypoglycemia risk: febrile child with 24h anorexia has depleted glycogen stores; glucose <3.0 mmol/L requires immediate 10% dextrose bolus)",
+    "Lactate (>2 mmol/L indicates tissue hypoperfusion; >4 mmol/L confirms septic shock — critical for risk stratification)",
+    "Coagulation screen: PT, APTT, fibrinogen, D-dimer (DIC screening — meningococcal septicemia has 30-40% DIC incidence; early fibrinogen <1.5 g/L is ominous)",
+    "Venous blood gas (assess pH, base excess — metabolic acidosis indicates tissue hypoperfusion and correlates with shock severity)",
+    "Blood group and save (anticipate need for blood products if DIC develops)",
+    "Urinalysis and urine culture (UTI screening — clean-catch or catheter specimen in febrile child under 5)",
+    "PCR for N. meningitidis (EDTA blood — definitive diagnosis even after antibiotics have been started; results in 2-4 hours)",
+    "Lumbar puncture — ONLY if hemodynamically stable AND no signs of raised intracranial pressure (papilloedema, bulging fontanelle, focal neurology). DO NOT delay antibiotics for LP. If LP is deferred, send blood PCR for meningococcal confirmation"
+  ],
+  "imaging": [
+    "Chest X-ray if respiratory deterioration or SpO2 decline (not immediate priority — avoid unnecessary transfers to radiology in unstable child)",
+    "Bedside echocardiography if hemodynamic compromise persists despite fluid resuscitation (assess myocardial function — septic cardiomyopathy can occur in meningococcal sepsis)",
+    "Cranial CT ONLY if raised ICP suspected before LP — not routinely indicated"
+  ],
+  "medications": [
+    "IV access — establish TWO peripheral lines immediately (one for antibiotics, one for fluids). If peripheral access fails within 90 seconds, proceed to intraosseous (IO) access without delay",
+    "IV normal saline 20 mL/kg bolus over 5-10 minutes — reassess after each bolus. May repeat up to 3 boluses (60 mL/kg) in first hour. If requiring >40 mL/kg, activate PICU team",
+    "Empiric IV ceftriaxone 100 mg/kg (max 4g) — administer within 30 minutes of arrival. DO NOT delay for blood cultures or LP. In meningococcal sepsis, each hour of antibiotic delay increases mortality by 7-8%",
+    "Paracetamol 15 mg/kg IV (preferred over oral in potentially septic child with poor GI perfusion) for fever management and comfort",
+    "10% dextrose 2 mL/kg IV bolus if blood glucose <3.0 mmol/L — then maintenance dextrose-containing fluids",
+    "Dexamethasone 0.15 mg/kg IV if bacterial meningitis suspected — give BEFORE or WITH first antibiotic dose (reduces hearing loss risk). Omit if pure septicemia without meningitis",
+    "Avoid ibuprofen and all NSAIDs until meningococcal disease and varicella are excluded"
+  ],
+  "disposition": "admission",
+  "disposition_detail": "Admit to pediatric high-dependency or PICU if: (1) requiring >20 mL/kg fluid resuscitation, (2) BP remains <5th percentile after first fluid bolus, (3) altered consciousness, (4) evolving purpuric rash, (5) evidence of DIC on coagulation screen. If none of these, admit to pediatric ward with hourly vital signs and 2-hourly rash checks for first 12 hours.",
+  "contraindications_flagged": [
+    "Avoid ibuprofen/NSAIDs — risk of hemorrhage if thrombocytopenia/DIC develops; also contraindicated if varicella cannot be excluded (risk of necrotizing fasciitis)",
+    "Avoid lumbar puncture if hemodynamically unstable, signs of raised ICP, or coagulopathy — empiric antibiotics take absolute priority",
+    "Salbutamol (home asthma medication) — no contraindication but not relevant; however, note that tachycardia from salbutamol use would be an important differential for the elevated HR if recently administered (verify with parent)",
+    "Avoid excessive fluid resuscitation beyond 60 mL/kg without vasopressor consideration — fluid overload in pediatric sepsis worsens outcomes"
+  ],
+  "reasoning": "4-year-old female with fever (39.8°C), acute-onset rash, lethargy, anorexia, and a hemodynamic profile concerning for compensated shock (HR 185 exceeding fever-adjusted range, BP 85/50 at 5th percentile for age). The management plan is structured around the principle of 'DO NOT delay antibiotics for anything.' The investigation panel is comprehensive because meningococcal septicemia can evolve from compensated shock to irreversible multi-organ failure within 2-4 hours. Lactate and coagulation screen are critical for early DIC detection — meningococcal DIC has 30-40% incidence and dramatically worsens prognosis. PCR for N. meningitidis is included because it remains positive even after antibiotics and provides definitive diagnosis. Lumbar puncture is explicitly conditional: it should NOT be performed in a hemodynamically unstable child, and antibiotics must NEVER be delayed for LP. The explicit instruction 'DO NOT delay antibiotics for LP' is the single most important management point. Fluid resuscitation follows PALS guidelines with clear escalation criteria to PICU. IVIG for potential Kawasaki disease is not included in the immediate plan but should be considered if fever persists beyond 5 days with compatible features. Dexamethasone is included for its evidence-based role in reducing complications of bacterial meningitis. Disposition is admission with explicit PICU escalation criteria.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9800
+}

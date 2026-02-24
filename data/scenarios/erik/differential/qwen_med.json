@@ -1,0 +1,64 @@
+{
+  "model_id": "qwen_med",
+  "candidates": [
+    {
+      "diagnosis": "Aortic dissection",
+      "probability": 0.30,
+      "supporting_evidence": [
+        "Known bicuspid aortic valve — strongest congenital risk factor for aortic dissection",
+        "Ascending aortic root dilated to 4.2 cm with lapsed follow-up surveillance (>2 years overdue)",
+        "Poorly controlled hypertension for 25 years — chronic aortic wall stress and medial degeneration",
+        "Simultaneous transient neurological deficit and melena could represent multi-territory malperfusion",
+        "Former 40-pack-year smoker — additional vascular wall damage"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Transient ischaemic attack",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Classic presentation: transient visual disturbance and confusion resolving within minutes",
+        "Multiple vascular risk factors: age, hypertension, diabetes, former smoker",
+        "Fully resolved symptoms — consistent with TIA rather than completed stroke",
+        "ABCD2 risk stratification needed to guide urgency of workup"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Upper GI bleeding",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Melena (dark/black stools) consistent with upper GI haemorrhage",
+        "Aspirin 75 mg daily — direct mucosal toxicity risk",
+        "Mild tachycardia (HR 98) may indicate compensatory response to blood loss",
+        "Age and comorbidities increase bleeding severity risk"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Hypertensive crisis",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "25-year history of poorly controlled hypertension",
+        "Transient neurological symptoms could represent hypertensive encephalopathy",
+        "Current BP 152/88 is elevated but may not fully represent peak (measured post-symptom resolution)",
+        "Target organ damage assessment warranted (renal function, fundoscopy)"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Mesenteric ischaemia",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Melena can result from mesenteric ischaemia causing mucosal breakdown",
+        "If aortic dissection is present, celiac/SMA involvement would cause mesenteric hypoperfusion",
+        "Elderly patient with extensive vascular disease burden",
+        "Lactate level would help assess for tissue ischaemia"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "The simultaneous presentation of transient neurological symptoms and melena in a patient with known aortic pathology (bicuspid valve + dilated root) demands that aortic dissection be the primary diagnostic consideration. While TIA and upper GI bleed individually are more common diagnoses, the COINCIDENCE of both appearing simultaneously should raise suspicion for a unifying aortic process. The patient's history of poorly controlled hypertension, former heavy smoking, and critically lapsed aortic surveillance further elevate the pre-test probability. Bilateral arm blood pressure measurement is an essential first step — a differential >20 mmHg systolic would strongly support the diagnosis. CTA aorta should be obtained urgently if clinical suspicion persists.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 5700
+}

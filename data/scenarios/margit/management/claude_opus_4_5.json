@@ -1,0 +1,39 @@
+{
+  "model_id": "medgemma_27b",
+  "investigations": [
+    "CT head non-contrast (urgent within 1 hour — NICE CG176: all anticoagulated patients with head injury require CT head within 1 hour of presentation regardless of GCS)",
+    "INR/PT (critical — if INR >1.5, intracranial bleeding risk is significantly elevated; if INR >3.0, consider immediate reversal)",
+    "CBC with differential (baseline haemoglobin for comparison if bleeding develops, platelet count for haemostasis assessment)",
+    "BMP (electrolytes, creatinine — baseline renal function for contrast decisions and medication dosing)",
+    "Coagulation screen (APTT, fibrinogen — comprehensive haemostasis profile)",
+    "Group and Save (prepare for potential blood product requirements — PCC, FFP, or packed red cells if intracranial bleeding confirmed)",
+    "Blood glucose (point-of-care — exclude hypoglycaemia as precipitant of fall)",
+    "12-lead ECG (assess current rhythm — AF rate control, rule out arrhythmia as fall cause)"
+  ],
+  "imaging": [
+    "CT head non-contrast (urgent within 1 hour per NICE CG176 for anticoagulated patients with head injury — assess for subdural, epidural, subarachnoid hemorrhage, and skull fracture)",
+    "CT C-spine (indicated per Canadian C-spine Rule: age >65, dangerous mechanism — superior to plain X-ray for detecting odontoid fractures in elderly)",
+    "Hip X-ray AP pelvis and lateral (exclude neck of femur fracture — if negative but clinical suspicion persists, MRI within 24 hours)",
+    "Chest X-ray if rib tenderness (occult rib fractures in osteoporotic patients)"
+  ],
+  "medications": [
+    "Hold warfarin pending CT head result — do NOT administer next dose until intracranial bleeding excluded",
+    "Paracetamol 1g oral or IV for pain management (safe in head injury and with warfarin)",
+    "If INR supratherapeutic (>3.0) AND CT shows bleeding: IV vitamin K 5-10 mg slow infusion + 4-factor prothrombin complex concentrate (PCC) 25-50 IU/kg based on INR — PCC preferred over FFP for speed of reversal",
+    "If INR therapeutic (2.0-3.0) AND CT shows bleeding: PCC 25 IU/kg + vitamin K 5 mg IV — discuss with haematology",
+    "If CT head negative: consider restarting warfarin after 24-hour observation period with repeat CT at 24 hours (delayed subdural risk)",
+    "Avoid NSAIDs (warfarin interaction — synergistic bleeding risk via platelet inhibition and GI mucosal damage)",
+    "Continue enalapril unless hypotensive (maintain cerebral perfusion pressure)",
+    "Continue vitamin D and calcium supplements"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Avoid NSAIDs — synergistic bleeding risk with warfarin (platelet inhibition + GI mucosal damage + reduced renal prostaglandins affecting warfarin clearance)",
+    "Avoid sedatives and opioids — head injury requires serial GCS monitoring; sedation masks neurological deterioration",
+    "Do NOT reverse warfarin prophylactically without imaging evidence of bleeding — patient has AF and is at high stroke risk (CHA2DS2-VASc likely ≥5: female, age >75, hypertension = minimum 4 points + AF indication)",
+    "Caution with IV contrast if CT angiography required — check creatinine first"
+  ],
+  "reasoning": "This 81-year-old female on warfarin anticoagulation for AF with osteoporosis, presenting after a fall with head strike, hip pain, and dizziness, requires a systematic high-risk trauma workup. CT head within 1 hour per NICE CG176 is the single most important investigation — delayed subdural hematoma in anticoagulated elderly is a well-documented cause of preventable death. INR determination is equally urgent: supratherapeutic INR dramatically increases bleeding risk and may require immediate reversal if CT shows hemorrhage. However, warfarin reversal must NOT be performed prophylactically — this patient has AF with likely CHA2DS2-VASc ≥5 (female, >75, hypertension = 4 points minimum plus the AF indication itself), making ischaemic stroke risk substantial if anticoagulation is reversed unnecessarily. CT C-spine is preferred over plain X-ray given age and osteoporosis — odontoid fractures are notoriously missed on plain films in elderly patients. Hip imaging is essential given osteoporosis and hip pain; if X-ray is negative, clinical correlation and potential MRI are warranted. Group and Save ensures preparedness for blood products. Admission is warranted for serial neurological observations (minimum 24 hours), repeat CT head at 24 hours even if initial CT is negative (delayed subdural risk in anticoagulated patients), INR-guided warfarin management, and orthopaedic assessment of hip. Explicit timeline: CT head within 1 hour, INR result within 1 hour, neurological observations every 15 minutes for first 4 hours then every 30 minutes.",
+  "confidence": "HIGH",
+  "processing_time_ms": 8800
+}

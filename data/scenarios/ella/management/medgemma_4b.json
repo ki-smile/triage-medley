@@ -1,0 +1,29 @@
+{
+  "model_id": "medgemma_4b",
+  "investigations": [
+    "Blood cultures (aerobic and anaerobic — BEFORE antibiotics if possible, but do NOT delay antibiotics)",
+    "CBC with differential (assess WBC, neutrophil count, platelet count for DIC screening)",
+    "CRP (inflammatory marker — elevated in bacterial infection)",
+    "Procalcitonin (superior to CRP for distinguishing bacterial vs viral in pediatric fever)",
+    "Blood glucose (hypoglycemia risk in febrile young children with poor oral intake)",
+    "Urinalysis and urine culture (occult UTI screening — standard for febrile child under 5)"
+  ],
+  "imaging": [
+    "Chest X-ray if respiratory symptoms develop or SpO2 deteriorates (currently 96% — monitor closely)"
+  ],
+  "medications": [
+    "IV access — establish immediately (may need IO access if peripheral access fails in shocked child)",
+    "IV normal saline 20 mL/kg bolus if signs of dehydration or hemodynamic compromise (may repeat up to 60 mL/kg in first hour)",
+    "Paracetamol 15 mg/kg PO or PR for fever management (avoid ibuprofen until meningococcal/varicella excluded)",
+    "Empiric IV ceftriaxone 80 mg/kg (max 2g) if meningococcal disease suspected — administer IMMEDIATELY, do not wait for culture results"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Avoid ibuprofen/NSAIDs until varicella and meningococcal disease are excluded (bleeding risk with thrombocytopenia/DIC)",
+    "Avoid lumbar puncture if hemodynamically unstable — treat empirically first",
+    "Salbutamol inhaler (home medication for asthma) — no contraindication but not relevant to current presentation"
+  ],
+  "reasoning": "4-year-old female with fever (39.8°C), acute-onset rash, lethargy, and anorexia. Vital signs show tachycardia (HR 185), borderline hypotension (BP 85/50), and adequate oxygenation (SpO2 96%). The priority is to establish IV access, obtain blood cultures and inflammatory markers, and administer empiric antibiotics if meningococcal disease is clinically suspected based on rash morphology. Procalcitonin is included as it has superior sensitivity and specificity for bacterial infection compared to CRP in pediatric populations. Blood glucose must be checked given poor oral intake and young age. Admission is warranted for observation, serial vital sign monitoring, and repeat clinical assessment. The rash must be re-examined at frequent intervals for evolution.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2500
+}

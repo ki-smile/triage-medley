@@ -1,0 +1,63 @@
+{
+  "model_id": "medgemma_4b",
+  "candidates": [
+    {
+      "diagnosis": "Viral exanthem",
+      "probability": 0.4,
+      "supporting_evidence": [
+        "Most common cause of fever with rash in preschool-age children (accounts for ~70% of cases)",
+        "Acute onset of rash with concurrent fever is classic presentation",
+        "Age 4 is peak incidence for many viral exanthems (roseola, enteroviral, adenoviral)",
+        "Lethargy and anorexia are common with viral febrile illness in young children"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Scarlet fever (Group A Streptococcus)",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "Sandpaper-like rash with fever in preschool-age child is classic presentation",
+        "Peak incidence age 4-8 years",
+        "High fever (39.8\u00b0C) is consistent",
+        "Requires rapid strep test and antibiotic treatment to prevent rheumatic fever"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Meningococcal disease",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Fever with rash and lethargy raises concern for invasive meningococcal infection",
+        "Rapid-onset rash is characteristic \u2014 petechial/purpuric rash can evolve within hours",
+        "Tachycardia (HR 185) and borderline BP (85/50) may indicate early sepsis",
+        "Age under 5 is a high-risk group for meningococcal disease"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Urinary tract infection with viral rash",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "UTI is a common occult source of fever in young children",
+        "Rash may be coincidental viral exanthem with concurrent UTI",
+        "Urinalysis should be performed in all febrile children under 5 without clear source",
+        "Anorexia and lethargy can be presenting signs of UTI in preschool children"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Kawasaki disease",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Fever with rash in child aged 6 months to 5 years is within classic age range",
+        "Requires \u22655 days of fever plus additional criteria (conjunctivitis, oral changes, extremity changes, lymphadenopathy)",
+        "Incomplete Kawasaki should be considered if fever persists beyond 5 days",
+        "Coronary artery aneurysm risk if untreated \u2014 early IVIG is protective"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "4-year-old female with acute fever and rash. The differential is dominated by viral exanthem as the statistically most likely cause. Scarlet fever is second given the age group and presentation. Meningococcal disease must be actively excluded given the combination of fever, rash, lethargy, and borderline vital signs \u2014 this is a don't-miss diagnosis where early recognition is life-saving. UTI should be screened for as an occult fever source. Kawasaki disease is lower probability given the short duration of symptoms but should be reconsidered if fever persists.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2650
+}

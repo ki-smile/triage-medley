@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_4b",
+  "retts_level": "YELLOW",
+  "ess_category": "trauma_fall",
+  "chief_complaint": "Fall with head strike and hip pain in elderly patient on anticoagulation",
+  "clinical_reasoning": "81-year-old female presenting after mechanical fall at home with head strike and hip pain. Vitals are reassuringly stable: HR 78, BP 155/88, RR 18, SpO2 96%, temp 36.8°C, GCS 15 (Alert). No acute vital sign derangement meeting ORANGE or RED RETTS thresholds. Patient is oriented and neurologically intact on initial assessment. However, warfarin use with head injury is a significant concern — anticoagulated patients can develop delayed intracranial hemorrhage hours after apparently minor head trauma. YELLOW is appropriate based on current vitals and presentation, but close monitoring and urgent CT head are recommended given anticoagulation status.",
+  "vital_sign_concerns": ["BP 155/88 — mildly hypertensive, but within patient's likely baseline given known hypertension"],
+  "risk_factors": ["Warfarin anticoagulation", "Osteoporosis — increased fracture risk", "Age 81 — falls with high morbidity", "Atrial fibrillation"],
+  "confidence": "MODERATE",
+  "dont_miss": ["Intracranial hemorrhage", "C-spine injury"],
+  "processing_time_ms": 2100
+}

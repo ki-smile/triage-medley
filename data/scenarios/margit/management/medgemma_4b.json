@@ -1,0 +1,29 @@
+{
+  "model_id": "medgemma_4b",
+  "investigations": [
+    "CT head non-contrast (urgent — anticoagulated patient with head injury)",
+    "INR/PT (critical — determines bleeding risk and need for reversal)",
+    "CBC with differential (baseline haemoglobin, platelet count)",
+    "BMP (electrolytes, creatinine, glucose)",
+    "Blood glucose (point-of-care — rule out hypoglycaemia as fall cause)"
+  ],
+  "imaging": [
+    "CT head non-contrast (urgent within 1 hour — anticoagulated head injury)",
+    "Hip X-ray (AP pelvis and lateral hip — exclude fracture)",
+    "C-spine X-ray if cervical tenderness on palpation"
+  ],
+  "medications": [
+    "Hold warfarin pending CT head result",
+    "Paracetamol 1g oral for pain (hip and head)",
+    "Avoid NSAIDs (warfarin interaction — increased bleeding risk)"
+  ],
+  "disposition": "observation",
+  "contraindications_flagged": [
+    "Avoid NSAIDs — warfarin interaction increases GI and intracranial bleeding risk",
+    "No sedatives — head injury requires serial neurological assessment",
+    "Avoid opioids if possible — altered consciousness assessment in head injury"
+  ],
+  "reasoning": "81-year-old female on warfarin presenting after fall with head strike and hip pain. The immediate priority is CT head to exclude intracranial hemorrhage — anticoagulated patients with head injury require urgent imaging per established guidelines regardless of neurological status. INR is critical to determine current bleeding risk and whether reversal agents may be needed. Warfarin should be held until CT result is available. Hip X-ray is needed to exclude fracture given osteoporosis and hip pain. Pain management with paracetamol is safe; NSAIDs are contraindicated due to warfarin interaction. Observation period with serial neurological assessments (GCS every 15-30 minutes) is appropriate while awaiting imaging results. If CT head shows hemorrhage, escalation to admission and neurosurgical consultation is warranted.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2200
+}

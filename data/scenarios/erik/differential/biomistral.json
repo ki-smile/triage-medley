@@ -1,0 +1,66 @@
+{
+  "model_id": "biomistral",
+  "candidates": [
+    {
+      "diagnosis": "Stanford Type A aortic dissection",
+      "probability": 0.40,
+      "supporting_evidence": [
+        "ALL EVIDENCE CONVERGES: bicuspid aortic valve (9x dissection risk) + dilated aortic root (4.2 cm, likely larger after 3 years without surveillance) + uncontrolled hypertension × 25 years + 40-pack-year smoking history",
+        "Two seemingly unrelated complaints (transient neuro + melena) are CLASSIC malperfusion syndrome: carotid territory (neuro) + mesenteric territory (GI)",
+        "Absence of chest pain is a WELL-DOCUMENTED PITFALL — painless dissection occurs in 5-15% of cases, especially when neurological symptoms dominate the presentation",
+        "BP measured in LEFT ARM ONLY — the single most important screening step (bilateral arm BP) has NOT been performed",
+        "The follow-up echo that was NEVER completed could have detected progressive root dilation or dissection flap formation years ago"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Mesenteric ischaemia from aortic malperfusion",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Melena in the context of suspected aortic dissection strongly suggests mesenteric malperfusion",
+        "Dissection flap extending to involve celiac trunk or superior mesenteric artery compromises bowel perfusion",
+        "Early mesenteric ischaemia presents with dark stools BEFORE frank bowel necrosis and catastrophic deterioration",
+        "Lactate level is CRITICAL — elevated lactate confirms tissue ischaemia and indicates surgical urgency",
+        "If mesenteric malperfusion is confirmed, mortality exceeds 60% without emergent intervention"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Aortic aneurysm rupture (contained)",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Known ascending aortic dilation at 4.2 cm — 3 years without monitoring, current size unknown",
+        "Bicuspid valve aortopathy follows an accelerated growth trajectory compared to tricuspid valve disease",
+        "Contained rupture can present insidiously with compensated haemodynamics before sudden decompensation",
+        "BP 152/88 may represent compensatory hypertension masking ongoing haemorrhage"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Carotid artery dissection",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Transient visual disturbance and confusion are consistent with internal carotid territory ischaemia",
+        "Carotid dissection can occur as extension of Type A aortic dissection or as an isolated event",
+        "Poorly controlled hypertension is a risk factor for spontaneous carotid dissection",
+        "CTA from arch to vertex would simultaneously evaluate both aortic and carotid pathology"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Aortoenteric fistula",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "RARE BUT CATASTROPHIC: aortic aneurysm can erode into adjacent duodenum creating a primary aortoenteric fistula",
+        "Presents with herald GI bleed (melena) before massive exsanguinating haemorrhage",
+        "Known ascending aortic dilation — if descending thoracic or abdominal aorta is also involved, fistula formation is possible",
+        "Endoscopy may reveal pulsatile mass at third portion of duodenum — but CTA is the diagnostic study of choice",
+        "Mortality approaches 100% if not diagnosed before massive haemorrhage"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "DEVIL'S ADVOCATE ASSESSMENT: I deliberately flag ALL FIVE diagnoses as don't-miss because this patient has the highest-risk aortic profile I have seen. A bicuspid aortic valve with known root dilation, LAPSED surveillance, 25 years of uncontrolled hypertension, and a 40-pack-year smoking history — this is a textbook setup for acute aortic catastrophe. The presentation of TWO SEPARATE COMPLAINTS (neuro + GI) that BOTH map onto aortic malperfusion territories is not a coincidence — it is a pattern. The absence of chest pain provides ZERO reassurance: painless dissection is a recognised entity, and neurological malperfusion can dominate the clinical picture, distracting clinicians into pursuing TIA workups while the aorta tears further. The single most important action right now is BILATERAL ARM BP MEASUREMENT. If there is a >20 mmHg differential, this patient needs emergent CTA aorta and cardiothoracic surgery alert. Every minute spent on separate TIA and GI workups is a minute of potentially lethal diagnostic delay.",
+  "confidence": "HIGH",
+  "processing_time_ms": 7200
+}

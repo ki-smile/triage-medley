@@ -1,0 +1,24 @@
+{
+  "model_id": "medgemma_4b",
+  "retts_level": "ORANGE",
+  "ess_category": "pediatric_fever",
+  "chief_complaint": "Pediatric fever with rash in 4-year-old female",
+  "clinical_reasoning": "4-year-old female presenting with fever (39.8°C), rash, lethargy, and reduced oral intake. Heart rate 185 is elevated but can be partially accounted for by high fever in a young child (expected HR increase ~10 bpm per 1°C above 38°C). SpO2 96% is adequate. BP 85/50 is at the lower end of normal for age 4. The combination of fever and rash warrants urgent evaluation but does not yet meet RED criteria based on current vital sign assessment. Differential includes viral exanthem vs bacterial infection. ORANGE — very urgent assessment within 20 minutes.",
+  "vital_sign_concerns": [
+    "HR 185 — significantly elevated, though partly fever-related",
+    "Temperature 39.8°C — high fever",
+    "BP 85/50 — low-normal for age 4",
+    "RR 34 — mildly elevated for age"
+  ],
+  "risk_factors": [
+    "Age 4 — vulnerable to rapid deterioration",
+    "Fever with rash — red-flag combination",
+    "Lethargy and reduced oral intake"
+  ],
+  "confidence": "MODERATE",
+  "dont_miss": [
+    "Meningococcal disease",
+    "Sepsis"
+  ],
+  "processing_time_ms": 2200
+}

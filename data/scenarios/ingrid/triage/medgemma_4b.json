@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_4b",
+  "retts_level": "YELLOW",
+  "ess_category": "neurological",
+  "chief_complaint": "Generalized weakness and dizziness in elderly patient",
+  "clinical_reasoning": "79-year-old female presenting with generalized weakness, dizziness, and fatigue. Near-fall without injury. Vital signs are within normal limits: T 36.4°C, HR 78, BP 118/68, RR 20, SpO2 96%, AVPU Alert. No fever, no tachycardia, no hypotension by standard thresholds. qSOFA score 0/3, SIRS criteria 0/4. Patient is alert and oriented. The presentation is non-specific in an elderly patient — most consistent with dehydration, viral illness, or medication side effects. Immunosuppression noted but no overt signs of infection. YELLOW — urgent but stable, monitor closely.",
+  "vital_sign_concerns": ["RR 20 — upper normal range", "BP 118/68 — low-normal for elderly patient"],
+  "risk_factors": ["Immunosuppression (methotrexate + prednisone)", "Type 2 diabetes", "Recent UTI treatment", "Polypharmacy"],
+  "confidence": "MODERATE",
+  "dont_miss": ["Urosepsis", "Medication toxicity"],
+  "processing_time_ms": 2150
+}

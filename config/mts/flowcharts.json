@@ -1,0 +1,391 @@
+{
+  "meta": {
+    "system": "MTS (Manchester Triage System)",
+    "version": "3.0",
+    "description": "Discriminator-based flowcharts by ESS category. Each flowchart contains an ordered array of discriminators evaluated top-down. The first matching discriminator determines the triage level. If no discriminator matches, the final 'default' entry applies.",
+    "levels": {
+      "RED": { "max_wait_minutes": 0, "retts_equivalent": "Red" },
+      "ORANGE": { "max_wait_minutes": 10, "retts_equivalent": "Orange" },
+      "YELLOW": { "max_wait_minutes": 60, "retts_equivalent": "Yellow" },
+      "GREEN": { "max_wait_minutes": 120, "retts_equivalent": "Green" }
+    }
+  },
+
+  "chest_pain": {
+    "flowchart_name": "Chest Pain",
+    "discriminators": [
+      {
+        "level": "RED",
+        "name": "Airway compromise",
+        "check": { "type": "keyword_match", "keywords": ["stridor", "airway obstruction", "unable to speak"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Inadequate breathing",
+        "check": { "type": "vital_threshold", "vital": "respiratory_rate", "below": 8, "above": 35 },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Shock — circulatory compromise",
+        "check": { "type": "vital_threshold", "vital": "systolic_bp", "below": 70 },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Unresponsive",
+        "check": { "type": "consciousness", "values": ["Unresponsive"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "ORANGE",
+        "name": "Acute-onset severe chest pain",
+        "check": { "type": "keyword_match", "keywords": ["crushing", "tearing", "sudden onset", "radiating to back", "radiating to jaw", "radiating to arm"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Cardiac pain with abnormal pulse",
+        "check": { "type": "vital_threshold", "vital": "heart_rate", "below": 40, "above": 150 },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Hypoxia",
+        "check": { "type": "vital_threshold", "vital": "spo2", "below": 92 },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "YELLOW",
+        "name": "Pleuritic chest pain",
+        "check": { "type": "keyword_match", "keywords": ["pleuritic", "worse on breathing", "sharp on inspiration", "positional chest pain"] },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "YELLOW",
+        "name": "Moderate tachycardia",
+        "check": { "type": "vital_threshold", "vital": "heart_rate", "above": 110 },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "GREEN",
+        "name": "Recent problem — non-acute chest discomfort",
+        "check": { "type": "default" },
+        "max_wait_minutes": 120
+      }
+    ]
+  },
+
+  "pediatric_fever": {
+    "flowchart_name": "Unwell Child / Pediatric Fever",
+    "discriminators": [
+      {
+        "level": "RED",
+        "name": "Unresponsive child",
+        "check": { "type": "consciousness", "values": ["Unresponsive"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Inadequate breathing",
+        "check": { "type": "vital_threshold", "vital": "respiratory_rate", "above": 60 },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Purpura with fever — non-blanching rash",
+        "check": { "type": "keyword_match", "keywords": ["non-blanching rash", "purpura", "petechiae with fever", "meningococcal"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "ORANGE",
+        "name": "Very hot child (>=41C)",
+        "check": { "type": "vital_threshold", "vital": "temperature", "above": 41.0 },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Altered consciousness",
+        "check": { "type": "consciousness", "values": ["Pain", "Voice"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Signs of meningism",
+        "check": { "type": "keyword_match", "keywords": ["neck stiffness", "photophobia", "bulging fontanelle", "meningism"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "YELLOW",
+        "name": "Hot child (>=39C)",
+        "check": { "type": "vital_threshold", "vital": "temperature", "above": 39.0 },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "YELLOW",
+        "name": "Moderate tachycardia for age",
+        "check": { "type": "vital_threshold", "vital": "heart_rate", "above": 160 },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "GREEN",
+        "name": "Warm child — low-grade fever, alert, well-appearing",
+        "check": { "type": "default" },
+        "max_wait_minutes": 120
+      }
+    ]
+  },
+
+  "trauma_fall": {
+    "flowchart_name": "Trauma / Falls",
+    "discriminators": [
+      {
+        "level": "RED",
+        "name": "Airway compromise",
+        "check": { "type": "keyword_match", "keywords": ["airway obstruction", "stridor", "gurgling", "unable to maintain airway"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Unresponsive",
+        "check": { "type": "consciousness", "values": ["Unresponsive"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Exsanguinating haemorrhage",
+        "check": { "type": "keyword_match", "keywords": ["massive bleeding", "exsanguinating", "arterial bleed", "uncontrolled haemorrhage"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Shock — haemodynamic compromise",
+        "check": { "type": "vital_threshold", "vital": "systolic_bp", "below": 80 },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "ORANGE",
+        "name": "Altered consciousness post-trauma",
+        "check": { "type": "consciousness", "values": ["Pain", "Voice"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "High-mechanism injury",
+        "check": { "type": "keyword_match", "keywords": ["high fall", "fall from height", "high-speed", "ejected", "pedestrian struck"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Significant head injury with anticoagulation",
+        "check": { "type": "keyword_match", "keywords": ["head injury on warfarin", "head injury on anticoagulant", "head strike on blood thinner", "head trauma anticoagulated"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "YELLOW",
+        "name": "Deformity or moderate injury",
+        "check": { "type": "keyword_match", "keywords": ["deformity", "possible fracture", "significant swelling", "unable to weight bear", "open wound"] },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "YELLOW",
+        "name": "Mild tachycardia post-trauma",
+        "check": { "type": "vital_threshold", "vital": "heart_rate", "above": 110 },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "GREEN",
+        "name": "Minor injury — alert, stable, low mechanism",
+        "check": { "type": "default" },
+        "max_wait_minutes": 120
+      }
+    ]
+  },
+
+  "abdominal": {
+    "flowchart_name": "Abdominal Pain",
+    "discriminators": [
+      {
+        "level": "RED",
+        "name": "Shock — abdominal catastrophe",
+        "check": { "type": "vital_threshold", "vital": "systolic_bp", "below": 70 },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Unresponsive",
+        "check": { "type": "consciousness", "values": ["Unresponsive"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Abdominal aortic aneurysm rupture signs",
+        "check": { "type": "keyword_match", "keywords": ["pulsatile abdominal mass", "AAA rupture", "abdominal aortic aneurysm", "tearing abdominal pain radiating to back"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "ORANGE",
+        "name": "Signs of peritonism",
+        "check": { "type": "keyword_match", "keywords": ["rigid abdomen", "peritonism", "guarding", "rebound tenderness", "board-like"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Haematemesis or significant GI bleeding",
+        "check": { "type": "keyword_match", "keywords": ["haematemesis", "hematemesis", "vomiting blood", "large volume melena", "coffee ground vomit", "massive rectal bleeding"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Altered consciousness with abdominal pain",
+        "check": { "type": "consciousness", "values": ["Pain", "Voice"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "YELLOW",
+        "name": "Moderate abdominal pain with vomiting",
+        "check": { "type": "keyword_match", "keywords": ["persistent vomiting", "unable to tolerate oral", "colicky pain", "moderate abdominal pain"] },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "YELLOW",
+        "name": "Low-grade fever with abdominal symptoms",
+        "check": { "type": "vital_threshold", "vital": "temperature", "above": 38.5 },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "GREEN",
+        "name": "Mild abdominal discomfort — stable, alert",
+        "check": { "type": "default" },
+        "max_wait_minutes": 120
+      }
+    ]
+  },
+
+  "respiratory": {
+    "flowchart_name": "Shortness of Breath / Respiratory Distress",
+    "discriminators": [
+      {
+        "level": "RED",
+        "name": "Airway compromise",
+        "check": { "type": "keyword_match", "keywords": ["stridor", "complete obstruction", "unable to speak", "choking", "anaphylaxis with airway oedema"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Inadequate breathing — critical hypoxia",
+        "check": { "type": "vital_threshold", "vital": "spo2", "below": 85 },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Respiratory arrest / agonal breathing",
+        "check": { "type": "vital_threshold", "vital": "respiratory_rate", "below": 6 },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Unresponsive",
+        "check": { "type": "consciousness", "values": ["Unresponsive"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "ORANGE",
+        "name": "Severe respiratory distress",
+        "check": { "type": "keyword_match", "keywords": ["unable to complete sentences", "accessory muscle use", "tripod position", "severe wheeze", "silent chest"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Significant hypoxia",
+        "check": { "type": "vital_threshold", "vital": "spo2", "below": 92 },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Tachypnoea with distress",
+        "check": { "type": "vital_threshold", "vital": "respiratory_rate", "above": 30 },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "YELLOW",
+        "name": "Moderate breathlessness",
+        "check": { "type": "keyword_match", "keywords": ["breathless on exertion", "productive cough", "wheeze", "mild dyspnea", "pleuritic pain"] },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "YELLOW",
+        "name": "Mild hypoxia for age",
+        "check": { "type": "vital_threshold", "vital": "spo2", "below": 95 },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "GREEN",
+        "name": "Mild respiratory symptoms — stable, normal saturations",
+        "check": { "type": "default" },
+        "max_wait_minutes": 120
+      }
+    ]
+  },
+
+  "neurological": {
+    "flowchart_name": "Neurological — Headache / Collapse / Focal Deficit",
+    "discriminators": [
+      {
+        "level": "RED",
+        "name": "Unresponsive or currently fitting",
+        "check": { "type": "consciousness", "values": ["Unresponsive"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Active seizure / status epilepticus",
+        "check": { "type": "keyword_match", "keywords": ["status epilepticus", "ongoing seizure", "continuous fitting", "active convulsion"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "RED",
+        "name": "Acute focal neurological deficit — possible stroke",
+        "check": { "type": "keyword_match", "keywords": ["sudden hemiplegia", "acute facial droop", "sudden speech loss", "acute aphasia", "acute limb weakness"] },
+        "max_wait_minutes": 0
+      },
+      {
+        "level": "ORANGE",
+        "name": "Altered consciousness",
+        "check": { "type": "consciousness", "values": ["Pain", "Voice"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Thunderclap headache — sudden severe onset",
+        "check": { "type": "keyword_match", "keywords": ["thunderclap", "worst headache ever", "sudden severe headache", "headache with neck stiffness"] },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "ORANGE",
+        "name": "Hypertensive crisis with neurological symptoms",
+        "check": { "type": "vital_threshold", "vital": "systolic_bp", "above": 220 },
+        "max_wait_minutes": 10
+      },
+      {
+        "level": "YELLOW",
+        "name": "Post-ictal state — resolved seizure",
+        "check": { "type": "keyword_match", "keywords": ["post-ictal", "resolved seizure", "first seizure", "known epilepsy breakthrough"] },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "YELLOW",
+        "name": "Moderate headache with red-flag feature",
+        "check": { "type": "keyword_match", "keywords": ["new headache over 50", "headache with fever", "progressive headache", "headache worse lying down", "headache with visual change"] },
+        "max_wait_minutes": 60
+      },
+      {
+        "level": "GREEN",
+        "name": "Chronic or mild neurological symptom — stable, alert",
+        "check": { "type": "default" },
+        "max_wait_minutes": 120
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_27b",
+  "retts_level": "ORANGE",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Simultaneous transient neurological deficit and melena — aortic pathology must be excluded",
+  "clinical_reasoning": "CRITICAL PATTERN: Simultaneous transient neurological deficit AND melena in a 72-year-old with known bicuspid aortic valve AND dilated ascending aortic root (4.2 cm, 3 years ago, lapsed surveillance). The probability of two simultaneous pathologies (TIA + GI bleed) is low — a UNIFYING DIAGNOSIS must be sought. Aortic dissection extending to carotid (causing transient neurological symptoms via carotid malperfusion) and celiac trunk (causing mesenteric ischaemia presenting as melena) fits perfectly. Pre-test probability for aortic pathology >15x baseline given bicuspid valve + dilation + uncontrolled hypertension x 25 years. BP 152/88 was measured in LEFT ARM ONLY — right arm BP is essential to detect dissection-related differential. HR 98 may represent early haemodynamic compromise. Reclassifying ESS from neurological to chest_pain pathway to ensure aortic imaging is prioritised. ORANGE — very urgent, physician assessment within 20 minutes.",
+  "vital_sign_concerns": ["HR 98 — tachycardic, may indicate haemodynamic compromise or ongoing blood loss", "BP 152/88 measured in LEFT ARM ONLY — bilateral BP measurement critical to detect aortic dissection", "BP appears hypertensive but may be pseudo-normal if right arm pressure is significantly lower (dissection flap)"],
+  "risk_factors": ["Bicuspid aortic valve — 9x increased risk of aortic dissection", "Ascending aortic root dilated to 4.2 cm with LAPSED surveillance (overdue >2 years)", "Uncontrolled hypertension for 25 years (recent readings 148-164 systolic)", "Former 40-pack-year smoker — aortic wall degeneration", "Type 2 diabetes — accelerates vascular disease"],
+  "confidence": "HIGH",
+  "dont_miss": ["Stanford Type A aortic dissection", "Aortic rupture"],
+  "processing_time_ms": 9100
+}

@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_27b",
+  "retts_level": "ORANGE",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Pleuritic chest pain with multiple VTE risk factors — high suspicion for pulmonary embolism",
+  "clinical_reasoning": "PATTERN RECOGNITION: 28-year-old female on drospirenone-containing OCP (highest VTE risk class among combined oral contraceptives, OR 6.3 vs non-use) for 14 months, PLUS 12-hour car drive 5 days ago (prolonged immobilization exceeding 4 hours is an independent VTE risk factor), PLUS family history of DVT in paternal aunt at age 45 (suggests possible inherited thrombophilia such as Factor V Leiden or prothrombin gene mutation), PLUS prior ED visit 3 weeks ago for RIGHT CALF PAIN diagnosed as 'muscle strain' WITHOUT Doppler ultrasound performed — this is a CLASSIC presentation of a MISSED DVT that has now progressed to pulmonary embolism. Today's findings: SpO2 95% is ABNORMAL for a healthy 28-year-old (expected baseline 98-100%, representing a 3-5% drop from normal). HR 102 is NOT anxiety — it is compensatory tachycardia from V/Q mismatch and increased dead-space ventilation. Low-grade fever 37.2\u00b0C is consistent with pulmonary infarction. Pain reproducible on palpation does NOT exclude PE — published evidence shows chest wall tenderness in 19.9% of PE patients vs 23.8% of non-PE patients (p=0.25, no significant difference). The multiplicative VTE risk from OCP + immobilization + family history exceeds 30\u00d7 baseline. ORANGE — very urgent, physician assessment within 20 minutes, STAT imaging.",
+  "vital_sign_concerns": ["SpO2 95% — ABNORMAL for a 28-year-old (expected 98-100%), represents significant A-a gradient widening", "HR 102 — compensatory tachycardia from V/Q mismatch, NOT anxiety", "Temperature 37.2\u00b0C — consistent with pulmonary infarction", "RR 20 — upper normal, compensatory tachypnea"],
+  "risk_factors": ["Drospirenone OCP \u00d7 14 months (highest VTE risk class, OR 6.3 vs non-use)", "12-hour car drive 5 days ago (prolonged immobilization)", "Family history DVT — paternal aunt at age 45 (suggests inherited thrombophilia)", "Prior ED visit 3 weeks ago: right calf pain diagnosed as muscle strain WITHOUT Doppler", "Sedentary occupation", "BMI 26.8 (overweight — additional VTE risk factor)"],
+  "confidence": "HIGH",
+  "dont_miss": ["Bilateral pulmonary embolism", "Saddle embolus with right ventricular strain"],
+  "processing_time_ms": 9100
+}

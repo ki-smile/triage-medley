@@ -1,0 +1,40 @@
+{
+  "model_id": "medgemma_27b",
+  "investigations": [
+    "STAT lactate (CRITICAL — occult hypoperfusion from early sepsis; normal lactate does NOT exclude sepsis but elevated lactate confirms tissue hypoperfusion)",
+    "Blood cultures x2 BEFORE antibiotics (essential for targeted therapy — resistant organism expected)",
+    "CBC with differential (URGENT — leukopenia from methotrexate + TMP-SMX folate antagonism? Neutrophil count determines infection-fighting capacity)",
+    "CMP (electrolytes, creatinine, glucose, eGFR — renal function critical for drug dosing and contrast decisions)",
+    "Urinalysis + urine culture with extended sensitivity panel (include ESBL screen)",
+    "Procalcitonin (bacterial sepsis marker — more specific than CRP in immunosuppressed patients)",
+    "CRP (baseline inflammatory marker — may be blunted by prednisone)",
+    "Cortisol level (random — assess adrenal reserve in chronic prednisone patient; cortisol <15 mcg/dL during illness suggests adrenal insufficiency)",
+    "Venous blood gas (acid-base status, lactate confirmation, glucose)",
+    "Point-of-care glucose (screen for steroid-induced hyperglycaemia or hypoglycaemia)"
+  ],
+  "imaging": [
+    "Chest X-ray (screen for pneumonia — immunosuppressed patients at risk for atypical infections)",
+    "CT abdomen/pelvis with contrast if clinical deterioration or lactate elevated (assess for renal abscess, pyelonephritis, urinary obstruction)"
+  ],
+  "medications": [
+    "Empiric piperacillin-tazobactam 4.5 g IV q8h (broad ESBL coverage — first-line for suspected urosepsis with resistant organism; do NOT use TMP-SMX or fluoroquinolones)",
+    "Stress-dose hydrocortisone 100 mg IV STAT (adrenal coverage — patient on chronic prednisone 7.5 mg daily cannot mount adequate cortisol response to sepsis; continue 50 mg IV q8h until stable)",
+    "IV fluid resuscitation: 30 mL/kg crystalloid (balanced crystalloid preferred over NS) — ~1860 mL for 62 kg patient. Administer in 500 mL boluses with reassessment after each",
+    "HOLD methotrexate immediately — risk of fatal pancytopenia from TMP-SMX interaction; do not restart until haematology clearance",
+    "Continue metoprolol 50 mg BID — do NOT abruptly discontinue beta-blocker (rebound tachycardia and hypertensive crisis risk); be aware HR will not reflect true sepsis severity",
+    "Continue metformin ONLY if eGFR >30 and lactate normal — hold if any concern for tissue hypoperfusion (lactic acidosis risk)",
+    "Paracetamol 1 g q6h PRN for discomfort (avoid NSAIDs — documented allergy)"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Avoid TMP-SMX — (1) likely resistant E. coli, (2) DANGEROUS folate antagonism potentiation with methotrexate causing pancytopenia",
+    "Avoid fluoroquinolones — documented quinolone resistance on prior culture",
+    "Avoid NSAIDs — documented allergy (severe GI bleeding)",
+    "Avoid metformin if eGFR <30 or elevated lactate — lactic acidosis risk",
+    "Caution with IV contrast — check eGFR first; if eGFR 30-60, pre-hydrate with crystalloid",
+    "Do NOT abruptly stop metoprolol — rebound sympathetic surge can precipitate cardiovascular crisis"
+  ],
+  "reasoning": "This case demands aggressive early intervention despite reassuring-appearing vital signs. The management plan addresses three simultaneous threats: (1) UROSEPSIS — piperacillin-tazobactam provides ESBL coverage for suspected resistant E. coli; blood cultures BEFORE antibiotics are non-negotiable for guiding de-escalation. (2) ADRENAL INSUFFICIENCY — chronic prednisone 7.5 mg daily suppresses the HPA axis; under septic stress, endogenous cortisol production is insufficient. Stress-dose hydrocortisone is both therapeutic and potentially life-saving. (3) IATROGENIC PANCYTOPENIA — TMP-SMX + methotrexate folate antagonism may have caused bone marrow suppression developing over the past 6 days. Methotrexate must be held immediately and CBC is the single most important lab result. IV fluid resuscitation is guided by the 30-point systolic BP drop from baseline — this patient IS in early distributive shock by relative standards, even though absolute BP appears normal. The disposition is admission with ICU escalation criteria: if lactate >4 mmol/L, WBC <1.0, or any hemodynamic deterioration despite fluid resuscitation. Serial lactate trending every 2-4 hours is essential to assess response to therapy.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9800
+}

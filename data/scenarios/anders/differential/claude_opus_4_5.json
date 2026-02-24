@@ -1,0 +1,65 @@
+{
+  "model_id": "medgemma_27b",
+  "candidates": [
+    {
+      "diagnosis": "Acute decompensated heart failure",
+      "probability": 0.35,
+      "supporting_evidence": [
+        "Established CHF with chronic atrial fibrillation \u2014 high baseline risk for decompensation",
+        "Chest tightness may represent increased pulmonary congestion or fluid overload",
+        "Type 2 diabetes contributes to progressive cardiomyopathy and diastolic dysfunction",
+        "Beta-blocker therapy (commonly prescribed in CHF/AF) may mask tachycardia, delaying recognition of decompensation",
+        "Warfarin use confirms long-standing AF \u2014 rate vs rhythm control strategy should be assessed"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Acute coronary syndrome / NSTEMI",
+      "probability": 0.3,
+      "supporting_evidence": [
+        "Chest tightness in a 68-year-old male with DM2 is ACS until proven otherwise",
+        "Diabetic patients frequently present with atypical ACS symptoms \u2014 tightness rather than sharp pain",
+        "Beta-blocker use may blunt the typical tachycardic response to ischaemia, masking severity",
+        "Serial troponins and 12-lead ECG are essential for risk stratification",
+        "AF increases myocardial oxygen demand, potentially unmasking underlying coronary disease"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Atrial fibrillation and heart failure both contribute to Virchow's triad (stasis)",
+        "Warfarin adherence and INR level must be confirmed \u2014 subtherapeutic anticoagulation is common",
+        "Chest tightness with underlying cardiopulmonary disease makes PE easy to miss",
+        "Wells score should be calculated \u2014 likely intermediate pre-test probability"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Community-acquired pneumonia",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Elderly patients with CHF and DM2 are immunocompromised and prone to atypical pneumonia",
+        "Pulmonary congestion from CHF can mask early pneumonia on auscultation",
+        "Chest tightness may represent pleuritic component rather than cardiac symptom",
+        "Fever may be absent in elderly or diabetic patients with infection"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pericarditis",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Chest tightness can be a presenting symptom of acute pericarditis",
+        "Warfarin anticoagulation increases risk of hemorrhagic pericardial effusion",
+        "ECG changes from pericarditis can be obscured by AF baseline rhythm",
+        "Less common but must be considered given anticoagulation status"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "This 68-year-old male presents a high-acuity differential dominated by ADHF and ACS. A critical clinical consideration is that beta-blocker therapy \u2014 standard in both CHF and AF rate control \u2014 may mask compensatory tachycardia in both decompensated heart failure and acute coronary syndromes. This means vital signs alone may underestimate severity. The patient's diabetic neuropathy further complicates presentation, as DM2 patients are known to have atypical or silent ischaemia. Warfarin status is pivotal: therapeutic INR reduces PE/stroke risk but introduces bleeding and pericardial complications. Serial troponins, BNP/NT-proBNP, INR, chest X-ray, and 12-lead ECG should be obtained urgently.",
+  "confidence": "HIGH",
+  "processing_time_ms": 8932
+}

@@ -1,0 +1,62 @@
+{
+  "model_id": "medgemma_4b",
+  "candidates": [
+    {
+      "diagnosis": "Dehydration / hypovolemia",
+      "probability": 0.30,
+      "supporting_evidence": [
+        "Elderly patient with weakness and dizziness — dehydration is the most common cause",
+        "BP 118/68 is low-normal and consistent with mild volume depletion",
+        "Metformin and recent antibiotic course may both contribute to reduced oral intake",
+        "Near-fall is consistent with orthostatic symptoms from hypovolemia"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Orthostatic hypotension",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Dizziness and near-fall on standing from bed — classic orthostatic presentation",
+        "Metoprolol may blunt compensatory heart rate response to postural change",
+        "Age 79 with autonomic dysfunction risk from diabetes",
+        "BP 118/68 suggests limited cardiovascular reserve"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Urosepsis",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Recent UTI treatment 6 days ago — possible treatment failure",
+        "Immunosuppressed on methotrexate + prednisone — impaired infection response",
+        "E. coli with quinolone resistance — may also be resistant to TMP-SMX",
+        "Vague symptoms (weakness, fatigue) can be the only presentation of sepsis in elderly"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Medication side effects — methotrexate toxicity",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Methotrexate can cause fatigue, weakness, and bone marrow suppression",
+        "Concurrent TMP-SMX increases methotrexate toxicity via reduced renal clearance",
+        "Drug interaction between TMP-SMX and methotrexate is well-documented and potentially fatal",
+        "CBC with differential needed to assess for pancytopenia"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Viral illness",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Non-specific symptoms of weakness and fatigue common in viral infections",
+        "Immunosuppressed patients are more susceptible to viral illness",
+        "Diagnosis of exclusion after ruling out more serious causes"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "79-year-old female on immunosuppressive therapy presenting with non-specific weakness and dizziness. The differential is broad given the vague presentation. Dehydration and orthostatic hypotension are statistically most likely in this age group. However, urosepsis must be considered given the recent UTI treatment and immunosuppression — this is flagged as a don't-miss diagnosis. Methotrexate toxicity is particularly relevant given the concurrent TMP-SMX course, which is a known dangerous drug interaction. Vital signs are normal, which makes an acute infectious process less likely but does not exclude it in an immunosuppressed patient.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2640
+}

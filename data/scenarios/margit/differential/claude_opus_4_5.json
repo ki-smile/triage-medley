@@ -1,0 +1,67 @@
+{
+  "model_id": "medgemma_27b",
+  "candidates": [
+    {
+      "diagnosis": "Mechanical fall with head injury",
+      "probability": 0.3,
+      "supporting_evidence": [
+        "Clear history of mechanical fall at home \u2014 fell and hit head on floor",
+        "Age 81 with osteoporosis and hypertension \u2014 high baseline fall risk",
+        "Multiple medications including enalapril (orthostatic risk) and warfarin (balance impairment not expected but polypharmacy contributes to fall risk)",
+        "Stable vital signs and GCS 15 support uncomplicated mechanical fall as most likely primary event"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Subdural hematoma",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Head strike + warfarin anticoagulation is the classic high-risk combination for subdural hematoma",
+        "Age-related cerebral atrophy stretches bridging veins, increasing vulnerability to shearing forces",
+        "Subdural hematoma classically presents with lucid interval \u2014 patient may appear well initially before deteriorating",
+        "Dizziness may be an early sign of developing intracranial pathology",
+        "NICE CG176: all patients on anticoagulants with head injury require CT head within 1 hour regardless of GCS"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Hip fracture",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "81-year-old female with osteoporosis reporting hip pain after fall \u2014 textbook presentation",
+        "Hip fracture incidence peaks in women aged 80-85 with osteoporosis",
+        "Low-energy fall in osteoporotic bone is sufficient mechanism",
+        "Occult hip fractures may have normal initial X-rays \u2014 MRI sensitivity is >99%",
+        "Warfarin complicates surgical management if fracture requires fixation"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Pre-syncopal fall secondary to cardiac arrhythmia",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Known atrial fibrillation \u2014 paroxysmal AF can cause transient cerebral hypoperfusion",
+        "Dizziness could represent the pre-syncopal event that caused the fall rather than a consequence of it",
+        "Enalapril can potentiate orthostatic hypotension, particularly in elderly with reduced baroreceptor sensitivity",
+        "Must perform ECG to assess current rhythm and consider Holter monitoring",
+        "If syncope caused the fall, recurrence risk is high and requires separate management"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "C-spine fracture",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Head strike mechanism involves cervical spine axial loading and potential hyperextension",
+        "Osteoporosis reduces bone density throughout the spine including cervical vertebrae",
+        "Canadian C-spine Rule mandates imaging: age >65, dangerous mechanism",
+        "Elderly patients may have limited range of motion at baseline, masking acute cervical injury",
+        "Concurrent anticoagulation increases risk of epidural hematoma if spinal fracture present"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "This 81-year-old anticoagulated female with osteoporosis presenting after a fall with head strike represents a complex trauma assessment. While simple mechanical fall is statistically most likely, the clinical priority is driven by the high-consequence don't-miss diagnoses. Subdural hematoma ranks second at 0.25 probability \u2014 not because it is the most likely diagnosis, but because the combination of warfarin anticoagulation and head trauma creates a well-documented high-risk scenario where delayed diagnosis is frequently fatal. The lucid interval phenomenon means current GCS 15 provides no reassurance. Hip fracture at 0.20 is highly plausible given the demographics and must be systematically excluded including with MRI if X-rays are negative and clinical suspicion persists. Cardiac syncope as the underlying cause of the fall must be explored \u2014 the distinction between 'fall causing dizziness' and 'dizziness causing fall' has fundamental implications for management and recurrence prevention. C-spine fracture is a don't-miss given mechanism, age, and osteoporosis.",
+  "confidence": "HIGH",
+  "processing_time_ms": 8900
+}

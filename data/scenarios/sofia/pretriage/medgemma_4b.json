@@ -1,0 +1,13 @@
+{
+  "model_id": "medgemma_4b",
+  "queue_priority": "STANDARD",
+  "chief_complaint": "Pleuritic chest pain, possibly musculoskeletal",
+  "reasoning": "28-year-old female presenting with chest pain that started two days ago after physical exertion (helping friend move). Pain worsens with deep breathing. Self-medicated with ibuprofen with partial relief. No significant chronic medical history. Young age and musculoskeletal mechanism suggest lower acuity. However, EHR shows OCP use (drospirenone/ethinylestradiol) and a prior ED visit 3 weeks ago for right calf pain — these are noted but do not independently escalate queue priority from speech alone.",
+  "ess_category_hint": "chest_pain",
+  "risk_amplifiers_detected": [
+    "Combined oral contraceptive use (drospirenone — highest VTE risk class)",
+    "Prior ED visit 3 weeks ago for right calf pain (diagnosed as muscle strain, no Doppler performed)"
+  ],
+  "confidence": "MODERATE",
+  "processing_time_ms": 1620
+}

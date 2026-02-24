@@ -1,0 +1,63 @@
+{
+  "model_id": "medgemma_4b",
+  "candidates": [
+    {
+      "diagnosis": "Simple mechanical fall",
+      "probability": 0.4,
+      "supporting_evidence": [
+        "81-year-old female with fall at home \u2014 most common presentation in this age group",
+        "Osteoporosis and age are primary risk factors for falls",
+        "Vital signs stable with no acute derangement",
+        "Mechanism described (fell and hit head on floor) consistent with simple mechanical fall"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Hip contusion or occult hip fracture",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Patient reports hip pain after fall",
+        "Osteoporosis significantly increases fracture risk from low-energy mechanisms",
+        "Occult hip fractures may not be evident on initial X-ray \u2014 MRI may be required",
+        "81-year-old female with osteoporosis is the textbook demographic for hip fracture"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Intracranial hemorrhage",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Head strike on floor in patient on warfarin anticoagulation",
+        "Warfarin-associated intracranial hemorrhage has 40-60% mortality",
+        "Patient reports dizziness which may be early neurological sign",
+        "Age-related cerebral atrophy increases subdural hematoma risk"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Syncope-related fall",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Dizziness reported \u2014 may indicate pre-syncopal episode rather than post-traumatic symptom",
+        "Atrial fibrillation can cause intermittent cerebral hypoperfusion",
+        "Enalapril may contribute to orthostatic hypotension in elderly",
+        "Must distinguish between fall causing dizziness vs dizziness causing fall"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "C-spine injury",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Head strike mechanism implies cervical spine loading",
+        "Osteoporosis increases risk of vertebral fracture from minor trauma",
+        "Elderly patients may have pre-existing cervical spondylosis masking acute injury",
+        "Canadian C-spine Rule: age >65 is a high-risk criterion"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "81-year-old female with osteoporosis and atrial fibrillation on warfarin presenting after a fall with head strike and hip pain. Simple mechanical fall is most likely given the mechanism and age group. Hip contusion or occult fracture is significant given osteoporosis. Intracranial hemorrhage is flagged as a don't-miss given warfarin use \u2014 the combination of anticoagulation and head trauma demands CT imaging regardless of clinical presentation. Syncope must be considered as the cause rather than consequence of the fall. C-spine injury is a don't-miss given the mechanism and osteoporosis.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2650
+}

@@ -1,0 +1,110 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "margit",
+        "name": [{"family": "Eriksson", "given": ["Margit"]}],
+        "gender": "female",
+        "birthDate": "1944-09-21"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-1",
+        "subject": {"reference": "Patient/margit"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "64859006", "display": "Osteoporosis"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2016-07-14"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-2",
+        "subject": {"reference": "Patient/margit"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "38341003", "display": "Hypertension"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2010-03-05"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-3",
+        "subject": {"reference": "Patient/margit"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "49436004", "display": "Atrial fibrillation"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2018-11-22"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-1",
+        "subject": {"reference": "Patient/margit"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "B01AA03", "display": "Warfarin"}]
+        },
+        "dosage": [{"text": "2.5 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-2",
+        "subject": {"reference": "Patient/margit"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "C09AA02", "display": "Enalapril"}]
+        },
+        "dosage": [{"text": "5 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-3",
+        "subject": {"reference": "Patient/margit"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "A11CC05", "display": "Cholecalciferol (Vitamin D)"}]
+        },
+        "dosage": [{"text": "800 IU daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-4",
+        "subject": {"reference": "Patient/margit"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "A12AA04", "display": "Calcium carbonate"}]
+        },
+        "dosage": [{"text": "500 mg twice daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-1",
+        "patient": {"reference": "Patient/margit"},
+        "code": {
+          "coding": [{"display": "Sulfonamides"}]
+        },
+        "reaction": [{"manifestation": [{"coding": [{"display": "Rash"}]}], "severity": "mild"}]
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "model_id": "qwen_med",
+  "retts_level": "ORANGE",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Chest tightness with dyspnea since morning",
+  "clinical_reasoning": "Patient presents with chest tightness and difficulty breathing. History of heart failure, atrial fibrillation, and type 2 diabetes. Currently on anticoagulation (warfarin). Vital signs show borderline SpO2 (94%) and mild tachycardia. Given cardiac history and acute presentation, ORANGE triage level is appropriate.",
+  "vital_sign_concerns": ["SpO2 94% — warrants monitoring", "Mildly elevated HR at 92 bpm"],
+  "risk_factors": ["Heart failure history", "Atrial fibrillation", "Type 2 diabetes mellitus"],
+  "confidence": "MODERATE",
+  "dont_miss": ["ACS", "PE", "CHF exacerbation"],
+  "processing_time_ms": 6100
+}

@@ -1,0 +1,65 @@
+{
+  "model_id": "medgemma_4b",
+  "candidates": [
+    {
+      "diagnosis": "Musculoskeletal chest wall strain",
+      "probability": 0.40,
+      "supporting_evidence": [
+        "Clear mechanical trigger — helped friend move apartments 2 days ago",
+        "Pain reproducible on palpation of chest wall",
+        "Partial relief with ibuprofen consistent with inflammatory/musculoskeletal process",
+        "Young patient with no prior cardiac history",
+        "Timeline consistent with delayed-onset muscle soreness (DOMS)"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Costochondritis",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Chest wall tenderness with pleuritic component",
+        "Common in young adults after physical exertion",
+        "Pain reproducible on palpation — classic finding",
+        "Partial NSAID response supports inflammatory etiology"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "probability": 0.20,
+      "supporting_evidence": [
+        "Patient on drospirenone-containing OCP — known VTE risk factor",
+        "Pleuritic nature of chest pain is consistent with PE",
+        "SpO2 95% slightly lower than expected for age",
+        "HR 102 — tachycardia could indicate underlying cardiopulmonary process",
+        "Prior ED visit for right calf pain — possible undiagnosed DVT"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Pleurisy / viral pleuritis",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Pleuritic chest pain is the hallmark symptom",
+        "Low-grade fever 37.2\u00b0C could suggest viral etiology",
+        "Young patient — viral pleurisy is common in this age group",
+        "Self-limiting condition but must exclude PE first"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Anxiety-related chest pain",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Young female presenting with chest pain — anxiety is statistically common",
+        "Tachycardia could reflect anxiety component",
+        "Diagnosis of exclusion after ruling out organic causes",
+        "Night-time awakening can occur with anxiety"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "28-year-old female with pleuritic chest pain after physical exertion. The reproducible chest wall tenderness and clear mechanical trigger make musculoskeletal strain the most likely diagnosis. However, the combination of OCP use and pleuritic pain mandates consideration of PE, which is flagged as a don't-miss diagnosis. SpO2 at 95% and tachycardia at 102 add mild concern. The prior ED visit for calf pain is noted as a potential precursor to DVT-related PE. D-dimer screening is recommended to exclude PE before attributing symptoms purely to musculoskeletal cause.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2780
+}

@@ -1,0 +1,12 @@
+{
+  "model_id": "qwen_med",
+  "retts_level": "YELLOW",
+  "ess_category": "trauma_fall",
+  "chief_complaint": "Fall at home with head injury and hip pain",
+  "clinical_reasoning": "Elderly female presenting after fall at home with head contact on floor. Reports hip pain and dizziness. Vital signs are stable and within normal limits for age. Heart rate 78, blood pressure 155/88 (patient has known hypertension), respiratory rate 18, SpO2 96%, temperature 36.8°C, consciousness level Alert. Standard trauma assessment pathway. No immediate red flags in vital signs. YELLOW triage level appropriate for stable trauma with monitoring.",
+  "vital_sign_concerns": ["BP mildly elevated at 155/88 — known hypertension"],
+  "risk_factors": ["Age 81", "Osteoporosis", "Atrial fibrillation on warfarin"],
+  "confidence": "MODERATE",
+  "dont_miss": ["Intracranial hemorrhage", "Hip fracture"],
+  "processing_time_ms": 5900
+}

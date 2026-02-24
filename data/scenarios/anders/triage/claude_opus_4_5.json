@@ -1,0 +1,12 @@
+{
+  "model_id": "medgemma_27b",
+  "retts_level": "ORANGE",
+  "ess_category": "chest_pain",
+  "chief_complaint": "Acute chest tightness with exertional dyspnea",
+  "clinical_reasoning": "This 68-year-old male presents with chest tightness and dyspnea onset this morning. His significant cardiac history (CHF, AF) and current medications (warfarin, metoprolol, enalapril, furosemide) suggest decompensation as the most likely etiology. SpO2 at 94% indicates early hypoxemia. While vitals are not critically deranged, the clinical picture in the context of his comorbidities mandates urgent evaluation. ECG and troponin should be obtained within 20 minutes. RETTS ESS-06 chest pain pathway: ongoing chest pain with cardiac history → ORANGE.",
+  "vital_sign_concerns": ["SpO2 94% — below normal threshold, concerning with cardiac history", "RR 20 — upper normal, may indicate compensatory tachypnea", "HR 92 — tachycardic relative to beta-blocker therapy (metoprolol)"],
+  "risk_factors": ["Heart failure (I50)", "Atrial fibrillation — embolic risk", "Diabetes — atypical ACS presentation possible", "Warfarin therapy — bleeding considerations", "ACE inhibitor + loop diuretic — electrolyte sensitivity"],
+  "confidence": "HIGH",
+  "dont_miss": ["NSTEMI/ACS", "Pulmonary embolism", "Acute decompensated heart failure", "Aortic dissection"],
+  "processing_time_ms": 8400
+}

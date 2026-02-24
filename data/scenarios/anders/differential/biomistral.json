@@ -1,0 +1,64 @@
+{
+  "model_id": "biomistral",
+  "candidates": [
+    {
+      "diagnosis": "Acute coronary syndrome / NSTEMI",
+      "probability": 0.3,
+      "supporting_evidence": [
+        "Chest tightness in a 68-year-old male with DM2 must be treated as ACS until definitively excluded",
+        "Silent or atypical MI is present in up to 40% of diabetic patients \u2014 symptom severity does not correlate with ischaemia severity",
+        "Known CHF may already have reduced coronary reserve, making even minor plaque events clinically significant",
+        "Warfarin does not protect against arterial coronary thrombosis \u2014 antiplatelet therapy is the relevant intervention"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Acute decompensated heart failure",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Established CHF with multiple decompensation triggers present (AF, DM2)",
+        "However, chest tightness as the primary complaint is less typical for pure decompensation \u2014 dyspnea and oedema are more classic",
+        "Could represent ACS-triggered decompensation rather than primary CHF exacerbation"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "PE is the great mimicker \u2014 chest tightness, dyspnea, and tachycardia overlap with CHF and ACS",
+        "Even patients on warfarin can develop PE if INR is subtherapeutic \u2014 up to 30% of warfarin patients have out-of-range INR at any given time",
+        "Heart failure and reduced mobility create a prothrombotic state independent of AF",
+        "CTPA should have a low threshold given anticoagulation status creates false sense of security"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Acute aortic dissection",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "CRITICAL: anticoagulation with warfarin makes aortic dissection rapidly lethal",
+        "Type A dissection can present as chest tightness without classic tearing pain in 6-15% of cases",
+        "Hypertension from DM2-related vascular disease is the primary risk factor",
+        "Must be excluded BEFORE administering heparin or antiplatelet agents for presumed ACS",
+        "Blood pressure measurement in both arms is a simple screening step"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Pericardial tamponade",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Warfarin anticoagulation predisposes to hemorrhagic pericardial effusion",
+        "Can develop insidiously in patients with chronic heart disease",
+        "Beck's triad (hypotension, muffled heart sounds, JVD) may be masked by baseline CHF findings",
+        "Echocardiography should be performed if haemodynamic compromise is present",
+        "Missed tamponade in an anticoagulated patient has near-100% mortality without intervention"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "DEVIL'S ADVOCATE ASSESSMENT: While the consensus favours ADHF as the leading diagnosis, I deliberately weight ACS higher and elevate three critical don't-miss diagnoses. The rationale is simple: in a 68-year-old anticoagulated male, the consequences of missing ACS, PE, aortic dissection, or tamponade are catastrophic and irreversible, while ADHF \u2014 though more probable \u2014 is more forgiving of a brief diagnostic delay. Warfarin is the key complicating factor: it provides false reassurance against embolic events while simultaneously making aortic dissection and tamponade far more dangerous. The clinical priority should be to EXCLUDE the life-threatening diagnoses before settling on the most likely one. Bilateral arm BP, urgent ECG, troponins, INR, bedside echo, and low-threshold CTPA are all indicated.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 6478
+}

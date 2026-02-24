@@ -1,0 +1,247 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "erik",
+        "name": [{"family": "Bergström", "given": ["Erik"]}],
+        "gender": "male",
+        "birthDate": "1953-11-08"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-1",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "38341003", "display": "Hypertension"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2001-03-15",
+        "note": [{"text": "Poorly controlled. Recent readings: 158/92, 164/96, 148/88."}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-2",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "63247009", "display": "Bicuspid aortic valve"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2018-04-22",
+        "note": [{"text": "Diagnosed on echocardiography 2018."}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-3",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "67362008", "display": "Aortic root dilation"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2023-02-10",
+        "note": [{"text": "Ascending aortic root measured at 4.2 cm. Cardiology recommended follow-up echo in 1 year — NEVER completed."}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-4",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "44054006", "display": "Diabetes mellitus type 2"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "active"}]},
+        "onsetDateTime": "2016-09-05"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-5",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://snomed.info/sct", "code": "8517006", "display": "Former smoker"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "inactive"}]},
+        "note": [{"text": "40 pack-year smoking history. Quit approximately 5 years ago."}]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-1",
+        "subject": {"reference": "Patient/erik"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "C08CA01", "display": "Amlodipine"}]
+        },
+        "dosage": [{"text": "10 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-2",
+        "subject": {"reference": "Patient/erik"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "A10BA02", "display": "Metformin"}]
+        },
+        "dosage": [{"text": "1000 mg twice daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-3",
+        "subject": {"reference": "Patient/erik"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "C10AA05", "display": "Atorvastatin"}]
+        },
+        "dosage": [{"text": "40 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-4",
+        "subject": {"reference": "Patient/erik"},
+        "medicationCodeableConcept": {
+          "coding": [{"system": "http://www.whocc.no/atc", "code": "B01AC06", "display": "Aspirin"}]
+        },
+        "dosage": [{"text": "75 mg daily"}],
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-1",
+        "patient": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"display": "No known allergies"}]
+        },
+        "clinicalStatus": {"coding": [{"code": "inactive"}]},
+        "verificationStatus": {"coding": [{"code": "confirmed"}]},
+        "type": "allergy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-1",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]
+        },
+        "effectiveDateTime": "2025-08-14",
+        "component": [
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]},
+            "valueQuantity": {"value": 158, "unit": "mmHg"}
+          },
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]},
+            "valueQuantity": {"value": 92, "unit": "mmHg"}
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-2",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]
+        },
+        "effectiveDateTime": "2025-11-20",
+        "component": [
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]},
+            "valueQuantity": {"value": 164, "unit": "mmHg"}
+          },
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]},
+            "valueQuantity": {"value": 96, "unit": "mmHg"}
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-bp-3",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://loinc.org", "code": "85354-9", "display": "Blood pressure panel"}]
+        },
+        "effectiveDateTime": "2026-01-10",
+        "component": [
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure"}]},
+            "valueQuantity": {"value": 148, "unit": "mmHg"}
+          },
+          {
+            "code": {"coding": [{"system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure"}]},
+            "valueQuantity": {"value": 88, "unit": "mmHg"}
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "echo-2018",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://loinc.org", "code": "34552-0", "display": "Echocardiography report"}]
+        },
+        "effectiveDateTime": "2018-04-22",
+        "conclusion": "Bicuspid aortic valve identified. Mild aortic regurgitation. Ascending aortic root 3.8 cm. LV function preserved (EF 55%)."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "echo-2023",
+        "subject": {"reference": "Patient/erik"},
+        "code": {
+          "coding": [{"system": "http://loinc.org", "code": "34552-0", "display": "Echocardiography report"}]
+        },
+        "effectiveDateTime": "2023-02-10",
+        "conclusion": "Bicuspid aortic valve with moderate aortic regurgitation (progression from mild). Ascending aortic root dilated to 4.2 cm (previously 3.8 cm in 2018 — interval growth 0.4 cm over 5 years). LV function preserved (EF 52%). RECOMMENDATION: Follow-up echocardiography in 12 months to monitor aortic root growth rate. Refer to cardiothoracic surgery if root exceeds 4.5 cm or growth rate exceeds 0.5 cm/year."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-echo-followup",
+        "subject": {"reference": "Patient/erik"},
+        "status": "active",
+        "intent": "plan",
+        "title": "Aortic root surveillance echocardiography",
+        "period": {"start": "2023-02-10", "end": "2024-02-10"},
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up echocardiography to monitor ascending aortic root dilation (currently 4.2 cm). Due by February 2024.",
+              "status": "not-started",
+              "scheduledPeriod": {"start": "2024-01-01", "end": "2024-02-28"}
+            }
+          }
+        ],
+        "note": [{"text": "OVERDUE: Follow-up echo was due by February 2024. Patient has not attended. Last contact regarding this: appointment letter sent March 2024, no response."}]
+      }
+    }
+  ]
+}

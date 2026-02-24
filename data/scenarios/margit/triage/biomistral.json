@@ -1,0 +1,12 @@
+{
+  "model_id": "biomistral",
+  "retts_level": "ORANGE",
+  "ess_category": "trauma_fall",
+  "chief_complaint": "Head trauma in anticoagulated elderly patient",
+  "clinical_reasoning": "CRITICAL FLAG: 81F on warfarin with head strike. ANY head injury on anticoagulation = immediate CT head regardless of GCS. Risk of delayed subdural hematoma is significant. Osteoporosis increases fracture risk. Hip pain may indicate occult fracture. Dizziness could be early sign of intracranial pressure. The stable vital signs are deceptive in this clinical context — anticoagulated elderly patients with head injury can maintain normal GCS and vitals for hours before catastrophic deterioration from expanding subdural hematoma. Age-related cerebral atrophy stretches bridging veins, making them exceptionally vulnerable to shearing forces even from minor mechanisms. Warfarin prolongs bleeding once it starts. This patient needs ORANGE prioritisation: CT head within 1 hour, urgent INR, and neurological observations every 15 minutes. Vitamin K and prothrombin complex concentrate should be available if INR is supratherapeutic.",
+  "vital_sign_concerns": ["BP 155/88 — hypertension increases haemorrhagic risk post head trauma", "Dizziness reported — potential early neurological sign not captured in standard vital parameters", "Normal vitals do NOT exclude intracranial pathology in anticoagulated patients"],
+  "risk_factors": ["Warfarin anticoagulation — the critical risk factor", "Age 81 — bridging vein vulnerability", "Osteoporosis — fracture risk from minor mechanism", "Hypertension — compounds bleeding risk", "Atrial fibrillation — cannot simply stop warfarin without stroke risk"],
+  "confidence": "HIGH",
+  "dont_miss": ["Subdural hematoma", "Epidural hematoma", "C-spine fracture", "Hip fracture", "Intracranial hemorrhage"],
+  "processing_time_ms": 7100
+}

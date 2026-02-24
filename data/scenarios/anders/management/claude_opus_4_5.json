@@ -1,0 +1,38 @@
+{
+  "model_id": "medgemma_27b",
+  "investigations": [
+    "Troponin T (high-sensitivity, serial at 0h, 3h, and 6h if intermediate risk)",
+    "BNP/NT-proBNP (differentiate cardiac vs non-cardiac dyspnoea)",
+    "CBC with differential",
+    "BMP (electrolytes, creatinine, glucose, eGFR calculation)",
+    "INR/PT (patient on warfarin — therapeutic range 2.0-3.0 for AF; supratherapeutic INR increases bleeding risk, subtherapeutic increases stroke risk)",
+    "D-dimer (age-adjusted threshold: >340 ng/mL considered positive for age 68)",
+    "12-lead ECG (compare with prior — assess for ST changes, new AF with RVR, axis deviation)",
+    "Lactate (assess tissue perfusion, screen for occult shock)",
+    "ABG (evaluate acid-base status, oxygenation if respiratory component suspected)"
+  ],
+  "imaging": [
+    "Chest X-ray (PA and lateral — assess for pulmonary oedema, cardiomegaly, pleural effusions, pneumonia)",
+    "Bedside echocardiography (assess LV/RV function, wall motion abnormalities, valvular disease, effusion, IVC collapsibility for volume status)",
+    "CT pulmonary angiogram if PE suspected (D-dimer elevated or Wells score ≥2 — patient has AF which is a risk factor for thromboembolism; requires eGFR >30 and INR check before contrast)"
+  ],
+  "medications": [
+    "Oxygen supplementation if SpO2 <94% (target 94-98%; avoid hyperoxia in cardiac patients)",
+    "IV furosemide 20-40 mg if signs of fluid overload (match or exceed home oral dose for IV efficacy)",
+    "Continue warfarin at current dose pending INR result — if INR subtherapeutic, consider bridging with LMWH only after discussion with cardiology (bleeding vs thrombotic risk assessment)",
+    "Continue rate control medication for AF (verify heart rate target <110 bpm at rest)",
+    "Continue diabetes medications with exception below",
+    "Hold metformin if IV contrast planned (withhold 48h post-contrast, recheck creatinine before restarting)",
+    "Sublingual GTN 0.4 mg if chest tightness persists and systolic BP >90 mmHg (use with caution given heart failure — avoid preload reduction if hypovolaemic)"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Avoid NSAIDs (exacerbate heart failure via sodium/water retention + synergistic bleeding risk with warfarin + potential renal impairment in diabetes)",
+    "Caution with IV contrast (diabetes with potential nephropathy — check eGFR; if eGFR 30-60, ensure pre- and post-hydration with isotonic saline)",
+    "Avoid abrupt warfarin reversal unless active life-threatening bleeding (patient needs anticoagulation for AF stroke prevention — CHA2DS2-VASc score likely ≥3)",
+    "Caution with nitrates if concurrent PDE5 inhibitor use (verify medication list)"
+  ],
+  "reasoning": "68-year-old male with chest tightness and significant cardiac comorbidity burden: CHF (structural heart disease), AF (thromboembolic risk), and DM2 (microvascular/macrovascular disease accelerator), on warfarin anticoagulation. This presentation demands a systematic rule-out of acute coronary syndrome (serial high-sensitivity troponins with 0/3h protocol), acute decompensated heart failure (BNP, chest X-ray, bedside echo with volume assessment), and pulmonary embolism (D-dimer with age-adjusted threshold, CTPA if indicated — AF itself is a PE risk factor). Lactate and ABG provide additional perfusion and metabolic data critical in a patient with diabetes and heart failure where occult hypoperfusion may be masked. Warfarin management requires careful INR-guided decisions: bridging with LMWH carries bleeding risk but subtherapeutic anticoagulation in AF with likely high CHA2DS2-VASc score carries stroke risk. Admission to a monitored bed is warranted for serial biomarkers, continuous telemetry (AF rate control assessment), and cardiology consultation. The metabolic profile (diabetes, potential renal impairment) necessitates careful contrast and medication decisions.",
+  "confidence": "HIGH",
+  "processing_time_ms": 9200
+}

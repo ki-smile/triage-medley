@@ -1,0 +1,35 @@
+{
+  "model_id": "medgemma_4b",
+  "investigations": [
+    "CBC with differential (CRITICAL — assess for leukopenia from methotrexate)",
+    "CMP (electrolytes, creatinine, glucose, eGFR)",
+    "Urinalysis + urine culture with sensitivity",
+    "Blood cultures x2 (before antibiotics)",
+    "Lactate (screen for occult hypoperfusion)",
+    "CRP",
+    "Procalcitonin (differentiate bacterial vs non-bacterial illness)",
+    "INR/coagulation panel"
+  ],
+  "imaging": [
+    "Chest X-ray (screen for pneumonia, pulmonary pathology)",
+    "CT abdomen/pelvis with contrast if clinical concern for complicated UTI or abscess"
+  ],
+  "medications": [
+    "IV fluid bolus 500 mL normal saline (assess response — repeat if needed)",
+    "Empiric broad-spectrum antibiotics: piperacillin-tazobactam 4.5 g IV q8h (covers ESBL — do NOT use TMP-SMX due to likely resistance and methotrexate interaction)",
+    "Hold methotrexate pending CBC result and infectious workup",
+    "Continue metoprolol 50 mg BID (do not abruptly discontinue beta-blocker)",
+    "Continue metformin unless creatinine elevated or contrast planned",
+    "Paracetamol 1 g for any discomfort (avoid NSAIDs)"
+  ],
+  "disposition": "admission",
+  "contraindications_flagged": [
+    "Avoid NSAIDs — documented allergy (GI bleeding) and renal risk in immunosuppressed diabetic patient",
+    "Avoid nephrotoxic agents — immunosuppressed + diabetic with potential renal impairment",
+    "Caution with aminoglycosides — renal toxicity risk; use only if no alternative for resistant organism",
+    "Avoid TMP-SMX — likely resistant organism AND dangerous interaction with methotrexate (folate antagonism potentiation)"
+  ],
+  "reasoning": "79-year-old immunosuppressed female (methotrexate + prednisone) presenting with generalized weakness 6 days after UTI treatment. While vital signs are normal, the combination of immunosuppression, recent UTI with resistant organism, and vague symptoms in an elderly patient warrants a thorough infectious workup. CBC is the single most critical lab — leukopenia from methotrexate (especially given concurrent TMP-SMX folate antagonism) would significantly change management. Blood cultures and lactate should be obtained before starting empiric antibiotics. Piperacillin-tazobactam provides ESBL coverage and avoids the problematic TMP-SMX + methotrexate interaction. Methotrexate should be held pending results. Admission is warranted for monitoring, IV antibiotics, and serial clinical reassessment.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 2800
+}

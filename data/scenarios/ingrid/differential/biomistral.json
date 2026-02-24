@@ -1,0 +1,70 @@
+{
+  "model_id": "biomistral",
+  "candidates": [
+    {
+      "diagnosis": "Urosepsis / septic shock (early)",
+      "probability": 0.35,
+      "supporting_evidence": [
+        "CRITICAL: 6-day bounce-back after UTI treatment — classic pattern for treatment failure progressing to bacteraemia",
+        "E. coli with quinolone resistance — organisms with extended resistance profiles (possible ESBL producer) may also be resistant to TMP-SMX",
+        "EVERY screening tool will MISS this: qSOFA 0, SIRS 0 — but these tools have <50% sensitivity in immunosuppressed patients on beta-blockers",
+        "Metoprolol is obliterating the tachycardic response — HR 78 is a LIE in a septic patient on beta-blockade",
+        "BP 118/68 vs baseline 148/82 = 30-point systolic drop — this IS hemodynamic compromise, just not by the textbook threshold",
+        "Prednisone abolishes the febrile response — septic immunosuppressed patients die afebrile",
+        "If you wait for this patient to 'look septic,' she will be in refractory shock"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Methotrexate-induced leukopenia with occult bacteraemia",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "LETHAL DRUG INTERACTION: TMP-SMX + methotrexate — both are folate antagonists. This combination is CONTRAINDICATED but frequently prescribed inadvertently",
+        "Methotrexate toxicity is potentiated by any drug that competes for renal tubular secretion or folate metabolism",
+        "Pancytopenia from this interaction can develop insidiously over 5-10 days — timeline matches (TMP-SMX started 6 days ago)",
+        "A patient with iatrogenic leukopenia plus an existing urinary tract infection is a setup for overwhelming sepsis",
+        "CBC result will be the most important single lab value in this case"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Acute adrenal crisis (steroid-dependent patient under stress)",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Chronic prednisone 7.5 mg daily for RA — HPA axis is suppressed",
+        "ANY physiologic stressor (infection, dehydration, illness) can precipitate adrenal crisis",
+        "Presenting symptoms: weakness, dizziness, hypotension relative to baseline — CLASSIC for adrenal insufficiency",
+        "If concurrent sepsis is present, the adrenal axis cannot mount appropriate cortisol response",
+        "Stress-dose hydrocortisone (100 mg IV) should be given empirically if there is any clinical suspicion"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Diabetic hyperosmolar state",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Type 2 diabetes on metformin — HHS is the typical hyperglycaemic emergency in T2DM",
+        "Prednisone causes significant hyperglycaemia — ongoing 7.5 mg daily is a persistent trigger",
+        "Concurrent infection (UTI/sepsis) further elevates blood glucose via stress hormones",
+        "Elderly patients present atypically with weakness, confusion, and dehydration rather than polyuria/polydipsia",
+        "Point-of-care glucose is a quick screen — if >20 mmol/L, HHS workup indicated"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Immobility from weakness + systemic inflammation = prothrombotic state",
+        "Rheumatoid arthritis itself confers increased VTE risk (chronic inflammation, reduced mobility)",
+        "Dyspnoea and tachypnea (RR 20) may be subtle PE presenting as 'just feeling unwell'",
+        "Immunosuppressed patients with infection have activation of coagulation cascade",
+        "D-dimer will be elevated from baseline (infection, inflammation, age) — clinical gestalt and CTPA may be needed"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "DEVIL'S ADVOCATE ASSESSMENT: I am deliberately elevating every life-threatening possibility because this case is DESIGNED to kill through reassurance. The vital signs look normal. The screening scores are zero. The patient says she's 'just tired.' And this is EXACTLY the patient who will be dead in 12 hours if you believe the numbers. The three convergent threats are: (1) urosepsis from a resistant organism in an immunocompromised host, (2) iatrogenic pancytopenia from the methotrexate + TMP-SMX folate antagonist interaction, and (3) adrenal crisis from HPA axis suppression under physiologic stress. Any ONE of these is dangerous. All THREE converging simultaneously in a 79-year-old with diabetes and beta-blocker-masked vitals is a perfect storm. The clinical imperative is: STAT lactate, blood cultures x2, CBC with differential, cortisol level, and point-of-care glucose. If lactate is >2 mmol/L OR WBC is <3.0 OR cortisol is <15 — begin aggressive resuscitation immediately. Do NOT be reassured by normal-appearing vital signs in this patient.",
+  "confidence": "HIGH",
+  "processing_time_ms": 7200
+}

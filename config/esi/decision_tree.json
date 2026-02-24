@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "system": "ESI (Emergency Severity Index)",
+    "version": "4.0",
+    "reference": "Gilboy N, Tanabe T, Travers D, Rosenau AM. Emergency Severity Index (ESI): A Triage Tool for Emergency Department Care, Version 4.",
+    "note": "Decision tree evaluated top-down. First matching level is assigned."
+  },
+
+  "esi_1_criteria": {
+    "description": "Immediate life-saving intervention required. Unresponsive or critical vital-sign derangement.",
+    "consciousness": {
+      "values": ["Unresponsive"],
+      "description": "AVPU = Unresponsive triggers ESI-1 regardless of vitals."
+    },
+    "critical_vitals": {
+      "description": "Any single critical vital triggers ESI-1.",
+      "heart_rate": { "below": 30, "above": 180 },
+      "systolic_bp": { "below": 60 },
+      "respiratory_rate": { "below": 6, "above": 40 },
+      "spo2": { "below": 80 }
+    },
+    "intervention_keywords": [
+      "intubation",
+      "chest decompression",
+      "surgical airway",
+      "cardiac arrest",
+      "pulseless",
+      "apneic",
+      "unresponsive",
+      "CPR in progress"
+    ]
+  },
+
+  "esi_2_criteria": {
+    "description": "High-risk situation, altered consciousness (not Unresponsive), or severe distress. Should not wait to be seen.",
+    "high_risk_speech_keywords": [
+      "chest pain",
+      "bröstsmärta",
+      "crushing chest",
+      "central chest tightness",
+      "stroke symptoms",
+      "sudden weakness one side",
+      "facial droop",
+      "slurred speech",
+      "seizure",
+      "krampanfall",
+      "active seizure",
+      "status epilepticus",
+      "severe headache",
+      "thunderclap headache",
+      "worst headache of my life",
+      "overdose",
+      "överdos",
+      "intentional ingestion",
+      "suicidal ingestion",
+      "anaphylaxis",
+      "allergic reaction with breathing difficulty",
+      "severe allergic reaction",
+      "breathing difficulty",
+      "dyspnea",
+      "syncope",
+      "uncontrolled bleeding",
+      "testicular pain",
+      "acute limb ischemia",
+      "cold pulseless limb"
+    ],
+    "dont_miss_conditions": [
+      "acute coronary syndrome",
+      "stroke / TIA",
+      "pulmonary embolism",
+      "anaphylaxis",
+      "sepsis",
+      "aortic dissection",
+      "ruptured ectopic pregnancy",
+      "status epilepticus",
+      "tension pneumothorax"
+    ],
+    "altered_consciousness": {
+      "values": ["Pain", "Voice"],
+      "description": "AVPU = Pain or Voice triggers ESI-2 (Unresponsive already captured by ESI-1)."
+    },
+    "vitals_danger_zone": {
+      "description": "Safety-net thresholds at the ESI-2/3 boundary. If a patient would otherwise be ESI-3 but has ANY danger-zone vital, upgrade to ESI-2.",
+      "heart_rate": { "below": 50, "above": 130 },
+      "systolic_bp": { "below": 90, "above": 180 },
+      "respiratory_rate": { "below": 10, "above": 30 },
+      "spo2": { "below": 92 },
+      "temperature": { "below": 35.0, "above": 40.0 }
+    },
+    "severe_pain": {
+      "description": "Severe pain or distress (NRS >= 7/10) in a high-risk context upgrades to ESI-2.",
+      "nrs_threshold": 7
+    }
+  },
+
+  "esi_3_to_5_resource_logic": {
+    "description": "For patients not meeting ESI-1 or ESI-2 criteria, the expected number of resources determines the level. Resources = labs, imaging, IV fluids/meds, procedures, specialist consults.",
+    "esi_3": {
+      "min_resources": 2,
+      "description": "Expects 2 or more resources (e.g., labs + imaging, or labs + IV + consult)."
+    },
+    "esi_4": {
+      "min_resources": 1,
+      "max_resources": 1,
+      "description": "Expects exactly 1 resource (e.g., X-ray only, or wound suture only)."
+    },
+    "esi_5": {
+      "min_resources": 0,
+      "max_resources": 0,
+      "description": "Expects zero resources. Prescription refill, simple reassessment, minor complaint."
+    }
+  },
+
+  "level_mapping": {
+    "description": "Maps ESI levels to approximate RETTS equivalents for cross-engine comparison.",
+    "ESI-1": { "retts_equivalent": "Red", "max_wait_minutes": 0 },
+    "ESI-2": { "retts_equivalent": "Orange", "max_wait_minutes": 10 },
+    "ESI-3": { "retts_equivalent": "Yellow", "max_wait_minutes": 60 },
+    "ESI-4": { "retts_equivalent": "Green", "max_wait_minutes": 120 },
+    "ESI-5": { "retts_equivalent": "Blue", "max_wait_minutes": 240 }
+  }
+}

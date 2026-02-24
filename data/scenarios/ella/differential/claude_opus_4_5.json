@@ -1,0 +1,66 @@
+{
+  "model_id": "medgemma_27b",
+  "candidates": [
+    {
+      "diagnosis": "Viral exanthem",
+      "probability": 0.3,
+      "supporting_evidence": [
+        "Statistically most common cause of fever with rash in children aged 1-5 years",
+        "Enteroviral, adenoviral, and HHV-6 infections are seasonal and highly prevalent in this age group",
+        "Acute-onset maculopapular rash with concurrent fever is the classic viral exanthem pattern",
+        "Lethargy and anorexia are expected with febrile viral illness but do not exclude more serious causes"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Meningococcal disease (invasive N. meningitidis)",
+      "probability": 0.25,
+      "supporting_evidence": [
+        "Fever + acute-onset rash + lethargy is the classic early presentation of meningococcemia",
+        "HR 185 exceeds fever-adjusted tachycardia \u2014 may represent compensatory response to sepsis",
+        "BP 85/50 is at or below the 5th percentile for age 4, consistent with early shock",
+        "Meningococcal rash can initially appear as blanching erythema before evolving to petechiae/purpura within hours",
+        "Children under 5 are at peak risk for invasive meningococcal disease",
+        "Case fatality rate 10-15% even with treatment; approaches 100% if missed"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Scarlet fever (Group A Streptococcus)",
+      "probability": 0.2,
+      "supporting_evidence": [
+        "Fever with sandpaper-textured rash in preschool child is classic scarlet fever",
+        "Peak incidence at age 4-8 years matches this patient",
+        "High fever (39.8\u00b0C) is consistent with GAS pharyngitis/scarlet fever",
+        "Requires rapid strep test \u2014 treatment prevents rheumatic fever and reduces transmission"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Kawasaki disease",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Age 4 is within the classic range (6 months to 5 years, peak 18-24 months)",
+        "Fever with rash fulfils 2 of 5 diagnostic criteria",
+        "Incomplete Kawasaki disease can present with fewer criteria and is frequently missed",
+        "Must be considered if fever continues beyond 5 days \u2014 coronary artery aneurysm risk",
+        "Early IVIG administration reduces coronary complications from 25% to <5%"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Drug reaction / allergic exanthem",
+      "probability": 0.1,
+      "supporting_evidence": [
+        "Must inquire about recent medication use, including over-the-counter antipyretics",
+        "Drug-induced rash can present with concurrent fever",
+        "Patient has mild asthma with salbutamol \u2014 verify if any recent antibiotics prescribed for respiratory symptoms",
+        "Morbilliform drug eruption typically appears 7-14 days after drug initiation"
+      ],
+      "is_dont_miss": false
+    }
+  ],
+  "reasoning": "4-year-old female with fever, acute-onset rash, lethargy, and borderline hemodynamic parameters. While viral exanthem remains statistically most probable, I weight meningococcal disease significantly higher than a purely probabilistic assessment would suggest, because the vital sign pattern (HR 185 exceeding fever adjustment, BP at 5th percentile) and the clinical context (lethargy beyond simple febrile malaise) create a concerning hemodynamic picture. The 'glass test' for non-blanching rash should be performed immediately. Kawasaki disease is flagged as a don't-miss because it presents within the classic age window, and early treatment dramatically alters outcomes \u2014 missing it in the first 10 days leads to irreversible coronary artery damage. Scarlet fever is readily treatable once identified. Drug reaction should be excluded by history. The key clinical decision is whether this child's hemodynamic profile reflects benign fever-associated tachycardia or early compensated septic shock \u2014 this distinction has life-or-death implications and warrants immediate senior review.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 9100
+}

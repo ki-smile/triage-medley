@@ -1,0 +1,87 @@
+{
+  "chest_pain": {
+    "ess_number": "06",
+    "name": "Chest Pain",
+    "name_sv": "Bröstsmärta",
+    "severity_map": {
+      "acute_onset_with_dyspnea": "RED",
+      "ongoing_chest_pain_cardiac_history": "ORANGE",
+      "chest_pain_stable": "YELLOW",
+      "resolved_chest_discomfort": "GREEN",
+      "chronic_musculoskeletal": "BLUE"
+    },
+    "dont_miss": ["STEMI", "aortic dissection", "pulmonary embolism", "tension pneumothorax"],
+    "default_level": "YELLOW"
+  },
+  "pediatric_fever": {
+    "ess_number": "30",
+    "name": "Pediatric Fever",
+    "name_sv": "Feber hos barn",
+    "severity_map": {
+      "fever_with_petechiae": "RED",
+      "fever_with_neck_stiffness": "RED",
+      "high_fever_infant_under_3mo": "RED",
+      "fever_with_rash_older_child": "ORANGE",
+      "fever_above_39_with_lethargy": "ORANGE",
+      "fever_above_38_5_otherwise_well": "YELLOW",
+      "low_grade_fever_well_appearing": "GREEN"
+    },
+    "dont_miss": ["meningococcal disease", "sepsis", "kawasaki disease"],
+    "default_level": "YELLOW"
+  },
+  "trauma_fall": {
+    "ess_number": "41",
+    "name": "Trauma / Fall",
+    "name_sv": "Trauma / Fall",
+    "severity_map": {
+      "high_energy_trauma": "RED",
+      "head_injury_with_loc": "ORANGE",
+      "fall_on_anticoagulants": "ORANGE",
+      "fall_with_deformity": "YELLOW",
+      "minor_fall_no_head_injury": "GREEN",
+      "superficial_injury": "BLUE"
+    },
+    "dont_miss": ["intracranial hemorrhage", "c-spine injury", "occult fracture"],
+    "default_level": "YELLOW"
+  },
+  "abdominal": {
+    "ess_number": "02",
+    "name": "Abdominal Pain",
+    "name_sv": "Buksmärta",
+    "severity_map": {
+      "acute_abdomen_peritonitis": "RED",
+      "severe_pain_with_vomiting": "ORANGE",
+      "moderate_abdominal_pain": "YELLOW",
+      "mild_chronic_abdominal": "GREEN"
+    },
+    "dont_miss": ["ruptured AAA", "ectopic pregnancy", "bowel obstruction", "appendicitis"],
+    "default_level": "YELLOW"
+  },
+  "respiratory": {
+    "ess_number": "04",
+    "name": "Breathing Difficulty",
+    "name_sv": "Andningsbesvär",
+    "severity_map": {
+      "respiratory_failure": "RED",
+      "severe_dyspnea_at_rest": "ORANGE",
+      "moderate_dyspnea_on_exertion": "YELLOW",
+      "mild_cough_no_distress": "GREEN"
+    },
+    "dont_miss": ["pulmonary embolism", "anaphylaxis", "tension pneumothorax", "epiglottitis"],
+    "default_level": "YELLOW"
+  },
+  "neurological": {
+    "ess_number": "15",
+    "name": "Neurological Symptoms",
+    "name_sv": "Neurologiska symtom",
+    "severity_map": {
+      "acute_focal_deficit": "RED",
+      "seizure_ongoing": "RED",
+      "severe_headache_sudden_onset": "ORANGE",
+      "transient_neuro_symptoms": "YELLOW",
+      "chronic_headache": "GREEN"
+    },
+    "dont_miss": ["stroke", "subarachnoid hemorrhage", "meningitis", "status epilepticus"],
+    "default_level": "YELLOW"
+  }
+}

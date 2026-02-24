@@ -1,0 +1,62 @@
+{
+  "model_id": "qwen_med",
+  "candidates": [
+    {
+      "diagnosis": "Musculoskeletal strain",
+      "probability": 0.30,
+      "supporting_evidence": [
+        "Physical exertion 2 days ago — helped friend move apartments",
+        "Chest wall tenderness reproducible on palpation",
+        "Partial response to ibuprofen",
+        "Young patient with no cardiac risk factors"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pulmonary embolism",
+      "probability": 0.30,
+      "supporting_evidence": [
+        "Drospirenone-containing OCP is a significant VTE risk factor",
+        "Pleuritic chest pain is a classic PE presentation",
+        "HR 102 — tachycardia present",
+        "SpO2 95% — lower than expected for a 28-year-old",
+        "Prior ED visit for calf pain raises concern for preceding DVT"
+      ],
+      "is_dont_miss": true
+    },
+    {
+      "diagnosis": "Costochondritis",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Anterior chest wall tenderness",
+        "Common in young adults after physical activity",
+        "Responds to anti-inflammatory medication"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pleurisy / viral pleuritis",
+      "probability": 0.15,
+      "supporting_evidence": [
+        "Pleuritic nature of pain — worsens with breathing",
+        "Low-grade fever 37.2\u00b0C may suggest infectious or inflammatory component",
+        "Common in young adults"
+      ],
+      "is_dont_miss": false
+    },
+    {
+      "diagnosis": "Pneumothorax",
+      "probability": 0.10,
+      "supporting_evidence": [
+        "Pleuritic chest pain with mild dyspnea",
+        "Young patient — primary spontaneous pneumothorax occurs in this demographic",
+        "SpO2 95% could be consistent with small pneumothorax",
+        "Chest X-ray would rapidly confirm or exclude"
+      ],
+      "is_dont_miss": true
+    }
+  ],
+  "reasoning": "The differential is evenly split between musculoskeletal strain and pulmonary embolism. While the mechanical trigger and reproducible tenderness favour musculoskeletal etiology, the combination of OCP use, pleuritic pain, tachycardia, and marginally low SpO2 means PE cannot be dismissed. The prior ED visit for calf pain adds additional concern. A D-dimer should be obtained as a screening test — if elevated, CTPA is indicated. Pneumothorax is included as a second don't-miss diagnosis given the pleuritic pain and mild hypoxemia in a young patient, though it is less likely without a tall/thin body habitus or known lung disease. Chest X-ray is the initial imaging study of choice.",
+  "confidence": "MODERATE",
+  "processing_time_ms": 5420
+}

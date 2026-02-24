@@ -1,0 +1,14 @@
+{
+  "model_id": "medgemma_4b",
+  "queue_priority": "MODERATE",
+  "chief_complaint": "Transient visual disturbance with melena",
+  "reasoning": "72-year-old male presenting with a transient episode of blurred vision and confusion approximately two hours ago, now fully resolved, along with dark/black stools (melena). Wife drove him in. The transient neurological symptoms are concerning for TIA but have resolved. The dark stools suggest possible upper GI bleeding. Neither symptom is currently active or immediately life-threatening based on speech alone, but the combination warrants timely assessment. No report of chest pain, syncope, or ongoing neurological deficit.",
+  "ess_category_hint": "neurological",
+  "risk_amplifiers_detected": [
+    "Age >65 — increased vascular event risk",
+    "Known hypertension — major risk factor for cerebrovascular events",
+    "Type 2 diabetes — accelerates atherosclerotic disease"
+  ],
+  "confidence": "MODERATE",
+  "processing_time_ms": 2150
+}

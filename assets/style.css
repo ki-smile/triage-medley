@@ -1,0 +1,251 @@
+/* ============================================================
+   Triage-Medley — Advanced Clinical Responsive Design
+   ============================================================ */
+
+:root {
+    /* KI Primary Palette */
+    --ki-primary: #4F0433;
+    --ki-on-primary: #FFFFFF;
+    --ki-secondary: #870052;
+    --ki-tertiary: #4DB5BC;
+
+    /* Surfaces */
+    --ki-surface: #EDF4F4;
+    --ki-surface-variant: #FEEEEB;
+    --ki-background: #F1F1F1;
+    --ki-on-surface: #000000;
+    --ki-on-surface-variant: #666666;
+    --ki-outline: #E0E0E0;
+    --ki-error: #B84145;
+
+    /* RETTS Triage Colours */
+    --retts-red: #B84145;
+    --retts-orange: #FF876F;
+    --retts-yellow: #F59A00;
+    --retts-green: #54B986;
+    --retts-blue: #4DB5BC;
+
+    /* Layout Spacing */
+    --gap-xs: 4px;
+    --gap-sm: 8px;
+    --gap-md: 16px;
+    --gap-lg: 24px;
+}
+
+/* ---- Reset & Global ---- */
+.stApp {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--ki-background);
+}
+
+/* Hide Streamlit default padding and top bars */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 0rem !important;
+    max-width: 100% !important;
+}
+
+/* Hide Streamlit clutter: Deploy button, Main Menu, Footer */
+[data-testid="stHeader"] {
+    background-color: rgba(0,0,0,0) !important;
+    border-bottom: none !important;
+}
+
+.stDeployButton {
+    display: none !important;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+/* Ensure the sidebar toggle is still visible and accessible */
+header[data-testid="stHeader"] button[kind="header"] {
+    color: var(--ki-primary) !important;
+}
+
+/* ---- Enhanced Streamlit Containers (Card Look) ---- */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid var(--ki-outline);
+    padding: 1rem;
+}
+
+.m3-card {
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid var(--ki-outline);
+    padding: 1rem;
+    margin-bottom: var(--gap-md);
+}
+
+.m3-card-elevated {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border: 1px solid var(--ki-outline);
+    padding: 1.5rem;
+    margin-bottom: var(--gap-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.m3-card-elevated:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] > div {
+    /* Fix internal spacing if needed */
+}
+
+/* ---- Component Styling (Material/AntD inspired) ---- */
+
+.ui-card-header {
+    font-weight: 700;
+    color: var(--ki-primary);
+    font-size: 0.9rem;
+    margin-bottom: var(--gap-sm);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--ki-outline);
+    padding-bottom: 8px;
+}
+
+/* Vitals Data visualization */
+.vital-box {
+    text-align: center;
+    padding: var(--gap-sm);
+    background: #F8F9FA;
+    border-radius: 8px;
+    border-bottom: 3px solid transparent;
+}
+
+.vital-box.critical { border-bottom-color: var(--retts-red); }
+.vital-box.warning  { border-bottom-color: var(--retts-yellow); }
+.vital-box.normal   { border-bottom-color: var(--retts-green); }
+
+.vital-val {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.vital-label {
+    font-size: 0.7rem;
+    color: var(--ki-on-surface-variant);
+    text-transform: uppercase;
+}
+
+/* ---- Minimizing Scroll Layouts ---- */
+
+.compact-list {
+    font-size: 0.85rem;
+    line-height: 1.3;
+}
+
+.compact-list li {
+    margin-bottom: 2px;
+}
+
+/* Sticky Action Bar Optimization */
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 0.75rem 2rem;
+    border-top: 1px solid var(--ki-outline);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+/* ---- Patient Header (RETTS Banner Redesign) ---- */
+.banner-fluid {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--gap-md);
+    color: white;
+    font-weight: 700;
+}
+
+/* Badge styles */
+.badge-ui {
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333; /* Ensure text is visible on light gray backgrounds */
+}
+
+/* High contrast for accessibility */
+.text-contrast {
+    color: var(--ki-on-surface);
+}
+
+/* Custom Scrollbar for inner cards to avoid page scroll */
+.scroll-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #CCC;
+    border-radius: 3px;
+}
+
+/* ---- Input Styling ---- */
+div[data-baseweb="input"] {
+    border-radius: 8px !important;
+}
+
+.stButton button {
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+}
+
+.stButton button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Grid Layout for Forms */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-md);
+}
+
+/* Kiosk Specifics */
+.kiosk-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--ki-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.kiosk-subtitle {
+    font-size: 1.2rem;
+    color: var(--ki-on-surface-variant);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
