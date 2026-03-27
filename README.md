@@ -17,7 +17,7 @@
 ---
 
 <p align="center">
-  <img src="docs/images/header_workflow.png" alt="AI-Assisted ED Triage: Nurse-in-the-Loop workflow with multi-model disagreement detection and human verification" width="100%">
+  <img src="docs/images/Medley-triage.png" alt="AI-Assisted ED Triage: Nurse-in-the-Loop workflow with multi-model disagreement detection and human verification" width="100%">
 </p>
 
 <p align="center"><em>AI-Assisted ED Triage — from patient voice intake through multi-model analysis to nurse-verified handoff and physician decision support.</em></p>
