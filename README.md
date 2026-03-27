@@ -110,7 +110,7 @@ The system produces three structured outputs per patient:
 > **Core principle:** Disagreement is never hidden. If one model out of eight flags a life-threatening condition, the clinician sees it.
 
 <p align="center">
-  <img src="docs/images/triage_view.png" alt="Triage View — Ensemble consensus with disagreement detection, EHR risk flags, and RETTS/ESI/MTS cross-engine comparison" width="90%">
+  <img src="docs/images/Pasted image.png" alt="Triage View — Ensemble consensus with disagreement detection, EHR risk flags, and RETTS/ESI/MTS cross-engine comparison" width="90%">
 </p>
 
 <p align="center"><em>Triage View — ensemble consensus (ORANGE), EHR-derived risk flags, don't-miss diagnoses, and rule engine evidence for a 79-year-old patient with immunosuppression and medication-masked vitals.</em></p>
