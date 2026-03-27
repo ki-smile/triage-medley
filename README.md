@@ -1,50 +1,149 @@
-# Triage-Medley
+<div align="center">
 
-**Human-in-the-Loop AI-Powered Triage Decision Support System**
+# Triage Medley
 
-A multi-model ensemble triage decision support system for Swedish emergency departments, built on the [MEDLEY framework](https://arxiv.org/abs/2508.21648) (Medical Ensemble Diagnostic system with Leveraged diversitY).
+**A human-in-the-loop clinical decision support system that uses multi-model disagreement as a safety signal for emergency department triage.**
 
-Built for the **MedGemma Impact Challenge** (February 2026).
+[![Paper](https://img.shields.io/badge/arXiv-2508.21648-b31b1b?logo=arxiv)](https://arxiv.org/abs/2508.21648)
+[![Demo](https://img.shields.io/badge/Live_Demo-triage.medleyai.org-8A2BE2?logo=streamlit)](https://triage.medleyai.org/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.36%2B-FF4B4B?logo=streamlit)](https://streamlit.io)
+[![License](https://img.shields.io/badge/License-KI_2026-228B22)](LICENSE)
 
-## Features
+[Live Demo](https://triage.medleyai.org/) · [Paper](https://arxiv.org/abs/2508.21648) · [Architecture](docs/ARCHITECTURE.md) · [Video Walkthrough](#-video-demos)
 
-- **Multi-Model Ensemble:** Combines MedGemma (4B & 27B), BioMistral, and rule engines.
-- **Shared Persistence:** Uses SQLite to synchronize patient data across multiple devices/browsers.
-- **Live Auto-Sync:** Queue View updates automatically when new patients arrive at the kiosk.
-- **Role-Based Workflows:** Optimized dashboards for Patients, Nurses, Physicians, and Admins.
-- **Audit Compliance:** Every AI suggestion and human decision is logged to `data/audit/audit.jsonl`.
+</div>
+
+---
+
+<p align="center">
+  <img src="docs/images/header_workflow.png" alt="AI-Assisted ED Triage: Nurse-in-the-Loop workflow with multi-model disagreement detection and human verification" width="100%">
+</p>
+
+<p align="center"><em>AI-Assisted ED Triage — from patient voice intake through multi-model analysis to nurse-verified handoff and physician decision support.</em></p>
+
+---
+
+## Overview
+
+Triage Medley implements the [MEDLEY framework](https://arxiv.org/abs/2508.21648) (Medical Ensemble Diagnostic system with Leveraged diversitY) — a system where **disagreement between AI models is preserved as a clinical resource, not collapsed into consensus**.
+
+In emergency departments, triage errors — both over-triage and under-triage — contribute to delayed treatment and adverse outcomes. Current AI-assisted triage systems typically produce a single prediction, hiding the uncertainty that clinicians need to make informed decisions.
+
+Triage Medley takes a different approach:
+
+- **Multiple AI models and rule engines** independently assess each patient
+- **Disagreement is surfaced**, not suppressed — when models disagree on severity, the system flags the case for senior review
+- **"Don't-miss" diagnoses** from any single model are elevated regardless of consensus
+- **The clinician always decides** — the system provides structured evidence, not automated decisions
+
+### Why This Matters
+
+| Problem | How Triage Medley Addresses It |
+|---------|-------------------------------|
+| Single-model AI hides uncertainty | Ensemble of 5 LLMs + 3 rule engines makes disagreement visible |
+| Triage errors in high-volume EDs | Two-stage pipeline (pre-triage in <60s, full triage with vitals) accelerates safe assessment |
+| Dangerous "don't-miss" conditions can be overlooked | Any model flagging a critical diagnosis triggers an alert, regardless of majority opinion |
+| AI suggestions lack auditability | Every model output, human override, and clinical decision is logged to an append-only audit trail |
+
+---
+
+## 🔗 Live Demo
+
+**→ [triage.medleyai.org](https://triage.medleyai.org/)**
+
+The live demo includes 6 synthetic patient scenarios covering a range of clinical complexity — from a pediatric meningitis case to an elderly patient with medication-masked sepsis. You can:
+
+- Walk through the **patient intake kiosk** (voice-to-text simulation)
+- Review the **priority queue** as a charge nurse
+- Enter vitals and see the **multi-model ensemble triage result** with disagreement analysis
+- Examine the **physician handoff view** with differential diagnosis and management plans
+- Download **PDF triage reports**
+
+> **Demo credentials:** Nurse (`nurse_anna` / `1234`), Physician (`dr_nilsson` / `5678`), Admin (`admin` / `0000`). Patient role requires no login.
+
+---
+
+## 🎥 Video Demos
+
+| Video | Description |
+|-------|-------------|
+| ▶️ [**Full System Walkthrough**](https://www.youtube.com/watch?v=Rc7Or94kE5o) | End-to-end demonstration: patient arrival → kiosk intake → nurse triage → physician handoff |
+| ▶️ [**Technical Deep Dive**](https://www.youtube.com/watch?v=iVhg4jCdJ9s&t=36s) | MEDLEY framework architecture, ensemble logic, and disagreement analysis |
+
+---
+
+## How It Works
+
+Triage Medley operates as a **two-stage pipeline** with a strict type-level separation: Stage A runs without vitals, Stage B requires them.
+
+### Stage A — Pre-Triage (< 60 seconds, no vitals)
+
+1. **Patient speaks** at a walk-in kiosk (or arrives via referral/ambulance)
+2. **Dual-ASR processing** transcribes speech; word-level disagreements between ASR systems are flagged
+3. **EHR lookup** retrieves active conditions, medications, allergies, and computes risk flags (e.g., immunosuppression + infection risk)
+4. **Pre-triage engine + MedGemma 4B** assign an initial queue priority (HIGH / MODERATE / STANDARD)
+
+### Stage B — Full Triage (with vitals)
+
+5. **Nurse enters vital signs** (HR, BP, RR, SpO₂, Temperature, consciousness level)
+6. **Three rule engines run in parallel:**
+   - **RETTS** — Swedish ED standard (vitals + ESS category → colour level)
+   - **ESI** — 5-level acuity with resource prediction
+   - **MTS** — Manchester Triage System flowchart discriminators
+7. **Five LLMs run in parallel** via `ThreadPoolExecutor`:
+   - MedGemma 4B, MedGemma 27B, Meditron-7B, QwenMed, BioMistral
+8. **Agreement Engine** analyzes ensemble outputs:
+   - Classifies consensus: FULL / PARTIAL / NONE
+   - Final triage level = **most severe** across all voters
+   - Aggregates don't-miss diagnoses from **all** models (union, not intersection)
+   - Flags cases for **senior review** when models disagree or a minority escalates severity
+
+### Output
+
+The system produces three structured outputs per patient:
+
+- **Triage Assessment** — RETTS colour level with vote distribution, escalation alerts, and don't-miss warnings
+- **Differential Diagnosis** — Three-tier ranking: primary (≥80% consensus), alternative (40–79%), minority/devil's advocate (<40%)
+- **Management Plan** — Consensus investigations, imaging, medications, disposition with per-model reasoning
+
+> **Core principle:** Disagreement is never hidden. If one model out of eight flags a life-threatening condition, the clinician sees it.
+
+<p align="center">
+  <img src="docs/images/triage_view.png" alt="Triage View — Ensemble consensus with disagreement detection, EHR risk flags, and RETTS/ESI/MTS cross-engine comparison" width="90%">
+</p>
+
+<p align="center"><em>Triage View — ensemble consensus (ORANGE), EHR-derived risk flags, don't-miss diagnoses, and rule engine evidence for a 79-year-old patient with immunosuppression and medication-masked vitals.</em></p>
+
+---
 
 ## Quick Start
 
-### 1. Install Dependencies
+### 1. Install
 
 ```bash
+git clone https://github.com/ki-smile/triage-medley.git
+cd triage-medley
 pip install -r requirements.txt
 ```
 
-### 2. Run the App (Mock Mode -- No API Keys Required)
+### 2. Run (Mock Mode — No API Keys Required)
 
 ```bash
 streamlit run app.py
 ```
 
-The app runs with **mock adapters** by default -- all AI model responses are simulated using pre-built scenario data. No HuggingFace account or API keys are needed to explore the full UI.
+The app runs with **mock adapters** by default — all AI model responses are simulated using pre-built scenario data for 6 patients. No HuggingFace account or API keys are needed to explore the full UI and workflow.
 
 ### 3. Run Tests
 
 ```bash
-# All tests
 pytest tests/ -v
-
-# HuggingFace adapter tests only (uses mocked API -- no token needed)
-pytest tests/test_hf_adapters.py -v
-
-# Space adapter tests (uses mocked Gradio client -- no token needed)
-pytest tests/test_space_adapters.py -v
-
-# PDF report tests
-pytest tests/test_pdf.py -v
 ```
+
+> **Need live model inference?** See the [HuggingFace Integration Guide](docs/HUGGINGFACE_SETUP.md) for connecting to real models via HF Inference API or Spaces.
+
+---
 
 ## Demo Credentials
 
@@ -60,246 +159,145 @@ Patient role requires no login.
 
 ---
 
-## HuggingFace Integration
-
-The system supports two modes of live model inference — the [HuggingFace Inference API](https://huggingface.co/docs/huggingface_hub/guides/inference) (direct model access) and [HuggingFace Spaces](https://huggingface.co/docs/hub/spaces) (custom Gradio deployments). Adapter switching is entirely config-driven -- no code changes required.
-
-| Mode | Library | Config Value | Best For |
-|------|---------|-------------|----------|
-| **Mock** | N/A (local JSON) | `adapter: "mock"` | Development, demos, no API key needed |
-| **Inference API** | `huggingface_hub.InferenceClient` | `adapter: "huggingface"` | Direct model access via HF infrastructure |
-| **Space** | `gradio_client.Client` | `adapter: "space"` | Custom deployments with full control over GPU/config |
-
-### Model Registry
-
-| Model ID | HuggingFace Repo | Stages | Role |
-|----------|-------------------|--------|------|
-| `medgemma_4b` | `google/medgemma-4b-it` | Pre-triage + Triage + Differential + Management | Anchor model (fast, multimodal) |
-| `medgemma_27b` | `google/medgemma-27b-text-it` | Triage + Differential + Management | Deep analysis (87.7% MedQA) [Disabled by default] |
-| `meditron_7b` | `OpenMeditron/Meditron3-Qwen2.5-7B` | Triage + Differential | Medical specialized Qwen2.5-7B variant |
-| `biomistral` | `BioMistral/BioMistral-7B` | Triage + Differential | Devil's advocate / don't-miss |
-
-### Step 1: Create a HuggingFace Account and Token
-
-1. Sign up at [huggingface.co](https://huggingface.co/join)
-2. Go to **Settings** > **Access Tokens** ([huggingface.co/settings/tokens](https://huggingface.co/settings/tokens))
-3. Create a new token with **Read** access (fine-grained: `Make calls to the serverless Inference API`)
-4. Copy the token (starts with `hf_...`)
-
-### Step 2: Request Model Access (Gated Models)
-
-Some models require accepting a license agreement before use:
-
-1. Visit each model page on HuggingFace and click **"Agree and access repository"** if prompted:
-   - [google/medgemma-4b-it](https://huggingface.co/google/medgemma-4b-it)
-   - [google/medgemma-27b-text-it](https://huggingface.co/google/medgemma-27b-text-it)
-2. Community models (Meditron3-7B, BioMistral) are typically open access -- no approval needed.
-
-### Alternative: Provide API Key via Admin Panel
-
-If `HF_TOKEN` is not set as an environment variable, admin users can provide a HuggingFace API key through the **Engine Config** page. Login as `admin` (PIN: `0000`) → Engine Config → enter your API key. The key is stored in the session only and not persisted.
-
-### Step 3: Set the HF_TOKEN Environment Variable
-
-```bash
-# Linux / macOS
-export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-# Windows (PowerShell)
-$env:HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
-# Or add to .env / .bashrc for persistence
-echo 'export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' >> ~/.bashrc
-```
-
-### Step 4: Switch from Mock to Live Adapters
-
-Edit `config/models.yaml` and change `adapter` from `"mock"` to `"huggingface"` or `"space"`:
-
-```yaml
-# config/models.yaml -- Mock mode (default)
-models:
-  medgemma_4b:
-    name: "MedGemma 4B"
-    hf_id: "google/medgemma-4b-it"
-    adapter: "mock"                    # <-- change this
-    space_id: "your-username/your-space"
-    api_name: "/predict"
-    stages: ["pretriage", "triage", "differential", "management"]
-    timeout_seconds: 3
-```
-
-**Option A: HuggingFace Inference API** (direct model access)
-
-```yaml
-    adapter: "huggingface"             # Direct model via InferenceClient
-    timeout_seconds: 30                # increase for API latency
-```
-
-**Option B: HuggingFace Space** (custom Gradio deployment)
-
-```yaml
-    adapter: "space"                   # Gradio Space via gradio_client
-    space_id: "your-username/your-space"  # your deployed Space
-    api_name: "/predict"               # Gradio endpoint name
-    timeout_seconds: 30                # Spaces may have cold-start latency
-```
-
-You can switch models individually -- e.g. enable only `medgemma_4b` via Space while keeping the rest on mock. Both live modes use the same `hf_` token.
-
-### Step 5: Test the Connection
-
-```bash
-# Test Inference API connection
-python -c "
-from huggingface_hub import InferenceClient
-import os
-client = InferenceClient(model='google/medgemma-4b-it', token=os.environ['HF_TOKEN'])
-response = client.chat_completion(messages=[{'role': 'user', 'content': 'Hello'}], max_tokens=50)
-print('Inference API OK:', response.choices[0].message.content[:100])
-"
-
-# Test Space connection
-python -c "
-from gradio_client import Client
-import os
-client = Client('your-username/your-space', hf_token=os.environ['HF_TOKEN'])
-result = client.predict(message='Hello', api_name='/predict')
-print('Space OK:', str(result)[:100])
-"
-
-# Run adapter tests (uses mocked responses -- validates parsing logic)
-pytest tests/test_hf_adapters.py tests/test_space_adapters.py -v
-```
-
-You can also test connections via the **Engine Config** admin page (login as `admin` / `0000`), which has both "Test Inference API" and "Test Space Connection" buttons.
-
-### Troubleshooting
-
-| Issue | Cause | Fix |
-|-------|-------|-----|
-| `RuntimeError: HF_TOKEN environment variable not set` | Token not exported | Run `export HF_TOKEN=hf_...` before starting the app |
-| `401 Unauthorized` | Invalid or expired token | Regenerate token at [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) |
-| `403 Forbidden` on MedGemma | Model access not granted | Visit model page and click "Agree and access repository" |
-| `timeout` errors | Model cold start or large model | Increase `timeout_seconds` in `config/models.yaml` (30-60s for 27B models) |
-| `ModuleNotFoundError: gradio_client` | Space dependency not installed | Run `pip install gradio_client>=1.0.0` |
-| Space cold-start (30-60s delay) | Free-tier Space sleeping | First request wakes the Space; increase `timeout_seconds` to 60 |
-| `No Space adapter registered` | Model has no Space adapter class | Only `medgemma_4b` currently has a Space adapter |
-| Graceful degradation | One model fails | System continues with remaining models; failed model excluded from ensemble |
-
----
-
-## Project Structure
+## Repository Structure
 
 ```
 triage-medley/
-├── app.py                       # Streamlit entry point (role-based navigation)
-├── requirements.txt             # Python dependencies
-├── assets/
-│   └── style.css                # Custom Streamlit CSS theme
+├── app.py                        # Streamlit entry point (role-based navigation)
+├── requirements.txt              # Python dependencies
+│
 ├── config/
-│   ├── engines.yaml             # Multi-engine configuration (RETTS, ESI, MTS)
-│   ├── models.yaml              # Model registry + adapter selection (mock | huggingface | space)
-│   ├── pretriage.yaml           # Pre-triage priority rules
-│   ├── esi/                     # ESI triage rules
-│   │   ├── decision_tree.json   # ESI 5-level decision tree
-│   │   └── resource_rules.json  # ESI resource prediction rules
-│   ├── mts/                     # Manchester Triage System rules
-│   │   ├── flowcharts.json      # MTS clinical flowcharts
-│   │   └── general_discriminators.json
-│   ├── prompts/                 # YAML prompt templates (per stage)
-│   │   ├── pretriage.yaml
-│   │   ├── triage.yaml
-│   │   ├── differential.yaml
-│   │   └── management.yaml
-│   └── retts/                   # RETTS clinical rules
-│       ├── ess_codes.json       # ESS category flowcharts
-│       └── vitals_cutoffs.json  # Vital sign thresholds per RETTS level
+│   ├── models.yaml               # Model registry + adapter selection (mock | huggingface | space)
+│   ├── engines.yaml              # Multi-engine configuration (RETTS, ESI, MTS)
+│   ├── pretriage.yaml            # Pre-triage priority rules
+│   ├── prompts/                  # YAML prompt templates (per pipeline stage)
+│   ├── retts/                    # RETTS clinical rules (ESS codes, vital thresholds)
+│   ├── esi/                      # ESI decision tree + resource rules
+│   └── mts/                      # MTS flowcharts + general discriminators
+│
 ├── src/
-│   ├── models/                  # Pydantic data classes
-│   │   ├── clinical.py          # Clinical data models
-│   │   ├── context.py           # PreTriageContext, FullTriageContext
-│   │   ├── enums.py             # RETTS levels, priorities, roles
-│   │   ├── outputs.py           # Triage/differential/management outputs
-│   │   └── vitals.py            # VitalSigns model
-│   ├── adapters/                # ModelAdapter protocol + implementations
-│   │   ├── base.py              # ModelAdapter protocol definition
-│   │   ├── mock_adapter.py      # Mock responses from JSON scenario files
-│   │   ├── hf_base.py           # HuggingFace Inference API base adapter
-│   │   ├── hf_medgemma.py       # MedGemma 4B / 27B adapters (Inference API)
-│   │   ├── hf_ensemble.py       # QwenMed, BioMistral adapters (Inference API)
-│   │   ├── space_base.py        # HuggingFace Space base adapter (Gradio client)
-│   │   ├── space_medgemma.py    # MedGemma 4B adapter via Space
-│   │   ├── prompt_builder.py    # Prompt template rendering
-│   │   └── factory.py           # Config-driven adapter creation (mock/hf/space)
-│   ├── engines/                 # Deterministic triage rule engines
-│   │   ├── retts_engine.py      # RETTS vitals + ESS → colour level
-│   │   ├── esi_engine.py        # ESI 5-level acuity engine
-│   │   ├── mts_engine.py        # Manchester Triage System engine
-│   │   ├── pretriage_engine.py  # Pre-triage queue priority engine
-│   │   └── agreement_engine.py  # Ensemble agreement analysis
-│   ├── services/                # Application services
-│   │   ├── asr_service.py       # Dual-ASR speech pipeline
-│   │   ├── auth_service.py      # Role-based authentication
-│   │   ├── ehr_service.py       # FHIR EHR data retrieval
-│   │   ├── orchestrator.py      # Two-stage pipeline orchestrator
-│   │   ├── pdf_service.py       # PDF triage report generation
-│   │   └── session_manager.py   # Streamlit session state management
-│   └── utils/                   # Shared utilities
-│       ├── audit.py             # Append-only audit logger
-│       ├── config.py            # YAML/JSON config loader
-│       └── theme.py             # UI theme constants
-├── pages/                       # Streamlit multi-page app
-│   ├── 0_Kiosk.py               # Patient self-arrival kiosk
-│   ├── 1_Queue_View.py          # Charge nurse: priority-ordered waiting room
-│   ├── 2_Triage_View.py         # Triage nurse: vitals entry → ensemble result
-│   ├── 3_Physician_View.py      # Physician: differential + management handoff
-│   ├── 4_Prompt_Editor.py       # Dev tool: live YAML prompt editing
-│   ├── 5_Audit_Log.py           # Compliance: full decision trail
-│   └── 6_Engine_Config.py       # Admin: engine selection + API key + Space config
+│   ├── models/                   # Pydantic data models (clinical, context, outputs, vitals)
+│   ├── adapters/                 # ModelAdapter protocol + implementations (mock, HF, Space)
+│   ├── engines/                  # Deterministic rule engines (RETTS, ESI, MTS, pre-triage, agreement)
+│   ├── services/                 # Application services (ASR, auth, EHR, orchestrator, PDF)
+│   └── utils/                    # Audit logger, config loader, theme
+│
+├── pages/                        # Streamlit multi-page app
+│   ├── 0_Kiosk.py                # Patient self-arrival kiosk
+│   ├── 1_Queue_View.py           # Charge nurse: priority-ordered waiting room
+│   ├── 2_Triage_View.py          # Triage nurse: vitals entry → ensemble result
+│   ├── 3_Physician_View.py       # Physician: differential + management handoff
+│   ├── 4_Prompt_Editor.py        # Dev tool: live YAML prompt editing
+│   ├── 5_Audit_Log.py            # Compliance: full decision trail
+│   └── 6_Engine_Config.py        # Admin: engine selection + API key config
+│
 ├── data/
-│   ├── audit/                   # Audit log output (audit.jsonl)
-│   ├── ehr/                     # Synthetic FHIR patient bundles (6 scenarios)
-│   └── scenarios/               # Mock JSON responses (6 patients × 4 stages × models)
-├── tests/                       # Pytest test suite
-│   ├── test_adapters.py         # Mock adapter tests
-│   ├── test_hf_adapters.py      # HuggingFace Inference API adapter tests (mocked)
-│   ├── test_space_adapters.py   # HuggingFace Space adapter tests (mocked)
-│   ├── test_pipeline.py         # End-to-end pipeline tests
-│   ├── test_retts.py            # RETTS engine tests
-│   ├── test_esi.py              # ESI engine tests
-│   ├── test_mts.py              # MTS engine tests
-│   ├── test_multi_engine.py     # Multi-engine agreement tests
-│   ├── test_pretriage.py        # Pre-triage engine tests
-│   ├── test_models.py           # Pydantic model tests
-│   ├── test_ehr.py              # EHR service tests
-│   ├── test_auth.py             # Authentication tests
-│   ├── test_audit.py            # Audit logger tests
-│   └── test_pdf.py              # PDF report tests
-├── docs/
-│   └── ARCHITECTURE.md          # Detailed architecture documentation
-├── presentation/                # PPTX slide deck + build tooling
-│   ├── Triage-Medley.pptx     # Generated presentation
-│   ├── build.js                 # Slide builder script
-│   ├── create-assets.js         # Asset generation script
-│   └── slides/                  # HTML slide sources + image assets
-└── ref/                         # Reference documents (papers, specs)
+│   ├── scenarios/                # Mock JSON responses (6 patients × 4 stages × models)
+│   ├── ehr/                      # Synthetic FHIR R4 patient bundles
+│   └── audit/                    # Audit log output (audit.jsonl)
+│
+├── tests/                        # Pytest suite (adapters, engines, pipeline, models, services)
+└── docs/
+    ├── ARCHITECTURE.md           # Detailed technical architecture with Mermaid diagrams
+    └── HUGGINGFACE_SETUP.md      # Step-by-step guide for live model inference
 ```
+
+---
+
+## Method Summary
+
+Triage Medley is the clinical triage implementation of the **MEDLEY** framework, described in:
+
+> **Leveraging Imperfection with MEDLEY: A Multi-Model Approach Harnessing Bias in Medical AI**  
+> arXiv:2508.21648
+
+The core insight is that **bias in medical AI is conventionally treated as a defect, but disagreement between diverse models can be a clinically informative signal**. Rather than training one better model or averaging predictions, MEDLEY:
+
+1. **Preserves individual model outputs** — each model's triage level, differential, and management plan are visible to the clinician
+2. **Treats disagreement as an escalation trigger** — if models disagree, that case requires more careful review
+3. **Uses "devil's advocate" models** — BioMistral is specifically included to surface low-probability, high-consequence diagnoses that consensus models might suppress
+4. **Combines deterministic and probabilistic reasoning** — three rule engines (RETTS, ESI, MTS) provide reproducible baselines; LLMs provide nuanced clinical reasoning
+
+The system operates on synthetic FHIR patient data and mock model responses in its current form. Prospective clinical validation has not been conducted.
+
+---
+
+## Included Scenarios
+
+The system ships with 6 synthetic patient scenarios designed to exercise different clinical pathways:
+
+| Patient | Age/Sex | Key Challenge |
+|---------|---------|---------------|
+| **Ingrid** | 79F | Immunosuppressed, medication-masked vitals, deceptively normal presentation |
+| **Erik** | 68M | Acute chest pain, aortic dissection vs. ACS differentiation |
+| **Ella** | 4F | Pediatric meningococcal sepsis, rapid deterioration risk |
+| **Sofia** | 34F | Young woman, atypical presentation, diagnostic uncertainty |
+| **Anders** | 52M | Multi-system complaints, comorbidity interactions |
+| **Margit** | 71F | Elderly polypharmacy, fall risk assessment |
+
+---
+
+## Limitations
+
+- **Not a validated clinical tool.** Triage Medley is a research prototype and proof-of-concept demonstrator. It has not undergone prospective clinical validation or regulatory review.
+- **Synthetic data only.** All patient scenarios use synthetic FHIR bundles generated with Synthea. No real patient data is used or stored.
+- **Mock model responses.** The default mode uses pre-generated JSON responses, not live model inference. Live inference requires HuggingFace API access and is subject to model availability and latency.
+- **Single-language focus.** The system is designed for Swedish emergency departments and uses RETTS as the primary triage framework. ESI and MTS are included for cross-system comparison but are secondary.
+- **No speech-to-text in demo.** The dual-ASR pipeline is simulated; real ASR integration is not included in this release.
+- **Ensemble composition is fixed.** The current model selection (MedGemma, Meditron, BioMistral) reflects availability at time of development, not an optimized ensemble selection.
+
+---
+
+## Future Work
+
+- **Prospective validation** with de-identified clinical data in a Swedish ED setting
+- **Real-time ASR integration** with medical-domain speech recognition models
+- **Adaptive ensemble selection** — choosing models based on presenting complaint
+- **FHIR R4 integration** with hospital EHR systems for live patient data
+- **Multilingual support** — extending beyond Swedish/English
+- **Regulatory pathway** — CE marking assessment for clinical decision support software
+
+---
+
+## Citation
+
+If you use Triage Medley or the MEDLEY framework in your research, please cite:
+
+```bibtex
+@article{medley2025,
+  title     = {TRIAGE-MEDLEY: Ensemble Triage Decision Support Using MedGemma and the MEDLEY Disagreement Framework},
+  author    = {Abtahi, Farhad and Afdideh, Fardin and Illueca Fernandez, Eduardo
+               and Karbalaie, Abdolamir and Seoane, Fernando},
+  journal   = {},
+  year      = {2026},
+  url       = {}
+}
+```
+
+---
 
 ## Contributors
 
-### SMAILE Team
+### SMAILE Team — Karolinska Institutet / KTH
 
-- Farhad Abtahi
-- Fardin Afdideh
-- Eduardo Illueca Fernandez
-- Abdolamir Karbalaie
-- Fernando Seoane
+| Name | Role |
+|------|------|
+| **Farhad Abtahi** | Principal Investigator |
+| **Fardin Afdideh** | Core Developer |
+| **Eduardo Illueca Fernandez** | Core Developer |
+| **Abdolamir Karbalaie** | Core Developer |
+| **Fernando Seoane** | Senior Researcher |
 
 ### Clinical Lead
 
-- Olof Silfver
+| Name | Role |
+|------|------|
+| **Olof Silfver** | Clinical Advisor |
+
+**SMAILE** — Stockholm Medical Artificial Intelligence and Learning Environments
+
+---
 
 ## License
 
-(c) 2026 SMAILE (Stockholm Medical Artificial Intelligence and Learning Environments), Karolinska Institutet.
+© 2026 SMAILE (Stockholm Medical Artificial Intelligence and Learning Environments), Karolinska Institutet.
