@@ -4,7 +4,6 @@
 
 **A human-in-the-loop clinical decision support system that uses multi-model disagreement as a safety signal for emergency department triage.**
 
-[![Paper](https://img.shields.io/badge/arXiv-2508.21648-b31b1b?logo=arxiv)](https://arxiv.org/abs/2508.21648)
 [![Demo](https://img.shields.io/badge/Live_Demo-triage.medleyai.org-8A2BE2?logo=streamlit)](https://triage.medleyai.org/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.36%2B-FF4B4B?logo=streamlit)](https://streamlit.io)
