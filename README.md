@@ -208,8 +208,8 @@ triage-medley/
 
 Triage Medley is the clinical triage implementation of the **MEDLEY** framework, described in:
 
-> **Leveraging Imperfection with MEDLEY: A Multi-Model Approach Harnessing Bias in Medical AI**  
-> arXiv:2508.21648
+> **TRIAGE-MEDLEY: Ensemble Triage Decision Support Using MedGemma and the MEDLEY Disagreement Framework**  
+> 
 
 The core insight is that **bias in medical AI is conventionally treated as a defect, but disagreement between diverse models can be a clinically informative signal**. Rather than training one better model or averaging predictions, MEDLEY:
 
